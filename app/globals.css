@@ -4096,28 +4096,221 @@ img {
   margin-right: 6px;
 }
 
-/* Responsive Dashboard for Tablets & Mobile */
+/* ============================================================
+   RESPONSIVE DESIGN: 3D DIGITAL TWIN & SIMULATOR FOR ALL DEVICES
+   ============================================================ */
+
+/* Touch optimization for mobile 3D canvas */
+.threejs-canvas-host {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Tablets & Small Laptops (<= 1024px) */
 @media (max-width: 1024px) {
   .digital-twin-dashboard {
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 16px;
+    padding: 14px 16px;
+  }
+  .digital-twin-viewport-container {
+    height: 480px;
+  }
+  .twin-hud-card {
+    min-width: 210px;
+    padding: 8px 12px;
   }
 }
 
-@media (max-width: 640px) {
-  .digital-twin-dashboard {
-    grid-template-columns: 1fr;
+/* Large Mobile & Standard Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .digital-twin-topbar {
+    padding: 8px 12px;
+    gap: 8px;
   }
-  .digital-twin-viewport-container {
-    height: 420px;
+  .twin-brand-badge {
+    font-size: 11.5px;
+    gap: 6px;
   }
+  .twin-version {
+    font-size: 8.5px;
+    padding: 1px 5px;
+  }
+  .twin-view-pills {
+    width: 100%;
+    order: 3;
+    justify-content: space-between;
+    margin-top: 2px;
+  }
+  .twin-view-pills .twin-pill {
+    flex: 1;
+    justify-content: center;
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+  .twin-quick-actions {
+    margin-left: auto;
+  }
+
+  /* Compact top-row HUD gauges */
   .twin-hud-overlay {
-    flex-direction: column;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    gap: 8px;
+    flex-direction: row;
   }
   .twin-hud-card {
-    min-width: unset;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    padding: 7px 10px;
+    background: rgba(13, 21, 32, 0.92);
+    border-radius: 5px;
+  }
+  .hud-title-row {
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+  }
+  .hud-label {
+    font-size: 8.5px;
+  }
+  .master-breaker-btn {
+    font-size: 9.5px;
+    padding: 2px 6px;
+  }
+  .temp-status-pill {
+    font-size: 8.5px;
+    padding: 1px 5px;
+  }
+  .hud-metric-row {
+    gap: 6px;
+  }
+  .hud-stat .lbl {
+    font-size: 8.5px;
+  }
+  .hud-stat .val {
+    font-size: 11.5px;
+    margin-top: 1px;
   }
 }
+
+/* Small Mobile (< 640px) */
+@media (max-width: 640px) {
+  .digital-twin-viewport-container {
+    height: 400px;
+  }
+  .digital-twin-dashboard {
+    grid-template-columns: 1fr;
+    padding: 12px 14px;
+    gap: 14px;
+  }
+  .twin-slider {
+    height: 8px;
+  }
+  .tap-selector-buttons {
+    gap: 5px;
+  }
+  .tap-btn {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  .hotspots-btn-bar {
+    gap: 5px;
+  }
+  .inspect-chip {
+    font-size: 10.5px;
+    padding: 5px 8px;
+  }
+  .scenario-btn-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 6px;
+  }
+  .scenario-btn {
+    justify-content: center;
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+  .twin-doors-controller {
+    left: 8px;
+    bottom: 28px;
+    padding: 6px 10px;
+  }
+}
+
+/* Extra Small Phones (< 480px) */
+@media (max-width: 480px) {
+  .digital-twin-viewport-container {
+    height: 360px;
+  }
+  .product-showcase-switcher {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .showcase-tab-pills {
+    width: 100%;
+  }
+  .showcase-tab-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 6px;
+    font-size: 11.5px;
+  }
+  .showcase-badge-pill {
+    margin-right: 0;
+    justify-content: center;
+  }
+  .twin-hud-overlay {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    gap: 6px;
+  }
+  .twin-hud-card {
+    padding: 5px 8px;
+  }
+  .hud-stat .lbl {
+    font-size: 7.5px;
+  }
+  .hud-stat .val {
+    font-size: 10.5px;
+  }
+  .twin-doors-controller {
+    left: 6px;
+    right: 6px;
+    bottom: 26px;
+    padding: 6px 8px;
+  }
+  .doors-title {
+    font-size: 9.5px;
+    margin-bottom: 4px;
+  }
+  .doors-btn-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .door-toggle-btn {
+    font-size: 10px;
+    padding: 4px 6px;
+    flex: 1 1 calc(50% - 4px);
+    text-align: center;
+  }
+  .twin-hotspot-card {
+    left: 6px;
+    right: 6px;
+    top: 70px;
+    max-width: calc(100% - 12px);
+    padding: 10px;
+  }
+  .twin-orbit-hint {
+    bottom: 6px;
+    right: 6px;
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+}
+
 
 
