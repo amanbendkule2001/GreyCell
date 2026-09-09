@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { solutions, products } from '../../data/mock-data';
+const imgs=['/images/industries/renewable-energy.jpg','/images/industries/industries-manufacturing.jpg','/images/industries/infrastructure-smart-cities.jpg'];
+export default function Solutions(){return <><section className="page-hero"><div className="container"><div className="eyebrow">Solutions / Applications</div><h1>ENGINEERED FOR<br/>THE APPLICATION.</h1><p>Power-distribution solutions structured around industrial, commercial and renewable-energy requirements referenced in the supplied Graycell material.</p></div></section><section className="page-content"><div className="container"><div className="feature-grid">{solutions.map((s,i)=><Link className="feature-card" href={`/solutions/${s.slug}`} key={s.id}><img src={imgs[i%imgs.length]} alt=""/><div className="inner"><div className="eyebrow">0{i+1} / APPLICATION</div><h3>{s.name}</h3><p>{s.summary}</p><span className="product-link">Explore solution <ArrowRight size={15}/></span></div></Link>)}</div></div></section></>}

@@ -1,0 +1,200 @@
+# Graycell Website --- AI Coding Rules
+
+## 1. Project identity
+
+Project: Graycell Group corporate engineering website.
+
+Primary brand: **Graycell**
+
+Working positioning: **Engineered Power. Built to Perform.**
+
+The site represents Graycell as a master brand / group presentation. The
+supplied catalogues reference: - Graycell Power Solutions Pvt. Ltd. -
+Graycell Energy LLP
+
+These legal/company names are content data, not permission to invent
+ownership, capabilities, certifications, or corporate relationships.
+
+Primary public enquiry email: - `sales@graycellpower.com`
+
+Do not publish director names or director phone numbers.
+
+## 2. Core product/source truth
+
+The supplied Graycell catalogues are the primary source for current
+product/content claims.
+
+Source-supported areas include: - Oil-filled distribution transformers -
+Dry-type distribution transformers - Aluminium foil-wound transformers -
+Copper-wound / copper-related transformer offerings - Natural ester oil
+transformers - Hermetically sealed and non-sealed transformers - Smart
+monitoring / digital diagnostics references - Compact substations - MV
+switchgear / VCB references - Related MV electrical-system offerings -
+Manufacturing, winding, testing and quality-process claims - Industrial,
+commercial, renewable-energy and utility applications - 25 kVA--2500 kVA
+and up-to-33 kV references in the supplied material
+
+Treat every technical range, standard, approval, partner relationship,
+certification, project, client logo and service claim as
+**source-controlled content**. If a claim is not supported by approved
+project data or a current company source, do not invent it.
+
+## 3. Technology stack
+
+Preferred frontend: - Next.js with App Router - TypeScript - Tailwind
+CSS - React - Framer Motion for UI motion - GSAP only for complex
+scroll/engineering sequences where justified - CSS for simple
+transitions - Lucide or a controlled SVG icon set
+
+The architecture must be CMS/API-ready even though Version 1 uses local
+mock data.
+
+## 4. Architecture rules
+
+Use: - reusable components - typed domain models - configuration-driven
+content - route-level page templates - separation of content/data from
+presentation - service/repository abstraction for future API integration
+
+Do not: - hardcode product copy into multiple components - hardcode
+contact details in multiple files - create a separate component for
+every product - duplicate product page layouts - couple UI components
+directly to future backend implementation - expose internal/confidential
+engineering data
+
+All contact information must originate from a single site configuration
+object.
+
+## 5. Data rules
+
+Every domain object must have: - stable `id` - human-readable `slug` -
+`status` - timestamps where appropriate - explicit relationships -
+optional media/document references
+
+Use TypeScript types/interfaces for all data.
+
+Never use `any` for domain data.
+
+Use `unknown` at external boundaries and validate before use.
+
+## 6. Product rules
+
+Product pages must be generated from structured product data.
+
+At minimum support: - product identity - category - summary - capacity -
+voltage - applications - technologies - specifications - features -
+documents - images - related products - enquiry configuration
+
+A product may be marked: - `manufactured` - `partner` - `associated` -
+`solution` - `draft`
+
+Do not imply that a partner/associated product is manufactured by
+Graycell unless explicitly confirmed.
+
+## 7. Design rules
+
+The visual language is: - German-inspired industrial precision - premium
+power engineering - restrained - technical - grid-based -
+high-contrast - data-led
+
+Do not use: - excessive glassmorphism - oversized rounded cards - random
+gradients - generic SaaS visuals - decorative lightning graphics - fake
+German flags/colors - fake factory scenes - fake engineers - fabricated
+projects
+
+Real Graycell assets take priority over AI-generated imagery.
+
+AI-generated imagery may be used for conceptual/atmospheric visuals, but
+must never be presented as a real Graycell factory, employee,
+certification, product, project or installation.
+
+## 8. Motion rules
+
+Motion must explain: - electrical flow - engineering process -
+assembly - product relationships - data - navigation
+
+Prefer subtle, controlled movement.
+
+Respect `prefers-reduced-motion`.
+
+Do not animate every component.
+
+## 9. Forms
+
+The enquiry/RFQ form must be production-minded.
+
+Minimum fields: - name - company - email - phone - requirement type -
+application - capacity - primary voltage - secondary voltage -
+quantity - location - special requirements - specification upload -
+message
+
+Frontend validation must be implemented.
+
+Do not expose secrets or email-service credentials in client code.
+
+## 10. WhatsApp
+
+The WhatsApp number is configuration data.
+
+Do not invent the number.
+
+Use an empty/null configuration until the approved number is supplied.
+
+## 11. Security
+
+-   Never commit secrets.
+-   Never put API keys in client-side source.
+-   Validate uploaded files.
+-   Restrict upload size/type.
+-   Sanitize rendered rich text.
+-   Validate all API responses.
+-   Use server-side handling for email/API credentials.
+-   Do not expose internal documents.
+-   Do not expose unpublished CMS data.
+
+## 12. Accessibility
+
+Required: - semantic HTML - keyboard navigation - visible focus states -
+proper form labels - alt text - sufficient contrast - reduced-motion
+support - logical heading hierarchy
+
+## 13. Performance
+
+Prioritize: - optimized images - AVIF/WebP - lazy loading - responsive
+image sizes - code splitting - dynamic imports for heavy visual
+modules - compressed video - minimal client-side JavaScript
+
+A premium site must remain fast.
+
+## 14. SEO
+
+Every page must have: - unique title - meta description - canonical
+URL - semantic headings - meaningful body content - Open Graph
+metadata - appropriate JSON-LD where applicable
+
+Never use keyword stuffing.
+
+See `ai-seo-spec.md`.
+
+## 15. AI behaviour
+
+Before creating a new component: 1. Search existing component hierarchy.
+2. Reuse an existing component if possible. 3. Extend an existing
+component if the behaviour belongs to an existing abstraction. 4. Create
+a new component only when it represents a genuinely reusable concept.
+
+Before adding a claim: 1. Check source data. 2. Check approved content.
+3. If unsupported, use a placeholder marked
+`CONTENT_REQUIRES_CONFIRMATION`. 4. Never silently manufacture a claim.
+
+Before adding a new product: 1. Add it to the typed data model. 2. Add
+required metadata. 3. Add related technologies/applications. 4. Add
+approved media/documents. 5. Verify its ownership/manufacturing status.
+
+## 16. Definition of done
+
+A feature is not complete until: - TypeScript passes - lint passes -
+responsive states work - keyboard interaction works - reduced motion is
+respected - loading/error/empty states exist where relevant - SEO
+metadata exists - no hardcoded contact values exist outside
+configuration - no unsupported technical claims are introduced - no
+duplicated UI pattern has been created unnecessarily
