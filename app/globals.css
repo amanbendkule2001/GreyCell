@@ -4312,5 +4312,422 @@ img {
   }
 }
 
+/* ============================================================
+   STAGE-GATE QUALITY & ENGINEERING INSPECTOR STYLES
+   ============================================================ */
+.stagegate-tab-track {
+  display: flex;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
 
+.stagegate-step-btn {
+  flex: 1;
+  min-width: 140px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
 
+.stagegate-step-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.stagegate-step-btn.active {
+  background: #fff;
+  border-color: rgba(8, 120, 201, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stagegate-step-btn .step-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.stagegate-step-btn.active .step-num {
+  color: #0878c9;
+}
+
+.stagegate-step-btn .step-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.stagegate-step-btn.active .step-title {
+  color: #0f172a;
+}
+
+.stagegate-display-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.05);
+}
+
+.stagegate-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.stagegate-details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.stagegate-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.stagegate-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0878c9;
+  background: rgba(8, 120, 201, 0.08);
+  padding: 4px 9px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.stagegate-standards-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #64748b;
+  background: #f8fafc;
+  padding: 4px 9px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.stagegate-title {
+  font-size: 23px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.stagegate-discipline {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0878c9;
+  margin-bottom: 14px;
+}
+
+.stagegate-desc {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+}
+
+.stagegate-equipment-box {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.stagegate-equipment-box .eq-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #0878c9;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.stagegate-equipment-box .eq-text {
+  font-size: 12.5px;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.stagegate-checklist {
+  margin-bottom: 24px;
+}
+
+.stagegate-checklist .chk-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #059669;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.stagegate-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #334155;
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.stagegate-check-item .chk-bullet {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.stagegate-actions-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* Visual Column */
+.stagegate-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stagegate-image-frame {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0d1520;
+}
+
+.stagegate-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stagegate-image-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(11, 29, 51, 0.9);
+  backdrop-filter: blur(8px);
+  color: #38bdf8;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Live Telemetry Box */
+.stagegate-telemetry-box {
+  background: #0c1522;
+  border: 1px solid rgba(8, 120, 201, 0.3);
+  border-radius: 6px;
+  padding: 16px;
+  color: #fff;
+}
+
+.stagegate-telemetry-box .telemetry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stagegate-telemetry-box .tel-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+}
+
+.stagegate-telemetry-box .tel-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.telemetry-metrics-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tel-metric-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.tel-metric-card .metric-lbl {
+  font-size: 11.5px;
+  color: #94a3b8;
+}
+
+.tel-metric-card .metric-val-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tel-metric-card .metric-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.tel-metric-card .metric-pass-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Client Trust Ecosystem Strip */
+.stagegate-client-strip {
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+.client-strip-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.client-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.client-badge-card {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.client-badge-card:hover {
+  border-color: #0878c9;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.client-badge-card strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.client-badge-card span {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Responsive Breakpoints for Stage Gate */
+@media (max-width: 992px) {
+  .stagegate-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .stagegate-display-card {
+    padding: 22px;
+  }
+  .client-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stagegate-step-btn {
+    min-width: 120px;
+    padding: 8px 10px;
+  }
+  .stagegate-title {
+    font-size: 20px;
+  }
+  .stagegate-image-frame {
+    height: 200px;
+  }
+  .client-badges-grid {
+    grid-template-columns: 1fr;
+  }
+  .stagegate-actions-row {
+    flex-direction: column;
+  }
+  .stagegate-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
