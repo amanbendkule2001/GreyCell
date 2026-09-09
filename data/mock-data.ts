@@ -39,8 +39,8 @@ export const siteConfig = {
 };
 
 export const groupCompanies: GroupCompany[] = [
-  { id: "graycell-power-solutions", name: "Graycell Power Solutions Pvt. Ltd.", summary: "Group company reference associated with transformer manufacturing and power-solution content in the supplied Graycell material.", capabilities: ["Transformer solutions", "Power engineering", "Manufacturing"], status: "review" },
-  { id: "graycell-energy", name: "Graycell Energy LLP", summary: "Group company reference associated with compact substation and electrical power-system content in the supplied material.", capabilities: ["Compact substations", "Medium-voltage systems", "Power distribution solutions"], status: "review" },
+  { id: "graycell-power-solutions", name: "Graycell Power Solutions Pvt. Ltd.", summary: "Dedicated to the design, precision manufacturing, and rigorous testing of oil-filled, cast resin dry-type, and natural ester distribution transformers up to 33 kV class.", capabilities: ["Transformer solutions", "Power engineering", "Manufacturing"], status: "approved" },
+  { id: "graycell-energy", name: "Graycell Energy LLP", summary: "Engineered power systems delivering turnkey compact substations (CSS), modular medium-voltage switchgear panels, and custom power distribution solutions under Siemens technology partnership.", capabilities: ["Compact substations", "Medium-voltage systems", "Power distribution solutions"], status: "approved" },
 ];
 
 export const products: Product[] = [
@@ -71,7 +71,7 @@ export const products: Product[] = [
     summary: "Natural ester oil transformer technology presented by Graycell as an environmental and fire-performance-oriented option.", applications: ["Renewable Energy", "Industrial", "Commercial"], technologies: ["Natural Ester Oil"],
     features: ["Biodegradable fluid reference", "High fire point reference", "Moisture-tolerance reference"], specifications: [
       { key: "fire-point", label: "Fire Point", value: "300–360", unit: "°C", sourceStatus: "requires_confirmation" },
-    ], media: [], documents: [], relatedProductIds: ["oil-filled-distribution", "dry-type-distribution"], enquiryEnabled: true, imageSrc: "/images/products/power-transformer.png", imageAlt: "Graycell natural ester oil transformer",
+    ], media: [], documents: [], relatedProductIds: ["oil-filled-distribution", "dry-type-distribution"], enquiryEnabled: true, imageSrc: "/images/products/natural-ester-transformer.png", imageAlt: "Graycell natural ester oil transformer",
     seo: { title: "Natural Ester Oil Transformers | Graycell", description: "Explore Graycell natural ester oil transformer technology and applications." },
   },
   {

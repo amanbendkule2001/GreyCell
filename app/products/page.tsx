@@ -6,7 +6,7 @@ import { products } from '../../data/mock-data';
 const imgs:any={
  'oil-filled-distribution':'/images/products/power-transformer.png',
  'dry-type-distribution':'/images/products/dry-type-transformer.png',
- 'natural-ester-transformers':'/images/products/power-transformer.png',
+ 'natural-ester-transformers':'/images/products/natural-ester-transformer.png',
  'foil-wound-transformers':'/images/products/mv-switchgear.png',
  'compact-substations':'/images/products/compact-substation.png'
 };

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, CirclePlay, Leaf, ShieldCheck, Cog, Users, Factory, Gauge } from 'lucide-react';
 import { products, solutions, siteConfig } from '../data/mock-data';
 import { SpecificationHub } from '../components/SpecificationHub';
+import { ClienteleSection } from '../components/ClienteleSection';
 
 const productImage:{[key:string]:string}={
  'oil-filled-distribution':'/images/products/power-transformer.png',
@@ -40,7 +41,27 @@ export default function Home(){
      </div>
      <div className="hero-visual">
        <div className="hero-side-note">ENGINEERING<br/>ENERGY<br/>FOR A<br/>BETTER TOMORROW<span>PEOPLE<br/>TECHNOLOGY<br/>SUSTAINABILITY<br/>PROGRESS</span></div>
-       <div className="hero-image-wrap"><img src="/images/brand/hero-transformer.jpg" alt="Graycell high performance power transformer"/></div>
+       {/* CSS Auto-Slider */}
+       <div className="hero-slider">
+         <div className="hero-slide hero-slide-1">
+           <img src="/images/brand/hero-transformer.jpg" alt="Graycell high performance power transformer"/>
+           <div className="slide-caption">Oil-Filled Power Transformer</div>
+         </div>
+         <div className="hero-slide hero-slide-2">
+           <img src="/images/products/compact-substation.jpg" alt="Graycell compact substation"/>
+           <div className="slide-caption">Compact Substations</div>
+         </div>
+         <div className="hero-slide hero-slide-3">
+           <img src="/images/products/mv-switchgear.jpg" alt="Graycell MV switchgear panels"/>
+           <div className="slide-caption">MV Switchgear Panels</div>
+         </div>
+       </div>
+       {/* Slide dots indicator */}
+       <div className="hero-slider-dots">
+         <span className="dot dot-1"></span>
+         <span className="dot dot-2"></span>
+         <span className="dot dot-3"></span>
+       </div>
        <div className="hero-badge"><strong>Power engineering solutions</strong><p>Transformers · Compact substations · MV systems</p></div>
      </div>
    </section>
@@ -57,6 +78,8 @@ export default function Home(){
        </div>
      </div>
    </section>
+
+   <ClienteleSection />
 
    <section className="section soft">
      <div className="container">

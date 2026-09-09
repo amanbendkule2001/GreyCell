@@ -20,7 +20,7 @@ const mfgStages = [
     num: '01',
     title: 'Manufacturing Setup',
     tag: 'PLANT INFRASTRUCTURE',
-    image: '/images/brand/hero-transformer.jpg',
+    image: '/images/manufacturing/stage-1-plant.jpg',
     desc: 'State-of-the-art manufacturing plant equipped with core stacking tables, vacuum ovens, and dedicated overhead cranes for heavy distribution transformer assembly.',
     chips: ['Khed-Shivapur Plant', '100+ CSS Units/Yr']
   },
@@ -28,7 +28,7 @@ const mfgStages = [
     num: '02',
     title: 'Winding & Assembly',
     tag: 'CORE & COIL WINDING',
-    image: '/images/technology/foil-winding.jpg',
+    image: '/images/manufacturing/stage-2-winding.jpg',
     desc: 'High-conductivity electrolytic copper strip and foil windings with step-lap core joints engineered for minimal excitation losses across oil and dry-type families.',
     chips: ['Electrolytic Copper', 'Cast-Resin & Oil']
   },
@@ -36,7 +36,7 @@ const mfgStages = [
     num: '03',
     title: 'Testing & Diagnostics',
     tag: 'HIGH-VOLTAGE BAY',
-    image: '/images/products/power-transformer.png',
+    image: '/images/manufacturing/stage-3-testing.jpg',
     desc: 'Calibrated testing laboratory covering insulation resistance, impedance, turns ratio, dielectric oil breakdown, and high-voltage impulse performance to IS & IEC standards.',
     chips: ['IS 2026 / IEC 60076', 'Up to 33 kV Class']
   },
@@ -44,7 +44,7 @@ const mfgStages = [
     num: '04',
     title: 'Quality & Approvals',
     tag: 'STANDARDS & SAFETY',
-    image: '/images/products/compact-substation.png',
+    image: '/images/manufacturing/stage-4-quality.jpg',
     desc: 'Rigorous stage-gate inspection from raw lamination to final tanking. Certified under Siemens 8FB20 technology partnership and CPRI / ERDA type testing.',
     chips: ['Siemens 8FB20 Partner', 'CPRI / ERDA Tested']
   }
