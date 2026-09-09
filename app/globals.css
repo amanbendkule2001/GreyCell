@@ -274,9 +274,11 @@ img {
 /* Mobile nav groups */
 .mobile-nav-group {
   border-bottom: 1px solid var(--line);
+  width: 100%;
 }
 
-.mobile-nav-parent {
+.mobile-nav-parent,
+.mobile-nav-link {
   display: flex;
   width: 100%;
   background: none;
@@ -291,32 +293,50 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: color 0.15s ease, padding-left 0.15s ease;
 }
 
-.mobile-nav-parent:hover {
+.mobile-nav-parent:hover,
+.mobile-nav-link:hover {
+  color: var(--blue);
+  padding-left: 4px;
+}
+
+.mobile-nav-parent.active,
+.mobile-nav-link.active {
   color: var(--blue);
 }
 
 .mobile-nav-children {
-  padding: 0 0 10px 16px;
+  padding: 2px 0 10px 16px;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
 .mobile-nav-children a {
-  padding: 9px 0;
+  display: block;
+  padding: 8px 0;
   font-size: 12.5px;
   font-weight: 500;
-  border-bottom: none;
+  border-bottom: none !important;
   color: #475569;
   text-transform: none;
   letter-spacing: normal;
+  text-decoration: none;
+  transition: color 0.15s ease, padding-left 0.15s ease;
 }
 
 .mobile-nav-children a:hover {
   color: var(--blue);
   padding-left: 4px;
+}
+
+.mobile-nav-children a.active {
+  color: var(--blue);
+  font-weight: 600;
 }
 
 /* Header Actions */
@@ -406,22 +426,6 @@ img {
   display: flex;
   flex-direction: column;
   padding: 16px 24px 36px;
-}
-
-.mobile-nav a {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ink);
-  transition: color 0.15s ease, padding-left 0.15s ease;
-}
-
-.mobile-nav a:hover {
-  color: var(--blue);
-  padding-left: 6px;
 }
 
 .mobile-drawer-cta {

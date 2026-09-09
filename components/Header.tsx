@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Menu, Search, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -100,8 +100,6 @@ export function Header() {
 
         {/* Header actions */}
         <div className="header-actions">
-          <button className="icon-button" aria-label="Search"><Search size={17} /></button>
-          <span className="lang">EN <ChevronDown size={11} /></span>
           <button className="header-cta" onClick={handleEnquiry}>Enquire Now <span>→</span></button>
           <button
             className="mobile-toggle"
@@ -117,22 +115,35 @@ export function Header() {
       {mobileOpen && (
         <div className="mobile-nav">
           <div className="container">
-            <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
+            <div className="mobile-nav-group">
+              <Link
+                href="/"
+                className={`mobile-nav-link${active('/') ? ' active' : ''}`}
+                onClick={() => setMobileOpen(false)}
+              >
+                Home
+              </Link>
+            </div>
             {navItems.map((item) => (
               <div key={item.label} className="mobile-nav-group">
                 {item.children ? (
                   <>
                     <button
-                      className="mobile-nav-parent"
+                      className={`mobile-nav-parent${active(item.href) ? ' active' : ''}`}
                       onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
                     >
-                      {item.label}
+                      <span>{item.label}</span>
                       <ChevronDown size={14} style={{ transform: mobileExpanded === item.label ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
                     </button>
                     {mobileExpanded === item.label && (
                       <div className="mobile-nav-children">
                         {item.children.map((child) => (
-                          <Link key={child.href} href={child.href} onClick={() => setMobileOpen(false)}>
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={active(child.href) ? 'active' : ''}
+                            onClick={() => setMobileOpen(false)}
+                          >
                             {child.label}
                           </Link>
                         ))}
@@ -140,7 +151,13 @@ export function Header() {
                     )}
                   </>
                 ) : (
-                  <Link href={item.href} onClick={() => setMobileOpen(false)}>{item.label}</Link>
+                  <Link
+                    href={item.href}
+                    className={`mobile-nav-link${active(item.href) ? ' active' : ''}`}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
             ))}
