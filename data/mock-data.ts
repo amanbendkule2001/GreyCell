@@ -35,7 +35,7 @@ export const siteConfig = {
   descriptor: "Power Engineering Group",
   headline: "ENGINEERED POWER. BUILT TO PERFORM.",
   supportingText: "Transformers, compact substations and medium-voltage power solutions engineered for reliable power infrastructure.",
-  contact: { salesEmail: "sales@graycellpower.com", whatsappNumber: "+919876543210" },
+  contact: { salesEmail: "sales@graycellpower.com", whatsappNumber: "+91 84599 47816" },
 };
 
 export const groupCompanies: GroupCompany[] = [
@@ -101,7 +101,7 @@ export const solutions: Solution[] = [
 ];
 
 export const projects: Project[] = [
-  { id: "compact-substation-showcase", slug: "compact-substation-application-showcase", title: "Compact Substation Application Showcase", status: "review", application: "Compact Substation", solution: "Compact Substation", equipment: ["Compact Substation"], media: [], relatedProductIds: ["compact-substations"], isCaseStudy: false, seo: { title: "Compact Substation Applications | Graycell", description: "Explore compact substation installation and application imagery from Graycell's supplied catalogue." } },
+  { id: "compact-substation-showcase", slug: "compact-substation-application-showcase", title: "Power Infrastructure & Substation Application Showcase", status: "review", application: "Power Distribution & Substations", solution: "Substations, Switchgear & Transformers", equipment: ["Outdoor Substation", "Power Transformers", "MV VCB Panels", "Cast Resin Dry-Type Transformer"], media: [], relatedProductIds: ["compact-substations", "oil-filled-distribution", "foil-wound-transformers", "dry-type-distribution"], isCaseStudy: false, seo: { title: "Power Infrastructure & Substation Applications | Graycell", description: "Explore outdoor substations, power transformers, medium-voltage switchgear, and cast resin transformers from Graycell engineering." } },
 ];
 
 export const resources: Resource[] = [

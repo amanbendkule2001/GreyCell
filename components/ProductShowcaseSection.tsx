@@ -49,7 +49,7 @@ export default function ProductShowcaseSection({
   capacity,
   voltage
 }: Props) {
-  const [activeMode, setActiveMode] = useState<'3d' | '2d'>('3d');
+  const [activeMode, setActiveMode] = useState<'3d' | '2d'>('2d');
 
   return (
     <div className="product-showcase-container">
@@ -57,18 +57,18 @@ export default function ProductShowcaseSection({
       <div className="product-showcase-switcher">
         <div className="showcase-tab-pills">
           <button
-            className={`showcase-tab-btn ${activeMode === '3d' ? 'active' : ''}`}
-            onClick={() => setActiveMode('3d')}
-          >
-            <Zap size={14} color={activeMode === '3d' ? '#0878c9' : '#64748b'} />
-            3D Digital Twin & Simulator
-          </button>
-          <button
             className={`showcase-tab-btn ${activeMode === '2d' ? 'active' : ''}`}
             onClick={() => setActiveMode('2d')}
           >
             <Camera size={14} color={activeMode === '2d' ? '#0878c9' : '#64748b'} />
             Studio Photograph
+          </button>
+          <button
+            className={`showcase-tab-btn ${activeMode === '3d' ? 'active' : ''}`}
+            onClick={() => setActiveMode('3d')}
+          >
+            <Zap size={14} color={activeMode === '3d' ? '#0878c9' : '#64748b'} />
+            3D Digital Twin & Simulator
           </button>
         </div>
 

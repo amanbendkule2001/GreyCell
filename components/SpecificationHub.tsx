@@ -98,7 +98,8 @@ export function SpecificationHub() {
     }
   };
 
-  const waUrl = `https://wa.me/919876543210?text=${encodeURIComponent(
+  const waPhone = (siteConfig.contact.whatsappNumber || '+918459947816').replace(/[^0-9]/g, '');
+  const waUrl = `https://wa.me/${waPhone}?text=${encodeURIComponent(
     `Hello Graycell Sales, I would like to request a technical quotation for ${activeItem.label} (${activeItem.rating}).`
   )}`;
 

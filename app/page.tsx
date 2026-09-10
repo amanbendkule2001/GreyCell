@@ -40,7 +40,6 @@ export default function Home(){
        </div>
      </div>
      <div className="hero-visual">
-       <div className="hero-side-note">ENGINEERING<br/>ENERGY<br/>FOR A<br/>BETTER TOMORROW<span>PEOPLE<br/>TECHNOLOGY<br/>SUSTAINABILITY<br/>PROGRESS</span></div>
        {/* CSS Auto-Slider */}
        <div className="hero-slider">
          <div className="hero-slide hero-slide-1">
