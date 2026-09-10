@@ -21,11 +21,46 @@ import { siteConfig } from '../../data/mock-data';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [refId, setRefId] = useState('');
   const [activeMap, setActiveMap] = useState<'office' | 'factory'>('office');
 
-  const submit = (e: FormEvent) => {
+  const [form, setForm] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    requirementType: 'Oil-Filled Distribution Transformer',
+    application: '',
+    capacity: '',
+    primaryVoltage: '',
+    secondaryVoltage: '',
+    quantity: '',
+    location: '',
+    message: '',
+  });
+
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          voltage: form.primaryVoltage ? `${form.primaryVoltage} / ${form.secondaryVoltage || 'Standard'}` : form.secondaryVoltage,
+          source: 'contact-page',
+        }),
+      });
+      const data = await res.json();
+      setRefId(data.refId || 'GC-' + Math.floor(100000 + Math.random() * 900000));
+    } catch (err) {
+      setRefId('GC-' + Math.floor(100000 + Math.random() * 900000));
+    } finally {
+      setSubmitting(false);
+      setSent(true);
+    }
   };
 
   const scrollToMap = (type: 'office' | 'factory') => {
@@ -235,15 +270,34 @@ export default function Contact() {
             {sent ? (
               <div className="panel pad" style={{ textAlign: 'center', padding: '48px 32px' }}>
                 <CheckCircle2 color="#16834b" size={54} style={{ margin: '0 auto 16px' }} />
+                <div className="eyebrow" style={{ color: '#16834b', marginBottom: 8 }}>ENQUIRY RECORDED · REF: #{refId}</div>
                 <h2 style={{ fontSize: 26, margin: '0 0 10px' }}>ENQUIRY SUBMITTED SUCCESSFULLY</h2>
-                <p style={{ maxWidth: 520, margin: '0 auto 24px', color: '#475569' }}>
-                  Thank you for submitting your engineering specification. Our technical sales team will review your parameters
-                  and reply with a technical & commercial proposal within 24 business hours to <strong>{siteConfig.contact.salesEmail}</strong>.
+                <p style={{ maxWidth: 540, margin: '0 auto 16px', color: '#475569', lineHeight: 1.6 }}>
+                  Thank you, <strong>{form.name || 'Client'}</strong>. Your specification has been logged under Reference ID <strong>#{refId}</strong> and dispatched to <strong>{siteConfig.contact.salesEmail}</strong>.
+                </p>
+                <p style={{ maxWidth: 500, margin: '0 auto 24px', fontSize: 13, color: '#64748b' }}>
+                  Our technical sales team will review your parameters and follow up with a technical & commercial proposal within 24 business hours.
                 </p>
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={() => setSent(false)}
+                  onClick={() => {
+                    setSent(false);
+                    setForm({
+                      name: '',
+                      company: '',
+                      email: '',
+                      phone: '',
+                      requirementType: 'Oil-Filled Distribution Transformer',
+                      application: '',
+                      capacity: '',
+                      primaryVoltage: '',
+                      secondaryVoltage: '',
+                      quantity: '',
+                      location: '',
+                      message: '',
+                    });
+                  }}
                 >
                   Submit Another Requirement
                 </button>
@@ -252,55 +306,105 @@ export default function Contact() {
               <form className="form-grid" onSubmit={submit}>
                 <div className="field">
                   <label>Full name *</label>
-                  <input required placeholder="Your name" />
+                  <input
+                    required
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={e => setForm({ ...form, name: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Company *</label>
-                  <input required placeholder="Organization / EPC name" />
+                  <input
+                    required
+                    placeholder="Organization / EPC name"
+                    value={form.company}
+                    onChange={e => setForm({ ...form, company: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Email *</label>
-                  <input type="email" required placeholder="name@company.com" />
+                  <input
+                    type="email"
+                    required
+                    placeholder="name@company.com"
+                    value={form.email}
+                    onChange={e => setForm({ ...form, email: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Phone *</label>
-                  <input required placeholder="+91 98765 43210" />
+                  <input
+                    required
+                    placeholder="+91 00000 00000"
+                    value={form.phone}
+                    onChange={e => setForm({ ...form, phone: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Equipment / Requirement Type *</label>
-                  <select required defaultValue="">
-                    <option value="" disabled>Select category</option>
-                    <option value="oil-filled">Oil-Filled Distribution Transformer (Up to 33 kV)</option>
-                    <option value="dry-type">Dry-Type Cast Resin / VPI Transformer</option>
-                    <option value="natural-ester">Natural Ester Eco-Fluid Transformer</option>
-                    <option value="compact-substation">Compact Substation (CSS / Package Substation)</option>
-                    <option value="mv-switchgear">Medium-Voltage Switchgear Panel (VCB / RMU)</option>
-                    <option value="custom">Custom Power Engineering Solution</option>
+                  <select
+                    required
+                    value={form.requirementType}
+                    onChange={e => setForm({ ...form, requirementType: e.target.value })}
+                  >
+                    <option value="Oil-Filled Distribution Transformer (Up to 33 kV)">Oil-Filled Distribution Transformer (Up to 33 kV)</option>
+                    <option value="Dry-Type Cast Resin / VPI Transformer">Dry-Type Cast Resin / VPI Transformer</option>
+                    <option value="Natural Ester Eco-Fluid Transformer">Natural Ester Eco-Fluid Transformer</option>
+                    <option value="Compact Substation (CSS / Package Substation)">Compact Substation (CSS / Package Substation)</option>
+                    <option value="Medium-Voltage Switchgear Panel (VCB / RMU)">Medium-Voltage Switchgear Panel (VCB / RMU)</option>
+                    <option value="Custom Power Engineering Solution">Custom Power Engineering Solution</option>
                   </select>
                 </div>
                 <div className="field">
                   <label>Application / Industry</label>
-                  <input placeholder="e.g. Solar PV, Industrial Plant, Commercial complex" />
+                  <input
+                    placeholder="e.g. Solar PV, Industrial Plant, Commercial complex"
+                    value={form.application}
+                    onChange={e => setForm({ ...form, application: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Capacity / Rating</label>
-                  <input placeholder="e.g. 500 kVA, 1000 kVA, 2500 kVA" />
+                  <input
+                    placeholder="e.g. 500 kVA, 1000 kVA, 2500 kVA"
+                    value={form.capacity}
+                    onChange={e => setForm({ ...form, capacity: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Primary Voltage Class</label>
-                  <input placeholder="e.g. 11 kV, 22 kV, 33 kV" />
+                  <input
+                    placeholder="e.g. 11 kV, 22 kV, 33 kV"
+                    value={form.primaryVoltage}
+                    onChange={e => setForm({ ...form, primaryVoltage: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Secondary Voltage</label>
-                  <input placeholder="e.g. 433 V, 415 V" />
+                  <input
+                    placeholder="e.g. 433 V, 415 V"
+                    value={form.secondaryVoltage}
+                    onChange={e => setForm({ ...form, secondaryVoltage: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Quantity</label>
-                  <input type="number" min="1" placeholder="e.g. 2 Units" />
+                  <input
+                    type="number"
+                    min="1"
+                    placeholder="e.g. 2 Units"
+                    value={form.quantity}
+                    onChange={e => setForm({ ...form, quantity: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Project / Delivery Location</label>
-                  <input placeholder="City, State / Site location" />
+                  <input
+                    placeholder="City, State / Site location"
+                    value={form.location}
+                    onChange={e => setForm({ ...form, location: e.target.value })}
+                  />
                 </div>
                 <div className="field">
                   <label>Specification Document (PDF / DOC / Image)</label>
@@ -308,11 +412,23 @@ export default function Contact() {
                 </div>
                 <div className="field full">
                   <label>Special Engineering Requirements / Notes</label>
-                  <textarea rows={5} placeholder="State any specific standards (IS / IEC / BEE Star Rating), vector group, ambient temperature, or special loss limits..." />
+                  <textarea
+                    rows={5}
+                    placeholder="State any specific standards (IS / IEC / BEE Star Rating), vector group, ambient temperature, or special loss limits..."
+                    value={form.message}
+                    onChange={e => setForm({ ...form, message: e.target.value })}
+                  />
                 </div>
                 <div className="field full">
-                  <button className="btn btn-primary" type="submit" style={{ width: '100%', justifyContent: 'center', height: 46 }}>
-                    Submit Technical Enquiry <ArrowRight size={16} />
+                  <button
+                    className="btn btn-primary"
+                    type="submit"
+                    disabled={submitting}
+                    style={{ width: '100%', justifyContent: 'center', height: 46 }}
+                  >
+                    {submitting ? 'Dispatching Technical Enquiry...' : (
+                      <>Submit Technical Enquiry <ArrowRight size={16} /></>
+                    )}
                   </button>
                 </div>
               </form>

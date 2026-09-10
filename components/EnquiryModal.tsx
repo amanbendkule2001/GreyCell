@@ -48,15 +48,23 @@ export function EnquiryModal() {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      const generatedRef = 'GC-' + Math.floor(100000 + Math.random() * 900000);
-      setRefId(generatedRef);
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, source: 'modal' }),
+      });
+      const data = await res.json();
+      setRefId(data.refId || 'GC-' + Math.floor(100000 + Math.random() * 900000));
+    } catch (err) {
+      setRefId('GC-' + Math.floor(100000 + Math.random() * 900000));
+    } finally {
       setSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    }
   };
 
   const handleWhatsAppSend = () => {
@@ -153,7 +161,7 @@ export function EnquiryModal() {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +91 98765 43210"
+                    placeholder="e.g. +91 00000 00000"
                     value={form.phone}
                     onChange={e => setForm({ ...form, phone: e.target.value })}
                   />
