@@ -35,7 +35,13 @@ export const siteConfig = {
   descriptor: "Power Engineering Group",
   headline: "ENGINEERED POWER. BUILT TO PERFORM.",
   supportingText: "Transformers, compact substations and medium-voltage power solutions engineered for reliable power infrastructure.",
-  contact: { salesEmail: "sales@graycellpower.com", whatsappNumber: "+91 84599 47816" },
+  contact: {
+    salesEmail: "sales@graycellpower.com",
+    whatsappNumber: "+91 84599 47816",
+    phoneNumbers: ["+91 84599 47816"],
+    officeAddress: "325, Platinum 9, Pashan-Sus Road, Baner, Pune – 411045, Maharashtra, India",
+    factoryAddress: "Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India",
+  },
 };
 
 export const groupCompanies: GroupCompany[] = [
