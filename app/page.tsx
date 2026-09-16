@@ -44,7 +44,7 @@ export default function Home(){
        <div className="hero-slider">
          <div className="hero-slide hero-slide-1">
            <img src="/images/brand/hero-transformer.jpg" alt="Graycell high performance power transformer"/>
-           <div className="slide-caption">Oil-Filled Power Transformer</div>
+           <div className="slide-caption">Oil-Filled Distribution Transformer</div>
          </div>
          <div className="hero-slide hero-slide-2">
            <img src="/images/products/compact-substation.jpg" alt="Graycell compact substation"/>
