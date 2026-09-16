@@ -656,7 +656,7 @@ img {
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: heroFade 15s infinite;
+  animation: heroFade 35s infinite;
 }
 
 .hero-slide img {
@@ -667,16 +667,20 @@ img {
   transition: transform 8s ease;
 }
 
-/* Each slide offset by 5s = 15s total cycle */
+/* Each slide offset by 5s = 35s total cycle */
 .hero-slide-1 { animation-delay: 0s; }
 .hero-slide-2 { animation-delay: 5s; }
 .hero-slide-3 { animation-delay: 10s; }
+.hero-slide-4 { animation-delay: 15s; }
+.hero-slide-5 { animation-delay: 20s; }
+.hero-slide-6 { animation-delay: 25s; }
+.hero-slide-7 { animation-delay: 30s; }
 
 @keyframes heroFade {
   0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  30%  { opacity: 1; }
-  35%  { opacity: 0; }
+  2%   { opacity: 1; }
+  13%  { opacity: 1; }
+  15%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -712,18 +716,22 @@ img {
   height: 6px;
   border-radius: 50%;
   background: rgba(255,255,255,0.35);
-  animation: dotActive 15s infinite;
+  animation: dotActive 35s infinite;
 }
 
 .dot-1 { animation-delay: 0s; }
 .dot-2 { animation-delay: 5s; }
 .dot-3 { animation-delay: 10s; }
+.dot-4 { animation-delay: 15s; }
+.dot-5 { animation-delay: 20s; }
+.dot-6 { animation-delay: 25s; }
+.dot-7 { animation-delay: 30s; }
 
 @keyframes dotActive {
   0%   { background: rgba(255,255,255,0.35); transform: scale(1); }
-  5%   { background: #0878c9; transform: scale(1.4); }
-  30%  { background: #0878c9; transform: scale(1.4); }
-  35%  { background: rgba(255,255,255,0.35); transform: scale(1); }
+  2%   { background: #0878c9; transform: scale(1.4); }
+  13%  { background: #0878c9; transform: scale(1.4); }
+  15%  { background: rgba(255,255,255,0.35); transform: scale(1); }
   100% { background: rgba(255,255,255,0.35); transform: scale(1); }
 }
 

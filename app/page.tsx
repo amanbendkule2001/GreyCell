@@ -4,11 +4,15 @@ import { products, solutions, siteConfig } from '../data/mock-data';
 import { SpecificationHub } from '../components/SpecificationHub';
 import { ClienteleSection } from '../components/ClienteleSection';
 
-const productImage:{[key:string]:string}={
- 'oil-filled-distribution':'/images/products/power-transformer.png',
- 'dry-type-distribution':'/images/products/dry-type-transformer.png',
- 'compact-substations':'/images/products/compact-substation.png',
- 'foil-wound-transformers':'/images/products/mv-switchgear.png'
+const productImage: { [key: string]: string } = {
+  'oil-filled-distribution': '/images/products/power-transformer.png',
+  'dry-type-distribution': '/images/products/dry-type-transformer.png',
+  'compact-substations': '/images/products/compact-substation.png',
+  'foil-wound-transformers': '/images/products/mv-switchgear.png',
+  'aluminium-foil-wound-transformers': '/images/products/aluminium_foil_wound.jpg',
+  'copper-foil-wound-transformers': '/images/products/copper_foil_wound.jpg',
+  'hermetically-sealed-transformers': '/images/products/hermetically_sealed.jpg',
+  'g-sense-monitoring': '/images/products/gsense_monitoring.jpg',
 };
 const industries=[
  {name:'Renewable Energy',img:'/images/industries/renewable-energy.jpg'},
@@ -43,16 +47,32 @@ export default function Home(){
        {/* CSS Auto-Slider */}
        <div className="hero-slider">
          <div className="hero-slide hero-slide-1">
-           <img src="/images/brand/hero-transformer.jpg" alt="Graycell high performance power transformer"/>
+           <img src="/images/brand/hero-transformer.jpg" alt="Graycell oil-filled distribution transformer"/>
            <div className="slide-caption">Oil-Filled Distribution Transformer</div>
          </div>
          <div className="hero-slide hero-slide-2">
            <img src="/images/products/compact-substation.jpg" alt="Graycell compact substation"/>
-           <div className="slide-caption">Compact Substations</div>
+           <div className="slide-caption">Compact Substations (CSS)</div>
          </div>
          <div className="hero-slide hero-slide-3">
            <img src="/images/products/mv-switchgear.jpg" alt="Graycell MV switchgear panels"/>
            <div className="slide-caption">MV Switchgear Panels</div>
+         </div>
+         <div className="hero-slide hero-slide-4">
+           <img src="/images/products/hero-gsense.jpg" alt="Graycell G-SenSe IoT smart monitoring"/>
+           <div className="slide-caption">Graycell G-SenSe Smart Monitoring</div>
+         </div>
+         <div className="hero-slide hero-slide-5">
+           <img src="/images/products/hero-foil-wound.jpg" alt="Graycell foil wound transformer"/>
+           <div className="slide-caption">Foil Wound Transformers</div>
+         </div>
+         <div className="hero-slide hero-slide-6">
+           <img src="/images/products/hero-hermetic.jpg" alt="Graycell hermetically sealed transformer"/>
+           <div className="slide-caption">Hermetically Sealed Transformers</div>
+         </div>
+         <div className="hero-slide hero-slide-7">
+           <img src="/images/products/hero-dry-type.jpg" alt="Graycell dry-type transformer"/>
+           <div className="slide-caption">Cast Resin Dry-Type Transformers</div>
          </div>
        </div>
        {/* Slide dots indicator */}
@@ -60,6 +80,10 @@ export default function Home(){
          <span className="dot dot-1"></span>
          <span className="dot dot-2"></span>
          <span className="dot dot-3"></span>
+         <span className="dot dot-4"></span>
+         <span className="dot dot-5"></span>
+         <span className="dot dot-6"></span>
+         <span className="dot dot-7"></span>
        </div>
        <div className="hero-badge"><strong>Power engineering solutions</strong><p>Transformers · Compact substations · MV systems</p></div>
      </div>
