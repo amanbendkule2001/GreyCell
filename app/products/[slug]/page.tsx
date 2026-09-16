@@ -10,6 +10,10 @@ const imgs: any = {
   'natural-ester-transformers': '/images/products/natural-ester-transformer.png',
   'foil-wound-transformers': '/images/products/mv-switchgear.png',
   'compact-substations': '/images/products/compact-substation.png',
+  'aluminium-foil-wound-transformers': '/images/products/aluminium_foil_wound.jpg',
+  'copper-foil-wound-transformers': '/images/products/copper_foil_wound.jpg',
+  'hermetically-sealed-transformers': '/images/products/hermetically_sealed.jpg',
+  'g-sense-monitoring': '/images/products/gsense_monitoring.jpg',
 };
 
 export function generateStaticParams() {
@@ -42,7 +46,7 @@ export default async function ProductDetail({
               productId={p.id}
               productName={p.name}
               category={p.category}
-              imageSrc={imgs[p.id] ?? '/images/products/oil-filled-transformer.jpg'}
+              imageSrc={p.imageSrc ?? imgs[p.id] ?? '/images/products/oil-filled-transformer.jpg'}
               imageAlt={p.imageAlt ?? p.name}
               capacity={p.capacity?.label}
               voltage={p.voltage?.label}

@@ -1,10 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-interface NavChild { href: string; label: string; desc?: string; }
+interface NavSubChild { href: string; label: string; desc?: string; }
+interface NavChild { href: string; label: string; desc?: string; children?: NavSubChild[]; }
 interface NavItem { href: string; label: string; children?: NavChild[]; }
 
 const navItems: NavItem[] = [
@@ -14,11 +15,22 @@ const navItems: NavItem[] = [
     { href: '/manufacturing', label: 'Manufacturing', desc: 'State-of-the-art facilities' },
   ]},
   { href: '/products', label: 'Products', children: [
-    { href: '/products/oil-filled-distribution-transformers', label: 'Oil-Filled Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
-    { href: '/products/dry-type-distribution-transformers', label: 'Dry-Type Transformers', desc: 'Cast resin & VPI insulation' },
-    { href: '/products/compact-substations', label: 'Compact Substations', desc: 'Plug-and-play MV/LV packages' },
+    {
+      href: '/products#transformers',
+      label: 'Transformers',
+      desc: 'Distribution & specialized transformer solutions',
+      children: [
+        { href: '/products/oil-filled-distribution-transformers', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
+        { href: '/products/aluminium-foil-wound-transformers', label: 'Aluminium Foil Wound Transformers', desc: 'Precision engineered foil winding' },
+        { href: '/products/copper-foil-wound-transformers', label: 'Copper Foil Wound Transformers', desc: 'High-efficiency copper winding' },
+        { href: '/products/dry-type-distribution-transformers', label: 'Dry Type Distribution Transformers', desc: 'Cast resin & VPI insulation' },
+        { href: '/products/natural-ester-transformers', label: 'Ester Oil Transformers', desc: 'Eco-fluid, fire-safe solutions' },
+        { href: '/products/hermetically-sealed-transformers', label: 'Hermetically Sealed and Corrugated Tank Transformers', desc: 'Corrugated tank, maintenance-free' },
+      ]
+    },
+    { href: '/products/compact-substations', label: 'Compact Substation (CSS)', desc: 'Plug-and-play MV/LV packages' },
     { href: '/products/foil-wound-transformers', label: 'MV Switchgear Panels', desc: 'MV VCB & RMU panels' },
-    { href: '/products/natural-ester-transformers', label: 'Natural Ester Transformers', desc: 'Eco-fluid, fire-safe solutions' },
+    { href: '/products/g-sense-smart-monitoring', label: 'Graycell G-SenSe', desc: 'IoT Smart Monitoring for Transformer & CSS' },
   ]},
   { href: '/solutions', label: 'Solutions', children: [
     { href: '/solutions/renewable-energy', label: 'Renewable Energy', desc: 'Solar & wind power applications' },
@@ -43,6 +55,7 @@ const navItems: NavItem[] = [
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileSubExpanded, setMobileSubExpanded] = useState<string | null>(null);
   const pathname = usePathname();
   const active = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href);
 
@@ -62,7 +75,7 @@ export function Header() {
           <span className="brand-tagline">ENGINEERED FOR A BRIGHTER TOMORROW</span>
         </Link>
 
-        {/* DESKTOP NAV with hover dropdowns */}
+        {/* DESKTOP NAV with hover dropdowns & flyout submenus */}
         <nav className="desktop-nav" aria-label="Primary">
           <Link className={active('/') ? 'active' : ''} href="/">Home</Link>
           {navItems.map((item) =>
@@ -77,12 +90,34 @@ export function Header() {
                 </Link>
                 <div className="nav-dropdown">
                   <div className="nav-dropdown-inner">
-                    {item.children.map((child) => (
-                      <Link key={child.href} href={child.href} className="nav-dropdown-link">
-                        <span className="nav-dropdown-label">{child.label}</span>
-                        {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
-                      </Link>
-                    ))}
+                    {item.children.map((child) =>
+                      child.children ? (
+                        <div className="nav-flyout-item-wrap" key={child.label}>
+                          <Link href={child.href} className="nav-dropdown-link nav-flyout-trigger-link">
+                            <div className="nav-flyout-text">
+                              <span className="nav-dropdown-label">{child.label}</span>
+                              {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
+                            </div>
+                            <ChevronRight size={13} className="nav-flyout-chevron" />
+                          </Link>
+                          <div className="nav-flyout-menu">
+                            <div className="nav-flyout-inner">
+                              {child.children.map((sub) => (
+                                <Link key={sub.href} href={sub.href} className="nav-dropdown-link">
+                                  <span className="nav-dropdown-label">{sub.label}</span>
+                                  {sub.desc && <span className="nav-dropdown-desc">{sub.desc}</span>}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <Link key={child.href} href={child.href} className="nav-dropdown-link">
+                          <span className="nav-dropdown-label">{child.label}</span>
+                          {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
+                        </Link>
+                      )
+                    )}
                   </div>
                 </div>
               </div>
@@ -130,7 +165,10 @@ export function Header() {
                   <>
                     <button
                       className={`mobile-nav-parent${active(item.href) ? ' active' : ''}`}
-                      onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                      onClick={() => {
+                        setMobileExpanded(mobileExpanded === item.label ? null : item.label);
+                        setMobileSubExpanded(null);
+                      }}
                     >
                       <span>{item.label}</span>
                       <ChevronDown size={14} style={{ transform: mobileExpanded === item.label ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
@@ -138,14 +176,54 @@ export function Header() {
                     {mobileExpanded === item.label && (
                       <div className="mobile-nav-children">
                         {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className={active(child.href) ? 'active' : ''}
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
+                          child.children ? (
+                            <div key={child.label} className="mobile-sub-group" style={{ paddingLeft: 8, borderLeft: '2px solid var(--line)' }}>
+                              <button
+                                className="mobile-sub-parent"
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'space-between',
+                                  width: '100%',
+                                  background: 'none',
+                                  border: 'none',
+                                  padding: '10px 0',
+                                  fontSize: 13,
+                                  fontWeight: 600,
+                                  color: '#1d3550',
+                                  cursor: 'pointer'
+                                }}
+                                onClick={() => setMobileSubExpanded(mobileSubExpanded === child.label ? null : child.label)}
+                              >
+                                <span>{child.label}</span>
+                                <ChevronDown size={13} style={{ transform: mobileSubExpanded === child.label ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+                              </button>
+                              {mobileSubExpanded === child.label && (
+                                <div className="mobile-sub-children" style={{ paddingLeft: 10, display: 'flex', flexDirection: 'column', gap: 8, paddingBottom: 8 }}>
+                                  {child.children.map((sub) => (
+                                    <Link
+                                      key={sub.href}
+                                      href={sub.href}
+                                      className={active(sub.href) ? 'active' : ''}
+                                      style={{ fontSize: 12, color: '#647888', textDecoration: 'none' }}
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      {sub.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={active(child.href) ? 'active' : ''}
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {child.label}
+                            </Link>
+                          )
                         ))}
                       </div>
                     )}

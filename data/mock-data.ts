@@ -92,6 +92,41 @@ export const products: Product[] = [
     features: ["Indoor/outdoor configuration references", "Project-specific customization references", "Monitoring/SCADA compatibility references"], specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/products/compact-substation.png", imageAlt: "Graycell compact substation package unit",
     seo: { title: "Compact Substations | Graycell", description: "Explore Graycell compact substation solutions and MV/LV power distribution capabilities." },
   },
+  {
+    id: "aluminium-foil-wound-transformers", slug: "aluminium-foil-wound-transformers", name: "Aluminium Foil Wound Transformers", shortName: "Aluminium Foil Wound", category: "transformer", status: "approved", ownership: "graycell_manufactured",
+    summary: "Precision engineered aluminium foil wound transformers offering uniform current distribution and enhanced mechanical strength.",
+    applications: ["Industrial", "Commercial", "Utility"], technologies: ["Foil Winding"],
+    features: ["Uniform current distribution", "High mechanical strength", "Reduced hot-spots"],
+    specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/products/aluminium_foil_wound.jpg", imageAlt: "Aluminium Foil Wound Transformer",
+    seo: { title: "Aluminium Foil Wound Transformers | Graycell", description: "Explore Graycell aluminium foil wound transformer solutions." },
+  },
+  {
+    id: "copper-foil-wound-transformers", slug: "copper-foil-wound-transformers", name: "Copper Foil Wound Transformers", shortName: "Copper Foil Wound", category: "transformer", status: "approved", ownership: "graycell_manufactured",
+    summary: "High-efficiency copper foil wound transformers for superior electrical performance and low losses.",
+    applications: ["Industrial", "Commercial", "Data Centers"], technologies: ["Foil Winding"],
+    features: ["Superior electrical conductivity", "Low electrical losses", "Compact design capabilities"],
+    specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/products/copper_foil_wound.jpg", imageAlt: "Copper Foil Wound Transformer",
+    seo: { title: "Copper Foil Wound Transformers | Graycell", description: "Explore Graycell copper foil wound transformer solutions." },
+  },
+  {
+    id: "hermetically-sealed-transformers", slug: "hermetically-sealed-transformers", name: "Hermetically Sealed and Corrugated Tank Transformers", shortName: "Hermetically Sealed", category: "transformer", status: "approved", ownership: "graycell_manufactured",
+    summary: "Maintenance-free hermetically sealed transformers with corrugated tanks for efficient cooling.",
+    applications: ["Utility", "Industrial", "Infrastructure"], technologies: ["Hermetically Sealed", "Corrugated Cooling"],
+    features: ["Maintenance-free operation", "No oil degradation from air/moisture", "Efficient heat dissipation"],
+    specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/products/hermetically_sealed.jpg", imageAlt: "Hermetically Sealed Transformer",
+    seo: { title: "Hermetically Sealed Transformers | Graycell", description: "Explore Graycell hermetically sealed and corrugated tank transformers." },
+  },
+  {
+    id: "g-sense-monitoring", slug: "g-sense-smart-monitoring", name: "Graycell G-SenSe Smart Monitoring", shortName: "G-SenSe Monitoring", category: "other", status: "approved", ownership: "graycell_solution",
+    summary: "Digital condition monitoring system for compact substations & transformers offering 24/7 visibility, predictive maintenance, and retrofit-ready deployment.",
+    applications: ["Condition Monitoring", "Transformer Health", "Substation Management"], technologies: ["Smart Monitoring", "IoT", "Cloud Analytics"],
+    features: ["24/7 Continuous visibility", "Predictive condition-based maintenance", "Retrofit-ready architecture", "Cloud platform with mobile access", "Monitoring of physical, electrical, and protection parameters"],
+    specifications: [
+      { key: "parameters", label: "Parameters Monitored", value: "Physical, Electrical, Protection", sourceStatus: "verified" },
+      { key: "connectivity", label: "Connectivity", value: "SIM / Wi-Fi / Ethernet", sourceStatus: "verified" }
+    ], media: [], documents: [], relatedProductIds: ["compact-substations", "oil-filled-distribution"], enquiryEnabled: true, imageSrc: "/images/products/gsense_monitoring.jpg", imageAlt: "Graycell G-SenSe IoT Monitoring System",
+    seo: { title: "Graycell G-SenSe Smart Monitoring | Graycell", description: "Explore the G-SenSe digital condition monitoring platform for transformers and compact substations." },
+  }
 ];
 
 export const technologies: Technology[] = [

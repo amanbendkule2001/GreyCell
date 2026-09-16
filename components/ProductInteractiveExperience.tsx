@@ -81,6 +81,10 @@ export default function ProductInteractiveExperience({
   const isDryType = productId === 'dry-type-distribution';
   const isNaturalEster = productId === 'natural-ester-transformers';
   const isOilFilled = productId === 'oil-filled-distribution';
+  const isAluminiumFoil = productId === 'aluminium-foil-wound-transformers';
+  const isCopperFoil = productId === 'copper-foil-wound-transformers';
+  const isHermetic = productId === 'hermetically-sealed-transformers';
+  const isGSense = productId === 'g-sense-monitoring';
 
   // Electrical Computations
   const tapRatio = useMemo(() => {
@@ -256,7 +260,10 @@ export default function ProductInteractiveExperience({
       txbay: { pos: new THREE.Vector3(0, 1.8, 2.6), look: new THREE.Vector3(0, 1.2, 0.2) },
       lvdist: { pos: new THREE.Vector3(2.2, 1.8, 2.6), look: new THREE.Vector3(1.55, 1.3, 0.3) },
       roof: { pos: new THREE.Vector3(0, 4.2, 3.2), look: new THREE.Vector3(0, 2.7, 0) },
-      doors: { pos: new THREE.Vector3(0, 2.0, 4.0), look: new THREE.Vector3(0, 1.3, 0.5) }
+      doors: { pos: new THREE.Vector3(0, 2.0, 4.0), look: new THREE.Vector3(0, 1.3, 0.5) },
+      screen: { pos: new THREE.Vector3(0, 1.45, 1.8), look: new THREE.Vector3(0, 1.25, 0.4) },
+      gateway: { pos: new THREE.Vector3(0.6, 2.7, 1.6), look: new THREE.Vector3(0.85, 2.3, 0) },
+      sensors: { pos: new THREE.Vector3(0, 0.5, 1.6), look: new THREE.Vector3(0, 0.4, 0.2) }
     };
   }, []);
 
@@ -271,8 +278,13 @@ export default function ProductInteractiveExperience({
 
   const resetCamera = () => {
     setActiveHotspot(null);
-    targetCamPosRef.current = new THREE.Vector3(7.8, 5.2, 8.8);
-    targetCamLookRef.current = new THREE.Vector3(0, 1.3, 0);
+    if (isGSense) {
+      targetCamPosRef.current = new THREE.Vector3(3.2, 2.0, 3.8);
+      targetCamLookRef.current = new THREE.Vector3(0, 1.2, 0);
+    } else {
+      targetCamPosRef.current = new THREE.Vector3(7.8, 5.2, 8.8);
+      targetCamLookRef.current = new THREE.Vector3(0, 1.3, 0);
+    }
   };
 
   // -------------------------------------------------------------
@@ -743,9 +755,110 @@ export default function ProductInteractiveExperience({
       modelGroup.add(switchgearBase);
 
     // =========================================================================
-    // PRODUCT 5: OIL-FILLED DISTRIBUTION TRANSFORMER
+    // PRODUCT 5: G-SENSE IOT SMART MONITORING SYSTEM
+    // =========================================================================
+    } else if (isGSense) {
+      const chassisMat = new THREE.MeshStandardMaterial({
+        color: '#2b3648',
+        roughness: 0.35,
+        metalness: 0.65
+      });
+      const chassisGeo = new THREE.BoxGeometry(2.4, 1.8, 0.65);
+      const chassis = new THREE.Mesh(chassisGeo, chassisMat);
+      chassis.position.y = 1.25;
+      chassis.castShadow = true;
+      chassis.userData = { interactiveId: 'enclosure', label: 'IP67 Rugged Enclosure (Click to Inspect)' };
+      modelGroup.add(chassis);
+      interactiveMeshes.push(chassis);
+
+      // Bezel
+      const bezelMat = new THREE.MeshStandardMaterial({ color: '#111827', roughness: 0.2, metalness: 0.8 });
+      const bezel = new THREE.Mesh(new THREE.BoxGeometry(2.1, 1.5, 0.08), bezelMat);
+      bezel.position.set(0, 1.25, 0.35);
+      modelGroup.add(bezel);
+
+      // Screen Canvas Texture
+      if (typeof document !== 'undefined') {
+        const screenCanvas = document.createElement('canvas');
+        screenCanvas.width = 512;
+        screenCanvas.height = 320;
+        const ctx = screenCanvas.getContext('2d');
+        if (ctx) {
+          ctx.fillStyle = '#050b14';
+          ctx.fillRect(0, 0, 512, 320);
+          ctx.fillStyle = '#0878c9';
+          ctx.fillRect(16, 16, 480, 36);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 18px sans-serif';
+          ctx.fillText('GRAYCELL G-SENSE · CONDITION MONITOR', 28, 41);
+          ctx.fillStyle = '#22c55e';
+          ctx.font = 'bold 14px monospace';
+          ctx.fillText('STATUS: ONLINE · 24/7 CLOUD SYNC', 28, 80);
+          ctx.fillStyle = '#38bdf8';
+          ctx.font = '16px monospace';
+          ctx.fillText('OIL TEMP:     52.4 °C  [NORMAL]', 28, 120);
+          ctx.fillText('WINDING TEMP: 65.1 °C  [NORMAL]', 28, 152);
+          ctx.fillText('OIL LEVEL:    94.0 %   [OPTIMAL]', 28, 184);
+          ctx.fillText('MOISTURE:     12 PPM   [IEC 60422]', 28, 216);
+          ctx.fillText('LOAD CURRENT: 512 A    [MODBUS RTU]', 28, 248);
+          ctx.fillStyle = '#f59e0b';
+          ctx.font = 'bold 14px sans-serif';
+          ctx.fillText('HEALTH INDEX: 94 / 100 · PREDICTIVE OK', 28, 288);
+        }
+        const screenTexture = new THREE.CanvasTexture(screenCanvas);
+        const screenMat = new THREE.MeshBasicMaterial({ map: screenTexture });
+        const screenMesh = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 1.3), screenMat);
+        screenMesh.position.set(0, 1.25, 0.40);
+        screenMesh.userData = { interactiveId: 'screen', label: 'G-SenSe OLED Diagnostic Screen (Click to Inspect)' };
+        modelGroup.add(screenMesh);
+        interactiveMeshes.push(screenMesh);
+      }
+
+      // Status LEDs
+      const ledColors = ['#22c55e', '#06b6d4', '#f59e0b'];
+      ledColors.forEach((col, idx) => {
+        const ledMat = new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 2.0 });
+        const led = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.02, 16), ledMat);
+        led.rotation.x = Math.PI / 2;
+        led.position.set(-0.75 + idx * 0.12, 0.52, 0.38);
+        modelGroup.add(led);
+      });
+
+      // Antenna
+      const antennaBase = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.12, 16), brassMat);
+      antennaBase.position.set(0.85, 2.2, 0);
+      const antennaStub = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.6, 16), new THREE.MeshStandardMaterial({ color: '#111827', roughness: 0.4 }));
+      antennaStub.position.set(0.85, 2.55, 0);
+      antennaStub.userData = { interactiveId: 'gateway', label: 'Cellular / Wi-Fi Cloud Gateway Antenna (Click to Inspect)' };
+      modelGroup.add(antennaBase);
+      modelGroup.add(antennaStub);
+      interactiveMeshes.push(antennaStub);
+
+      // Industrial Cable Glands & Ports
+      [-0.6, 0, 0.6].forEach((xPos) => {
+        const gland = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.15, 16), brassMat);
+        gland.position.set(xPos, 0.28, 0);
+        gland.userData = { interactiveId: 'sensors', label: 'RS-485 / PT100 / CT Sensor Cable Gland (Click to Inspect)' };
+        modelGroup.add(gland);
+        interactiveMeshes.push(gland);
+
+        const conduit = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.4, 16), new THREE.MeshStandardMaterial({ color: '#0f172a' }));
+        conduit.position.set(xPos, 0.08, 0);
+        modelGroup.add(conduit);
+      });
+
+    // =========================================================================
+    // PRODUCT 6: TRANSFORMERS (Oil-Filled, Al Foil, Cu Foil, Hermetically Sealed)
     // =========================================================================
     } else {
+      if (isAluminiumFoil) {
+        copperMat.color.set('#cbd5e1');
+        copperMat.emissive.set('#475569');
+      } else if (isCopperFoil) {
+        copperMat.color.set('#b45309');
+        copperMat.emissive.set('#78350f');
+      }
+
       const tank = new THREE.Mesh(new THREE.BoxGeometry(3.0, 2.05, 1.7), steelTankMat);
       tank.position.y = 1.38;
       tank.castShadow = true;
@@ -1250,17 +1363,40 @@ export default function ProductInteractiveExperience({
           spec: 'IK10 Mechanical Impact Resistant · Padlock Compatible'
         }
       };
+    } else if (isGSense) {
+      map = {
+        screen: {
+          title: 'G-SenSe OLED Diagnostic Screen & Parameter Telemetry',
+          desc: 'High-contrast real-time telemetry screen displaying oil temperature, winding temperature, moisture in oil (PPM), vibration, and health index.',
+          spec: 'High-Contrast OLED · 24/7 Continuous Parameter Telemetry'
+        },
+        gateway: {
+          title: 'Cellular & Wi-Fi Cloud Connectivity Gateway',
+          desc: 'Integrated IoT transmitter supporting SIM / 4G / Wi-Fi / Ethernet for zero-latency telemetry sync to the G-SenSe Centralized Monitoring System.',
+          spec: 'SIM / 4G LTE / Wi-Fi 802.11 b/g/n / Modbus RTU RS-485'
+        },
+        sensors: {
+          title: 'Multi-Parameter Sensor Integration Layer',
+          desc: 'Connects directly with transformer hybrid OTI/WTI sensors, spare thermometer pockets, magnetic float / reed switches, and CT current inputs.',
+          spec: '4–20 mA · RS-485 Modbus RTU · Digital Alarm/Trip Contacts'
+        },
+        enclosure: {
+          title: 'IP67 Rugged Weatherproof Field Enclosure',
+          desc: 'Cast aluminum housing designed for transformer plinth, substation pole, or compact substation (CSS) panel mounting in harsh outdoor conditions.',
+          spec: 'IP67 Weatherproof · IK10 Impact Rated · Operating: -20°C to +70°C'
+        }
+      };
     } else {
       map = {
         buchholz: {
-          title: 'Buchholz Gas & Surge Relay',
-          desc: 'Protective safety device mounted on the inclined pipe between tank and conservator to detect slow gas accumulation (incipient faults) and oil surges (severe short circuits).',
-          spec: 'Dual Stage: Alarm Contact (Gas) & Trip Contact (Surge)'
+          title: isHermetic ? 'Pressure Relief Valve & Vacuum Gauge' : 'Buchholz Gas & Surge Relay',
+          desc: isHermetic ? 'Pressure-vacuum gauge and relief device for sealed tank protection without atmospheric breathers.' : 'Protective safety device mounted on the inclined pipe between tank and conservator to detect slow gas accumulation and oil surges.',
+          spec: isHermetic ? 'Hermetic Seal Gauge · Rapid Pressure Relief' : 'Dual Stage: Alarm Contact (Gas) & Trip Contact (Surge)'
         },
         conservator: {
-          title: 'Conservator Tank & Silica Gel Breather',
-          desc: 'Elevated oil expansion chamber allowing dielectric fluid to expand with temperature without exposing the main tank to atmospheric moisture.',
-          spec: 'Visual Oil Level Gauge · Color-Indicating Silica Gel Crystals'
+          title: isHermetic ? 'Hermetically Sealed Nitrogen Gas Cushion' : 'Conservator Tank & Silica Gel Breather',
+          desc: isHermetic ? 'Hermetically sealed tank with flexible corrugated cooling walls absorbing oil expansion without external air exchange.' : 'Elevated oil expansion chamber allowing dielectric fluid to expand with temperature without exposing the main tank to atmospheric moisture.',
+          spec: isHermetic ? '100% Sealed Tank · Zero Air Contact · Zero Maintenance' : 'Visual Oil Level Gauge · Color-Indicating Silica Gel Crystals'
         },
         bushings: {
           title: 'High-Voltage Porcelain Shed Bushings',
@@ -1268,14 +1404,14 @@ export default function ProductInteractiveExperience({
           spec: '33 kV Class · High Creepage Distance · Pure Copper Terminals'
         },
         core: {
-          title: 'Step-Lap CRGO Magnetic Core & Copper Windings',
-          desc: 'Laminated core composed of cold-rolled grain-oriented silicon steel with 45° miter step-lap joints for minimum no-load losses and acoustic hum.',
-          spec: 'Prime Grade M3/M4 Silicon Steel · Concentric Disc Windings'
+          title: isAluminiumFoil ? 'CRGO Magnetic Core with Precision Aluminium Foil Winding' : (isCopperFoil ? 'CRGO Magnetic Core with High-Conductivity Copper Foil Winding' : 'Step-Lap CRGO Magnetic Core & Copper Windings'),
+          desc: isAluminiumFoil ? 'Precision wound aluminium foil coils delivering uniform axial current distribution and high short-circuit withstand capability.' : (isCopperFoil ? 'Electrolytic copper foil winding offering exceptionally low electrical losses, maximum thermal conductivity, and compact dimensions.' : 'Laminated core composed of cold-rolled grain-oriented silicon steel with 45° miter step-lap joints for minimum no-load losses and acoustic hum.'),
+          spec: isAluminiumFoil ? 'Aluminium Foil Winding · Uniform Current Flow · High Short-Circuit Strength' : (isCopperFoil ? '99.9% Electrolytic Copper Foil · Ultra-Low I²R Losses' : 'Prime Grade M3/M4 Silicon Steel · Concentric Disc Windings')
         },
         radiator: {
-          title: 'Corrugated Radiator Cooling Fin Banks',
-          desc: 'Precision deep-fold steel fins providing massive surface area for natural thermosiphon oil cooling (ONAN) without auxiliary cooling fans.',
-          spec: 'Deep Corrugation Folds · Electrostatic Powder Coat Finish'
+          title: isHermetic ? 'Elastic Corrugated Tank Cooling Fins' : 'Corrugated Radiator Cooling Fin Banks',
+          desc: isHermetic ? 'Corrugated steel wall fins that expand and contract with oil thermal expansion, eliminating the need for a conservator.' : 'Precision deep-fold steel fins providing massive surface area for natural thermosiphon oil cooling (ONAN) without auxiliary cooling fans.',
+          spec: isHermetic ? 'Elastic Expansion Wall Fins · ONAN Cooling' : 'Deep Corrugation Folds · Electrostatic Powder Coat Finish'
         },
         tapchanger: {
           title: 'Off-Circuit Tap Changer (OCTC)',
@@ -1285,7 +1421,7 @@ export default function ProductInteractiveExperience({
       };
     }
     return map;
-  }, [isDryType, isNaturalEster, isSwitchgear, isCSS]);
+  }, [isDryType, isNaturalEster, isSwitchgear, isCSS, isGSense, isAluminiumFoil, isCopperFoil, isHermetic]);
 
   return (
     <div className={`digital-twin-wrapper ${isFullscreen ? 'fullscreen-mode' : ''}`}>
@@ -1295,7 +1431,7 @@ export default function ProductInteractiveExperience({
           <span className="live-pulse"></span>
           <strong>GRAYCELL DIGITAL TWIN</strong>
           <span className="twin-version">
-            {isCSS ? 'CSS WORKBENCH' : (isSwitchgear ? 'VCB SWITCHGEAR' : (isDryType ? 'CAST RESIN' : (isNaturalEster ? 'BIO-FLUID' : 'OIL TRANSFORMER')))}
+            {isCSS ? 'CSS WORKBENCH' : (isSwitchgear ? 'VCB SWITCHGEAR' : (isDryType ? 'CAST RESIN' : (isNaturalEster ? 'BIO-FLUID' : (isGSense ? 'G-SENSE IOT' : (isAluminiumFoil ? 'AL-FOIL TX' : (isCopperFoil ? 'CU-FOIL TX' : (isHermetic ? 'HERMETIC TX' : 'OIL TRANSFORMER')))))))}
           </span>
         </div>
 

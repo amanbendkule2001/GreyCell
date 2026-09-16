@@ -231,6 +231,16 @@ img {
   filter: drop-shadow(0 -1px 1px rgba(0,0,0,0.06));
 }
 
+/* Invisible bridge to keep hover state active */
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
 .nav-item-wrap:hover .nav-dropdown {
   opacity: 1;
   visibility: visible;
@@ -269,6 +279,91 @@ img {
   font-size: 11px;
   color: #647888;
   margin-top: 2px;
+}
+
+/* ============================================================
+   FLYOUT SUBMENU (NESTED DROPDOWN WITH HOVER BRIDGE)
+   ============================================================ */
+.nav-flyout-item-wrap {
+  position: relative;
+}
+
+.nav-flyout-trigger-link {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px;
+}
+
+.nav-flyout-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-flyout-chevron {
+  color: #718292;
+  transition: transform 0.2s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.nav-flyout-item-wrap:hover > .nav-flyout-trigger-link {
+  background: var(--soft);
+}
+
+.nav-flyout-item-wrap:hover > .nav-flyout-trigger-link .nav-flyout-chevron {
+  transform: translateX(3px);
+  color: var(--blue);
+}
+
+/* Flyout Submenu Panel */
+.nav-flyout-menu {
+  position: absolute;
+  left: calc(100% + 2px);
+  top: -6px;
+  min-width: 320px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(11, 29, 51, 0.16), 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(6px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 250;
+  pointer-events: none;
+}
+
+/* 
+ * CRITICAL HOVER BRIDGE:
+ * This ::before pseudo-element creates an invisible protective bridge spanning
+ * 28px to the left and 20px top/bottom. When the user moves the cursor from the 
+ * "Transformer" link toward the sublinks, it crosses through this bridge,
+ * guaranteeing the submenu NEVER flickers or disappears!
+ */
+.nav-flyout-menu::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -28px;
+  width: 36px;
+  bottom: -16px;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.nav-flyout-item-wrap:hover > .nav-flyout-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.nav-flyout-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 /* Mobile nav groups */
