@@ -235,8 +235,31 @@ export default function CompactSubstationPage() {
                     </tbody>
                   </table>
 
-                  <Link href="/contact" className="btn btn-primary" style={{ width: '100%', marginTop: 20 }}>
-                    Enquire for {sec.title} <ArrowRight size={15} />
+                  <Link
+                    href="/contact"
+                    className="btn btn-primary"
+                    style={{
+                      width: '100%',
+                      minHeight: 48,
+                      height: 'auto',
+                      padding: '12px 16px',
+                      marginTop: 20,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 8,
+                      textAlign: 'center',
+                      lineHeight: 1.35,
+                      fontSize: 'clamp(11px, 2.5vw, 12px)',
+                      wordBreak: 'break-word',
+                      boxSizing: 'border-box',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <span style={{ flex: '1 1 auto', textAlign: 'center' }}>
+                      Enquire for {sec.title}
+                    </span>
+                    <ArrowRight size={15} style={{ flexShrink: 0 }} />
                   </Link>
                 </div>
               </div>
