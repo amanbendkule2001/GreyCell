@@ -5,7 +5,8 @@
   --navy2: #12304f;
   --blue: #0878c9;
   --blue2: #1595e5;
-  --ink: #10243d;
+  --ink: #4e555e;
+  --heading-dark-grey: #4e555e;
   --muted: #64748b;
   --line: #dce4ea;
   --soft: #f4f7f9;
@@ -56,10 +57,11 @@ img {
 /* ============================================================
    SITE HEADER & RESPONSIVE NAVBAR
    ============================================================ */
+/* 1. Increased Header Height so the larger image has room */
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 72px;
+  height: 84px; /* Increased from 72px */
   z-index: 100;
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(14px);
@@ -67,7 +69,7 @@ img {
 }
 
 .header-inner {
-  height: 72px;
+  height: 84px; /* Increased from 72px */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,24 +81,24 @@ img {
   flex-direction: column;
   flex-shrink: 0;
   text-decoration: none;
+  justify-content: center; /* Centers the image content vertically */
 }
 
-.brand-word {
-  font-size: clamp(22px, 1.8vw, 27px);
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  white-space: nowrap;
+/* 2. Enlarged Logo Image Properties */
+.brand-logo {
+  /* Increased minimum, fluid scaling, and maximum height caps */
+  height: clamp(38px, 3.2vw, 46px); /* Up from clamp(26px, 2.2vw, 32px) */
+  width: auto;
+  max-width: 220px;                 /* Up from 160px to prevent clipping wide images */
+  display: block;
+  object-fit: contain;
 }
 
-.brand-word span {
-  color: inherit;
-}
-
+/* 3. Minor adjustments to the tagline positioning */
 .brand-tagline {
-  font-size: 7.5px;
+  font-size: 8px; /* Slightly up from 7.5px for readability */
   letter-spacing: 0.12em;
-  margin-top: 3px;
+  margin-top: 2px; /* Snug spacing right below your expanded image */
   color: #3b5269;
   white-space: nowrap;
 }
@@ -135,15 +137,17 @@ img {
   font-weight: 600;
 }
 
+/* 4. Shifted active underline down to match the new 84px header height */
 .desktop-nav a.active:after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -11px;
+  bottom: -15px; /* Adjusted from -11px */
   height: 2px;
   background: var(--blue);
 }
+
 
 /* ============================================================
    DROPDOWN NAVIGATION
@@ -561,6 +565,14 @@ img {
   color: #9eb9d2;
 }
 
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-heading h2,
+.panel h2,
+.page-hero h1 {
+  color: var(--heading-dark-grey);
+}
+
 .hero-title {
   font-size: clamp(40px, 4.8vw, 76px);
   line-height: 0.98;
@@ -568,10 +580,14 @@ img {
   margin: 18px 0 22px;
   font-weight: 700;
   max-width: 610px;
+  color: var(--heading-dark-grey);
 }
 
-.hero-title .blue {
-  color: var(--blue);
+.hero-title .blue,
+.hero-title span,
+h1 span,
+h2 span {
+  color: var(--heading-dark-grey);
 }
 
 .hero-copy p {
@@ -2058,6 +2074,14 @@ img {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.04em;
+}
+
+.footer-brand-logo {
+  height: clamp(28px, 2.4vw, 34px);
+  width: auto;
+  max-width: 170px;
+  display: block;
+  object-fit: contain;
 }
 
 .footer-grid p, .footer-grid span {

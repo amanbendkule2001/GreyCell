@@ -31,39 +31,40 @@ export function Footer() {
 
         <div className="footer-grid">
           <div>
-            <div className="footer-brand">GRAYCELL</div>
+            <div className="footer-brand">
+              <img
+                src="/images/brand/graycell-logo.png"
+                alt="Graycell"
+                className="footer-brand-logo"
+              />
+            </div>
             <p>Power engineering for transformers, compact substations and electrical infrastructure.</p>
           </div>
 
           <div>
             <div className="footer-title">Explore</div>
             <Link href="/products">Products</Link>
-            <Link href="/solutions">Solutions</Link>
-            <Link href="/engineering">Engineering</Link>
             <Link href="/technology">Technology</Link>
+            <Link href="/build-your-requirement">Build Your Requirement</Link>
           </div>
 
           <div>
             <div className="footer-title">Company</div>
-            <Link href="/projects">Projects</Link>
-            <Link href="/resources">Resources</Link>
+            <Link href="/about">About Us</Link>
             <Link href="/group">Graycell Group</Link>
             <Link href="/contact">Contact</Link>
           </div>
 
           <div>
-            <div className="footer-title">Sales & Locations</div>
+            <div className="footer-title">Sales & Factory</div>
             <a href={`mailto:${siteConfig.contact.salesEmail}`} style={{ display: 'block', marginBottom: 4 }}>
               {siteConfig.contact.salesEmail}
             </a>
-            <a href="tel:+918459947816" style={{ display: 'block', marginBottom: 8, color: 'inherit' }}>
-              +91 84599 47816
+            <a href="tel:+917559132800" style={{ display: 'block', marginBottom: 2, color: 'inherit' }}>
+              +91 7559132800 / +91 9518345584
             </a>
-            <span style={{ display: 'block', fontSize: 11.5, color: '#8ba0b5', lineHeight: 1.4, marginBottom: 4 }}>
-              <strong style={{ color: '#c4d7ea' }}>Office:</strong> 325, Platinum 9, Baner, Pune – 411045
-            </span>
-            <span style={{ display: 'block', fontSize: 11.5, color: '#8ba0b5', lineHeight: 1.4 }}>
-              <strong style={{ color: '#c4d7ea' }}>Factory:</strong> Gat 311, Khed Shivapur, MH – 412205
+            <span style={{ display: 'block', fontSize: 11.5, color: '#8ba0b5', lineHeight: 1.4, marginTop: 6 }}>
+              <strong style={{ color: '#c4d7ea' }}>Factory:</strong> Gat No. 311, Plot 7-8, Khed Shivapur, Pune, MH – 412205
             </span>
           </div>
         </div>

@@ -34,19 +34,18 @@ export const siteConfig = {
   brand: "Graycell",
   descriptor: "Power Engineering Group",
   headline: "ENGINEERED POWER. BUILT TO PERFORM.",
-  supportingText: "Transformers, compact substations and medium-voltage power solutions engineered for reliable power infrastructure.",
+  supportingText: "Manufacturer of Oil and Dry type Transformers,Compact Substations,Medium Voltage SwitchGear Panels Oil, Dry Type Distribution & Power Transformers.",
   contact: {
     salesEmail: "sales@graycellpower.com",
-    whatsappNumber: "+91 84599 47816",
-    phoneNumbers: ["+91 84599 47816"],
-    officeAddress: "325, Platinum 9, Pashan-Sus Road, Baner, Pune – 411045, Maharashtra, India",
+    whatsappNumber: "+91 7559132800",
+    phoneNumbers: ["+91 7559132800", "+91 9518345584", "+91 8600018957"],
     factoryAddress: "Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India",
   },
 };
 
 export const groupCompanies: GroupCompany[] = [
   { id: "graycell-power-solutions", name: "Graycell Power Solutions Pvt. Ltd.", summary: "Dedicated to the design, precision manufacturing, and rigorous testing of oil-filled, cast resin dry-type, and natural ester distribution transformers up to 33 kV class.", capabilities: ["Transformer solutions", "Power engineering", "Manufacturing"], status: "approved" },
-  { id: "graycell-energy", name: "Graycell Energy LLP", summary: "Engineered power systems delivering turnkey compact substations (CSS), modular medium-voltage switchgear panels, and custom power distribution solutions under Siemens technology partnership.", capabilities: ["Compact substations", "Medium-voltage systems", "Power distribution solutions"], status: "approved" },
+  { id: "graycell-energy", name: "Graycell Energy LLP", summary: "Engineered power systems delivering turnkey compact substations (CSS), Medium Voltage SwitchGear Panels, and custom power distribution solutions under Siemens technology partnership.", capabilities: ["Compact substations", "Medium-voltage systems", "Power distribution solutions"], status: "approved" },
 ];
 
 export const products: Product[] = [
@@ -81,14 +80,14 @@ export const products: Product[] = [
     seo: { title: "Natural Ester Oil Transformers | Graycell", description: "Explore Graycell natural ester oil transformer technology and applications." },
   },
   {
-    id: "foil-wound-transformers", slug: "foil-wound-transformers", name: "MV Switchgear & Solutions", shortName: "MV Switchgear", category: "mv_system", status: "approved", ownership: "graycell_manufactured",
-    summary: "Medium-voltage switchgear systems and modular panel solutions engineered for robust power distribution.", applications: ["Industrial", "Commercial", "Utility"], technologies: ["MV Switchgear", "Vacuum Circuit Breakers"],
-    features: ["Indoor modular switchgear lineup", "Arc-fault safety protection", "Advanced metering and monitoring", "Scalable multi-panel design"], specifications: [], media: [], documents: [], relatedProductIds: ["oil-filled-distribution", "compact-substations"], enquiryEnabled: true, imageSrc: "/images/products/mv-switchgear.png", imageAlt: "Graycell medium-voltage switchgear lineup",
-    seo: { title: "MV Switchgear & Solutions | Graycell", description: "Explore Graycell medium-voltage switchgear and power distribution solutions." },
+    id: "foil-wound-transformers", slug: "foil-wound-transformers", name: "Medium Voltage SwitchGear Panels", shortName: "Medium Voltage SwitchGear Panels", category: "mv_system", status: "approved", ownership: "graycell_manufactured",
+    summary: "Medium Voltage SwitchGear Panels and modular solutions engineered for robust power distribution.", applications: ["Industrial", "Commercial", "Utility"], technologies: ["Medium Voltage SwitchGear Panels", "Vacuum Circuit Breakers"],
+    features: ["Indoor modular switchgear lineup", "Arc-fault safety protection", "Advanced metering and monitoring", "Scalable multi-panel design"], specifications: [], media: [], documents: [], relatedProductIds: ["oil-filled-distribution", "compact-substations"], enquiryEnabled: true, imageSrc: "/images/products/mv-switchgear.png", imageAlt: "Graycell Medium Voltage SwitchGear Panels lineup",
+    seo: { title: "Medium Voltage SwitchGear Panels | Graycell", description: "Explore Graycell Medium Voltage SwitchGear Panels and power distribution solutions." },
   },
   {
     id: "compact-substations", slug: "compact-substations", name: "Compact Substations", shortName: "Compact Substations", category: "compact_substation", status: "review", ownership: "graycell_solution",
-    summary: "Compact substation solutions referenced in the supplied Graycell Energy material, including MV/LV integration and project-specific configurations.", applications: ["Industrial", "Commercial", "Infrastructure", "Utility"], technologies: ["MV Switchgear", "Transformer Integration", "Smart Monitoring"],
+    summary: "Compact substation solutions referenced in the supplied Graycell Energy material, including MV/LV integration and project-specific configurations.", applications: ["Industrial", "Commercial", "Infrastructure", "Utility"], technologies: ["Medium Voltage SwitchGear Panels", "Transformer Integration", "Smart Monitoring"],
     features: ["Indoor/outdoor configuration references", "Project-specific customization references", "Monitoring/SCADA compatibility references"], specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/products/compact-substation.png", imageAlt: "Graycell compact substation package unit",
     seo: { title: "Compact Substations | Graycell", description: "Explore Graycell compact substation solutions and MV/LV power distribution capabilities." },
   },
@@ -142,7 +141,7 @@ export const solutions: Solution[] = [
 ];
 
 export const projects: Project[] = [
-  { id: "compact-substation-showcase", slug: "compact-substation-application-showcase", title: "Power Infrastructure & Substation Application Showcase", status: "review", application: "Power Distribution & Substations", solution: "Substations, Switchgear & Transformers", equipment: ["Outdoor Substation", "Power Transformers", "MV VCB Panels", "Cast Resin Dry-Type Transformer"], media: [], relatedProductIds: ["compact-substations", "oil-filled-distribution", "foil-wound-transformers", "dry-type-distribution"], isCaseStudy: false, seo: { title: "Power Infrastructure & Substation Applications | Graycell", description: "Explore outdoor substations, power transformers, medium-voltage switchgear, and cast resin transformers from Graycell engineering." } },
+  { id: "compact-substation-showcase", slug: "compact-substation-application-showcase", title: "Power Infrastructure & Substation Application Showcase", status: "review", application: "Power Distribution & Substations", solution: "Substations, Switchgear & Transformers", equipment: ["Outdoor Substation", "Power Transformers", "Medium Voltage SwitchGear Panels", "Cast Resin Dry-Type Transformer"], media: [], relatedProductIds: ["compact-substations", "oil-filled-distribution", "foil-wound-transformers", "dry-type-distribution"], isCaseStudy: false, seo: { title: "Power Infrastructure & Substation Applications | Graycell", description: "Explore outdoor substations, power transformers, Medium Voltage SwitchGear Panels, and cast resin transformers from Graycell engineering." } },
 ];
 
 export const resources: Resource[] = [

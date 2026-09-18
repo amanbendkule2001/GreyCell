@@ -1,14 +1,16 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { MessageCircle, X, Send, ArrowUp, Mail, Check } from 'lucide-react';
-import { siteConfig } from '../data/mock-data';
+import { MessageCircle, X, ArrowUp, Mail, Phone, ExternalLink } from 'lucide-react';
 
 export function WhatsAppWidget() {
   const [chatOpen, setChatOpen] = useState(false);
-  const [message, setMessage] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  const phone = (siteConfig.contact.whatsappNumber || '+919876543210').replace(/[^0-9]/g, '');
+  const contacts = [
+    { label: 'Technical & Sales Support 1', phone: '7559132800', display: '+91 7559132800' },
+    { label: 'Technical & Sales Support 2', phone: '9518345584', display: '+91 9518345584' },
+    { label: 'Technical & Sales Support 3', phone: '8600018957', display: '+91 8600018957' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,23 +28,14 @@ export function WhatsAppWidget() {
     window.dispatchEvent(new CustomEvent('open-enquiry'));
   };
 
-  const startChat = (customText?: string) => {
-    const textToSend = customText || message || 'Hello Graycell team, I would like to enquire about your power solutions.';
-    const encoded = encodeURIComponent(textToSend);
-    window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank', 'noopener,noreferrer');
+  const openWhatsApp = (num: string) => {
+    window.open(`https://wa.me/91${num}`, '_blank', 'noopener,noreferrer');
     setChatOpen(false);
   };
 
-  const quickPrompts = [
-    { label: '⚡ Transformer Enquiry', text: 'Hello Graycell team, I would like to enquire about your Power & Distribution Transformers.' },
-    { label: '📦 Compact Substation (CSS)', text: 'Hello Graycell team, I need technical specifications and quote for Compact Substations.' },
-    { label: '🔌 MV Switchgear', text: 'Hello Graycell team, I would like to request details for MV Switchgear & panels.' },
-    { label: '📋 Technical Consultation', text: 'Hello Graycell team, I have a custom engineering specification to discuss.' },
-  ];
-
   return (
     <>
-      {/* SIDE DOCK (Mockup 2 style) */}
+      {/* SIDE DOCK */}
       <aside className="side-quick-dock" aria-label="Quick Actions">
         <button
           className="dock-item"
@@ -77,7 +70,7 @@ export function WhatsAppWidget() {
         )}
       </aside>
 
-      {/* FLOATING WHATSAPP BUTTON (Mockup 1 style) */}
+      {/* FLOATING WHATSAPP BUTTON */}
       <div className="floating-whatsapp-wrap">
         {!chatOpen && (
           <button
@@ -99,7 +92,7 @@ export function WhatsAppWidget() {
           </button>
         )}
 
-        {/* CHAT POPUP WINDOW */}
+        {/* CHAT / CONTACT SELECTOR POPUP */}
         {chatOpen && (
           <div className="whatsapp-chat-popup">
             <div className="wa-popup-header">
@@ -108,58 +101,53 @@ export function WhatsAppWidget() {
                 <span className="wa-online-indicator" />
               </div>
               <div className="wa-header-info">
-                <strong>Graycell Technical Sales</strong>
-                <span>Online · Engineering Support</span>
+                <strong>Graycell WhatsApp Support</strong>
+                <span>Select a contact to start chat</span>
               </div>
               <button
                 className="wa-close-btn"
                 onClick={() => setChatOpen(false)}
-                aria-label="Close WhatsApp chat popup"
+                aria-label="Close WhatsApp popup"
               >
                 <X size={18} />
               </button>
             </div>
 
-            <div className="wa-popup-body">
-              <div className="wa-bubble">
-                <p>Hello! 👋 Welcome to <strong>Graycell</strong>.</p>
-                <p>How can our engineering team assist with your power transformer, compact substation, or MV switchgear requirement today?</p>
-                <span className="wa-time">Just now</span>
-              </div>
-
-              <div className="wa-quick-options">
-                <span className="wa-quick-label">Tap a topic to start:</span>
-                {quickPrompts.map(p => (
-                  <button
-                    key={p.label}
-                    className="wa-chip"
-                    onClick={() => startChat(p.text)}
-                  >
-                    {p.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="wa-popup-footer">
-              <input
-                type="text"
-                className="wa-input"
-                placeholder="Type your message..."
-                value={message}
-                onChange={e => setMessage(e.target.value)}
-                onKeyDown={e => {
-                  if (e.key === 'Enter') startChat();
-                }}
-              />
-              <button
-                className="wa-send-btn"
-                onClick={() => startChat()}
-                aria-label="Send WhatsApp message"
-                title="Send on WhatsApp"
-              >
-                <Send size={16} />
-              </button>
+            <div className="wa-popup-body" style={{ padding: 16, display: 'grid', gap: 10 }}>
+              <p style={{ fontSize: 13, color: '#475569', margin: '0 0 4px' }}>
+                Connect directly with our engineering & sales team on WhatsApp:
+              </p>
+              {contacts.map((c, i) => (
+                <button
+                  key={i}
+                  className="wa-chip"
+                  onClick={() => openWhatsApp(c.phone)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '12px 14px',
+                    borderRadius: 6,
+                    background: '#f8fafc',
+                    border: '1px solid #cbd5e1',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    width: '100%',
+                    fontSize: 13.5,
+                    fontWeight: 500,
+                    color: '#0f172a',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <Phone size={15} color="#16834b" />
+                    <div>
+                      <div>{c.label}</div>
+                      <div style={{ fontSize: 12, color: '#64748b' }}>{c.display}</div>
+                    </div>
+                  </div>
+                  <ExternalLink size={14} color="#16834b" />
+                </button>
+              ))}
             </div>
           </div>
         )}
@@ -167,3 +155,4 @@ export function WhatsAppWidget() {
     </>
   );
 }
+

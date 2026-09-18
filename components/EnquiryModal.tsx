@@ -179,7 +179,7 @@ export function EnquiryModal() {
                     <option value="Distribution Transformers">Distribution Transformers</option>
                     <option value="Dry-Type Transformers">Dry-Type Distribution Transformers</option>
                     <option value="Compact Substations">Compact Package Substations (CSS)</option>
-                    <option value="MV Switchgear & Solutions">MV Switchgear & Solutions</option>
+                    <option value="Medium Voltage SwitchGear Panels">Medium Voltage SwitchGear Panels</option>
                     <option value="Custom Engineering">Custom Technical Requirement</option>
                   </select>
                 </div>

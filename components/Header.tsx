@@ -9,46 +9,59 @@ interface NavChild { href: string; label: string; desc?: string; children?: NavS
 interface NavItem { href: string; label: string; children?: NavChild[]; }
 
 const navItems: NavItem[] = [
-  { href: '/about', label: 'About Us', children: [
-    { href: '/about', label: 'Company Overview', desc: 'Our story, mission & values' },
-    { href: '/group', label: 'Group & Leadership', desc: 'Management & corporate structure' },
-    { href: '/manufacturing', label: 'Manufacturing', desc: 'State-of-the-art facilities' },
-  ]},
-  { href: '/products', label: 'Products', children: [
-    {
-      href: '/products#transformers',
-      label: 'Transformers',
-      desc: 'Distribution & specialized transformer solutions',
-      children: [
-        { href: '/products/oil-filled-distribution-transformers', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
-        { href: '/products/aluminium-foil-wound-transformers', label: 'Aluminium Foil Wound Transformers', desc: 'Precision engineered foil winding' },
-        { href: '/products/copper-foil-wound-transformers', label: 'Copper Foil Wound Transformers', desc: 'High-efficiency copper winding' },
-        { href: '/products/dry-type-distribution-transformers', label: 'Dry Type Distribution Transformers', desc: 'Cast resin & VPI insulation' },
-        { href: '/products/natural-ester-transformers', label: 'Ester Oil Transformers', desc: 'Eco-fluid, fire-safe solutions' },
-        { href: '/products/hermetically-sealed-transformers', label: 'Hermetically Sealed and Corrugated Tank Transformers', desc: 'Corrugated tank, maintenance-free' },
-      ]
-    },
-    { href: '/products/compact-substations', label: 'Compact Substation (CSS)', desc: 'Plug-and-play MV/LV packages' },
-    { href: '/products/foil-wound-transformers', label: 'MV Switchgear Panels', desc: 'MV VCB & RMU panels' },
-    { href: '/products/g-sense-smart-monitoring', label: 'Graycell G-SenSe', desc: 'IoT Smart Monitoring for Transformer & CSS' },
-  ]},
-  { href: '/solutions', label: 'Solutions', children: [
-    { href: '/solutions/renewable-energy', label: 'Renewable Energy', desc: 'Solar & wind power applications' },
-    { href: '/solutions/industrial', label: 'Industrial', desc: 'Manufacturing & process plants' },
-    { href: '/solutions/commercial-infrastructure', label: 'Commercial & Infrastructure', desc: 'Buildings, transit & utilities' },
-  ]},
-  { href: '/technology', label: 'Technology', children: [
-    { href: '/technology/foil-winding', label: 'Foil Winding Technology', desc: 'Precision winding for efficiency' },
-    { href: '/technology/natural-ester', label: 'Natural Ester Fluid', desc: 'Sustainable, biodegradable dielectric' },
-    { href: '/technology/smart-monitoring', label: 'Smart Monitoring', desc: 'IoT-enabled transformer health' },
-  ]},
-  { href: '/engineering', label: 'Engineering' },
-  { href: '/manufacturing', label: 'Manufacturing' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/resources', label: 'Resources', children: [
-    { href: '/resources/graycell-product-catalogue', label: 'Product Catalogue', desc: 'Full product specification PDF' },
-    { href: '/resources', label: 'Technical Resources', desc: 'Whitepapers & case studies' },
-  ]},
+  {
+    href: '/products',
+    label: 'Products',
+    children: [
+      {
+        href: '/products/transformer',
+        label: 'Transformer',
+        desc: 'Oil-filled & dry-type distribution transformer solutions',
+        children: [
+          { href: '/products/transformer#oil-filled', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
+          { href: '/products/transformer#aluminium-foil', label: 'Aluminium Foil Wound Transformers', desc: 'Precision engineered foil winding' },
+          { href: '/products/transformer#copper-foil', label: 'Copper Foil Wound Transformers', desc: 'High-efficiency copper winding' },
+          { href: '/products/transformer#dry-type', label: 'Dry Type Distribution Transformers', desc: 'Cast resin & VPI insulation' },
+          { href: '/products/transformer#ester-oil', label: 'Natural Ester Transformers', desc: 'Eco-fluid, fire-safe solutions' },
+          { href: '/products/transformer#hermetically-sealed', label: 'Hermetically Sealed Transformers', desc: 'Corrugated tank, maintenance-free' },
+        ],
+      },
+      {
+        href: '/products/compact-substation',
+        label: 'Compact Sub-Station',
+        desc: 'Siemens approved partner plug-and-play CSS',
+        children: [
+          { href: '/products/compact-substation#compact-substation-3mva', label: 'Up to 3MVA, 33kV Class', desc: 'High capacity sub-station packages' },
+          { href: '/products/compact-substation#compact-substation-oil-dry', label: 'CSS with Oil / Dry Type Transformer up to 33kV', desc: 'Oil or cast resin transformer integrations' },
+          { href: '/products/compact-substation#compact-substation-oltc', label: 'CSS with Transformer having OLTC up to 33kV', desc: 'On-Load Tap Changer integrations' },
+          { href: '/products/compact-substation#compact-substation-msedcl', label: 'MSEDCL Approved CSS', desc: 'Utility compliant distribution packages' },
+          { href: '/products/compact-substation#compact-substation-pad-mounted', label: 'PAD Mounted CSS', desc: 'Compact skid / pad mounted solutions' },
+          { href: '/products/compact-substation#compact-substation-e-house', label: 'E-House (Walkable Container Rich Substation)', desc: 'Heavy-duty walkable container substations' },
+        ],
+      },
+      {
+        href: '/products/mv-switchgear-panels',
+        label: 'Medium Voltage SwitchGear Panels',
+        desc: 'Medium Voltage SwitchGear Panels with Siemens VCB & RMU',
+        children: [
+          { href: '/products/mv-switchgear-panels#mv-fully-tested', label: 'Fully Tested Panel', desc: 'IEC type tested switchgear assemblies' },
+          { href: '/products/mv-switchgear-panels#mv-voltage-class', label: 'Voltage Ratio – 11kV / 22kV Class', desc: '11kV & 22kV medium voltage class' },
+          { href: '/products/mv-switchgear-panels#mv-current-rating', label: 'Current Ratio up to 2500A', desc: 'Busbar ratings up to 2500A, 21kA' },
+          { href: '/products/mv-switchgear-panels#mv-installation', label: 'Installation – Indoor / Outdoor', desc: 'Weatherproof indoor and outdoor panels' },
+        ],
+      },
+    ],
+  },
+  {
+    href: '/technology',
+    label: 'Technology',
+    children: [
+      { href: '/technology#foil-winding', label: 'Foil Winding Technology', desc: 'Precision winding for efficiency' },
+      { href: '/technology#natural-ester', label: 'Natural Ester Fluid', desc: 'Sustainable, biodegradable dielectric' },
+      { href: '/technology#g-sense', label: 'Graycell G-Sense', desc: 'IoT Smart Monitoring for Transformer & CSS' },
+    ],
+  },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -69,10 +82,13 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
 
-        {/* LOGO – one color, no ® */}
+        {/* LOGO */}
         <Link href="/" className="brand-lockup" onClick={() => setMobileOpen(false)}>
-          <span className="brand-word">GRAY<span>CELL</span></span>
-          <span className="brand-tagline">ENGINEERED FOR A BRIGHTER TOMORROW</span>
+          <img
+            src="/images/brand/graycell-logo.png"
+            alt="Graycell"
+            className="brand-logo"
+          />
         </Link>
 
         {/* DESKTOP NAV with hover dropdowns & flyout submenus */}

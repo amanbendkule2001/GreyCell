@@ -71,13 +71,8 @@ export default function Contact() {
     }
   };
 
-  const officeAddress = "325, Platinum 9, Pashan-Sus Road, Baner, Pune – 411045, Maharashtra, India";
   const factoryAddress = "Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India";
-
-  const officeMapEmbedUrl = "https://maps.google.com/maps?q=Platinum+9,+Pashan-Sus+Road,+Baner,+Pune,+Maharashtra+411045&t=&z=16&ie=UTF8&iwloc=&output=embed";
   const factoryMapEmbedUrl = "https://maps.google.com/maps?q=Gat+No.+311,+Plot+No.+7,8,+Gauddara+Road,+nr.+Chate+College,+Khed+Shivapur,+Maharashtra+412205&t=&z=14&ie=UTF8&iwloc=&output=embed";
-
-  const officeDirectionsUrl = "https://www.google.com/maps/search/?api=1&query=Platinum+9,+Pashan-Sus+Road,+Baner,+Pune,+Maharashtra+411045";
   const factoryDirectionsUrl = "https://www.google.com/maps/search/?api=1&query=Gat+No.+311+Plot+No.+7+8+Gauddara+Road+nr+Chate+College+Khed+Shivapur+Maharashtra+412205";
 
   return (
@@ -88,8 +83,7 @@ export default function Contact() {
           <div className="eyebrow">Graycell Power Solutions Pvt. Ltd. · Contact & Locations</div>
           <h1>CONNECT WITH OUR<br />ENGINEERING TEAM.</h1>
           <p>
-            Whether you require distribution transformers, turnkey compact substations, MV switchgear panels,
-            or wish to visit our Pune corporate office and manufacturing plant, our application engineers are at your service.
+            Whether you require distribution transformers, turnkey compact substations, or Medium Voltage SwitchGear Panels, our application engineers are at your service.
           </p>
         </div>
       </section>
@@ -98,61 +92,9 @@ export default function Contact() {
       <section className="contact-locations-section">
         <div className="container">
           
-          {/* TWO ADDRESS CARDS */}
-          <div className="contact-address-grid">
+          {/* FACTORY & WORKS CARD */}
+          <div className="contact-address-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '800px', margin: '0 auto 30px' }}>
             
-            {/* CORPORATE OFFICE */}
-            <div className="contact-address-card office">
-              <div>
-                <div className="contact-card-top">
-                  <div className="contact-card-icon-wrap">
-                    <Building2 size={24} />
-                  </div>
-                  <span className="contact-card-badge office">Corporate Office</span>
-                </div>
-                <h3 className="contact-card-title">Corporate & Registered Office</h3>
-                <div className="contact-card-company">Graycell Power Solutions Pvt. Ltd.</div>
-                <p className="contact-card-address">
-                  <strong>325, Platinum 9, Pashan-Sus Road,</strong><br />
-                  Baner, Pune – 411045, Maharashtra, India
-                </p>
-
-                <div className="contact-card-details">
-                  <div className="contact-detail-row">
-                    <Mail size={15} color="var(--blue)" />
-                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a></span>
-                  </div>
-                  <div className="contact-detail-row">
-                    <Phone size={15} color="var(--blue)" />
-                    <span>Phone: <a href="tel:+918459947816">+91 84599 47816</a></span>
-                  </div>
-                  <div className="contact-detail-row">
-                    <Clock size={15} color="var(--muted)" />
-                    <span>Working Hours: Mon – Sat (9:00 AM – 6:30 PM IST)</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-card-actions">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => scrollToMap('office')}
-                >
-                  <MapPin size={15} /> View on Map
-                </button>
-                <a
-                  href={officeDirectionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  <Navigation size={14} /> Get Directions <ExternalLink size={12} />
-                </a>
-              </div>
-            </div>
-
-            {/* FACTORY & WORKS */}
             <div className="contact-address-card factory">
               <div>
                 <div className="contact-card-top">
@@ -162,7 +104,7 @@ export default function Contact() {
                   <span className="contact-card-badge factory">Factory & Works</span>
                 </div>
                 <h3 className="contact-card-title">Manufacturing & Testing Unit</h3>
-                <div className="contact-card-company">Graycell Power Solutions Pvt. Ltd.</div>
+                <div className="contact-card-company">Graycell Power Solutions Pvt. Ltd. & Graycell Energy LLP</div>
                 <p className="contact-card-address">
                   <strong>Gat No. 311, Plot No. 7, 8, Gauddara Road,</strong><br />
                   nr. Chate College, Khed Shivapur,<br />
@@ -171,16 +113,20 @@ export default function Contact() {
 
                 <div className="contact-card-details">
                   <div className="contact-detail-row">
+                    <Mail size={15} color="var(--blue)" />
+                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a></span>
+                  </div>
+                  <div className="contact-detail-row">
+                    <Phone size={15} color="#16834b" />
+                    <span>Hotline / WhatsApp: <a href="tel:+917559132800">+91 7559132800</a> / <a href="tel:+919518345584">+91 9518345584</a> / <a href="tel:+918600018957">+91 8600018957</a></span>
+                  </div>
+                  <div className="contact-detail-row">
                     <ShieldCheck size={15} color="#16834b" />
                     <span>Transformer Assembly, Vacuum Drying & Routine Testing Bay</span>
                   </div>
                   <div className="contact-detail-row">
                     <Clock size={15} color="var(--muted)" />
-                    <span>Plant Visits & FAT (Factory Acceptance Test) by Appointment</span>
-                  </div>
-                  <div className="contact-detail-row">
-                    <Phone size={15} color="#16834b" />
-                    <span>Hotline: <a href="tel:+918459947816">+91 84599 47816</a></span>
+                    <span>Plant Visits & FAT (Factory Acceptance Test) by Appointment (Mon – Sat, 9:00 AM – 6:30 PM IST)</span>
                   </div>
                 </div>
               </div>
@@ -211,34 +157,17 @@ export default function Contact() {
           <div className="contact-map-frame-box" id="map-view">
             <div className="contact-map-header">
               <div>
-                <strong style={{ fontSize: 15, color: '#0f172a' }}>Google Location Map</strong>
+                <strong style={{ fontSize: 15, color: '#0f172a' }}>Factory Location Map</strong>
                 <span style={{ fontSize: 12, color: '#64748b', marginLeft: 10 }}>
-                  Showing {activeMap === 'office' ? 'Corporate Office (Baner, Pune)' : 'Manufacturing Plant (Khed Shivapur)'}
+                  Manufacturing Plant & Works (Khed Shivapur, Pune)
                 </span>
-              </div>
-
-              <div className="contact-map-tabs">
-                <button
-                  type="button"
-                  className={`contact-map-tab ${activeMap === 'office' ? 'active' : ''}`}
-                  onClick={() => setActiveMap('office')}
-                >
-                  <Building2 size={14} /> Corporate Office (Pune)
-                </button>
-                <button
-                  type="button"
-                  className={`contact-map-tab ${activeMap === 'factory' ? 'active' : ''}`}
-                  onClick={() => setActiveMap('factory')}
-                >
-                  <Factory size={14} /> Factory & Works (Shivapur)
-                </button>
               </div>
             </div>
 
             <iframe
-              title={activeMap === 'office' ? "Graycell Corporate Office Map" : "Graycell Factory Map"}
+              title="Graycell Factory Map"
               className="contact-map-embed"
-              src={activeMap === 'office' ? officeMapEmbedUrl : factoryMapEmbedUrl}
+              src={factoryMapEmbedUrl}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -246,11 +175,11 @@ export default function Contact() {
 
             <div className="contact-map-footer-info">
               <div>
-                <strong>📍 {activeMap === 'office' ? 'Office Location:' : 'Factory Location:'} </strong>
-                <span>{activeMap === 'office' ? officeAddress : factoryAddress}</span>
+                <strong>📍 Factory Location: </strong>
+                <span>{factoryAddress}</span>
               </div>
               <a
-                href={activeMap === 'office' ? officeDirectionsUrl : factoryDirectionsUrl}
+                href={factoryDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-map-direct-link"
@@ -352,7 +281,7 @@ export default function Contact() {
                     <option value="Dry-Type Cast Resin / VPI Transformer">Dry-Type Cast Resin / VPI Transformer</option>
                     <option value="Natural Ester Eco-Fluid Transformer">Natural Ester Eco-Fluid Transformer</option>
                     <option value="Compact Substation (CSS / Package Substation)">Compact Substation (CSS / Package Substation)</option>
-                    <option value="Medium-Voltage Switchgear Panel (VCB / RMU)">Medium-Voltage Switchgear Panel (VCB / RMU)</option>
+                    <option value="Medium Voltage SwitchGear Panels">Medium Voltage SwitchGear Panels</option>
                     <option value="Custom Power Engineering Solution">Custom Power Engineering Solution</option>
                   </select>
                 </div>
@@ -485,7 +414,7 @@ export default function Contact() {
 
               <div className="eyebrow">DOWNLOAD SPECS</div>
               <p style={{ fontSize: 12.5, color: '#475569', margin: '6px 0 14px' }}>
-                Access our complete technical catalogue for transformers, compact substations, and MV switchgear panels.
+                Access our complete technical catalogue for transformers, compact substations, and Medium Voltage SwitchGear Panels.
               </p>
               <Link
                 href="/resources/graycell-product-catalogue"

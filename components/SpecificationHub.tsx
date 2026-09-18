@@ -39,7 +39,7 @@ const categories = [
   },
   {
     id: 'mv-switchgear',
-    label: 'MV Switchgear & VCB',
+    label: 'Medium Voltage SwitchGear Panels',
     icon: Cpu,
     rating: '11 kV & 33 kV · Up to 3150A',
     standard: '21kA / 3 Sec Internal Arc',
