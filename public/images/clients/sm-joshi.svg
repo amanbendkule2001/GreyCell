@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <g fill="none" transform="translate(14, 12)">
+    <!-- Circuit Power Nodes -->
+    <rect x="2" y="2" width="48" height="48" rx="8" fill="#0284c7"/>
+    <circle cx="16" cy="16" r="4.5" fill="#ffffff"/>
+    <circle cx="36" cy="16" r="4.5" fill="#ffffff"/>
+    <circle cx="26" cy="36" r="4.5" fill="#ffffff"/>
+    <path d="M16 16 L36 16 L26 36 Z" stroke="#ffffff" stroke-width="2.5"/>
+    <!-- Text -->
+    <text x="62" y="28" font-family="'Arial', sans-serif" font-size="18" font-weight="800" fill="#0f172a" letter-spacing="1">S.M. JOSHI</text>
+    <text x="63" y="44" font-family="'Arial', sans-serif" font-size="10" font-weight="600" fill="#0284c7" letter-spacing="2.5">CONSULTANTS</text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <g fill="none" transform="translate(15, 12)">
+    <!-- CIDCO Orange Sun & Infrastructure Arch -->
+    <circle cx="28" cy="22" r="14" fill="#f97316"/>
+    <path d="M6 46 C16 28 40 28 50 46" stroke="#0284c7" stroke-width="6" stroke-linecap="round"/>
+    <path d="M14 48 C20 36 36 36 42 48" stroke="#ffffff" stroke-width="3"/>
+    <!-- Text -->
+    <text x="64" y="32" font-family="'Arial', sans-serif" font-size="26" font-weight="900" fill="#0284c7" letter-spacing="3">CIDCO</text>
+    <text x="65" y="46" font-family="'Arial', sans-serif" font-size="8.5" font-weight="700" fill="#ea580c" letter-spacing="1.2">MAHARASHTRA</text>
+  </g>
+</svg>

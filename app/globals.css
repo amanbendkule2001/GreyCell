@@ -583,11 +583,8 @@ h1, h2, h3, h4, h5, h6,
   color: var(--heading-dark-grey);
 }
 
-.hero-title .blue,
-.hero-title span,
-h1 span,
-h2 span {
-  color: var(--heading-dark-grey);
+.hero-title .blue {
+  color: var(--blue);
 }
 
 .hero-copy p {

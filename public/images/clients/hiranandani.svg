@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <g fill="none" transform="translate(10, 8)">
+    <!-- Classic Emerald Crest -->
+    <path d="M22 6 C12 6 6 14 6 25 C6 38 18 48 32 54 C46 48 58 38 58 25 C58 14 52 6 42 6 Z" fill="#0b5e39"/>
+    <path d="M24 10 L40 10 L40 16 L24 16 Z M20 18 L44 18 L44 21 L20 21 Z" fill="#ffffff"/>
+    <path d="M23 23 L27 23 L27 41 L23 41 Z M30 23 L34 23 L34 41 L30 41 Z M37 23 L41 23 L41 41 Z M37 41 Z" fill="#ffffff"/>
+    <path d="M18 42 L46 42 L46 45 L18 45 Z" fill="#ffffff"/>
+    <!-- Typography -->
+    <text x="70" y="32" font-family="'Times New Roman', serif" font-size="20" font-weight="bold" fill="#0b5e39" letter-spacing="2.5">HIRANANDANI</text>
+    <text x="72" y="46" font-family="'Arial', sans-serif" font-size="9" font-weight="600" fill="#64748b" letter-spacing="3.5">COMMUNITIES</text>
+  </g>
+</svg>

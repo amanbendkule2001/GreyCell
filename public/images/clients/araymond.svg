@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <g fill="none" transform="translate(18, 14)">
+    <!-- ARaymond Red Star -->
+    <circle cx="24" cy="24" r="22" fill="#e11d48"/>
+    <polygon points="24,8 28,19 39,19 30,26 33,37 24,30 15,37 18,26 9,19 20,19" fill="#ffffff"/>
+    <!-- Text -->
+    <text x="58" y="34" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="24" font-weight="700" fill="#1e293b" letter-spacing="1">ARaymond</text>
+  </g>
+</svg>

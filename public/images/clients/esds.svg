@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <g fill="none" transform="translate(18, 14)">
+    <!-- Cloud & Data Swoosh -->
+    <path d="M12 34 C6 34 2 29 2 24 C2 19 6 15 11 15 C13 9 19 5 26 5 C33 5 39 9 41 15 C46 15 50 19 50 24 C50 29 46 34 40 34 Z" fill="#f97316"/>
+    <path d="M12 28 C20 18 34 18 42 28" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <!-- Text -->
+    <text x="60" y="32" font-family="'Arial Black', sans-serif" font-size="25" font-weight="900" fill="#0284c7" letter-spacing="2">ESDS</text>
+    <text x="61" y="45" font-family="'Arial', sans-serif" font-size="8.5" font-weight="700" fill="#ea580c" letter-spacing="2">DATA CENTERS</text>
+  </g>
+</svg>

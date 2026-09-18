@@ -36,7 +36,7 @@ export default function Home(){
    <section className="hero">
      <div className="hero-copy container">
        <div className="eyebrow">ENGINEERED FOR A BRIGHTER TOMORROW</div>
-       <h1 className="hero-title">POWERING<br/>A MORE<br/>SUSTAINABLE WORLD</h1>
+       <h1 className="hero-title">POWERING<br/>A MORE<br/><span className="blue">SUSTAINABLE WORLD</span></h1>
        <p>{siteConfig.supportingText}</p>
        <div className="hero-buttons">
          <Link className="btn btn-primary" href="/products">Explore Our Products <ArrowRight size={16}/></Link>

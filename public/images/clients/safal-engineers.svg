@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <g fill="none" transform="translate(16, 12)">
+    <!-- High-Voltage Shield -->
+    <path d="M25 4 L45 12 L45 28 C45 40 25 50 25 50 C25 50 5 40 5 28 L5 12 Z" fill="#1e3a8a"/>
+    <path d="M27 12 L17 28 L25 28 L23 42 L33 24 L25 24 Z" fill="#f59e0b"/>
+    <!-- Text -->
+    <text x="58" y="30" font-family="'Arial', sans-serif" font-size="20" font-weight="900" fill="#1e3a8a" letter-spacing="2">SAFAL</text>
+    <text x="59" y="45" font-family="'Arial', sans-serif" font-size="10" font-weight="700" fill="#d97706" letter-spacing="2.5">ENGINEERS</text>
+  </g>
+</svg>
