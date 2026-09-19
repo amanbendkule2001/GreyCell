@@ -21,7 +21,7 @@ export default function CompactSubstationPage() {
   const cssSections = [
     {
       id: 'compact-substation-3mva',
-      title: 'Up to 3MVA, 33kV Class',
+      title: 'Compact Substation',
       subtitle: 'High Capacity Compact Substation Package',
       imageSrc: '/images/products/compact-substation.png',
       summary:
@@ -43,7 +43,7 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-oil-dry',
-      title: 'CSS with Oil / Dry Type Transformer up to 33kV',
+      title: 'Compact Substation',
       subtitle: 'Oil, Cast Resin, VPI & Green Ester Oil Transformer Options',
       imageSrc: '/images/products/css-oil-dry.jpg',
       summary:
@@ -64,7 +64,7 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-oltc',
-      title: 'CSS with Transformer having OLTC up to 33kV',
+      title: 'Compact Substation',
       subtitle: 'On-Load Tap Changer Integrated Compact Substation',
       imageSrc: '/images/products/css-oltc.jpg',
       summary:
@@ -85,7 +85,7 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-msedcl',
-      title: 'MSEDCL Approved CSS',
+      title: 'Compact Substation',
       subtitle: 'Utility Compliant Compact Substation Packages',
       imageSrc: '/images/products/css-msedcl.jpg',
       summary:
@@ -106,7 +106,7 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-pad-mounted',
-      title: 'PAD Mounted CSS',
+      title: 'Compact Substation',
       subtitle: 'Skid & Pad Mounted Compact Substation Solutions',
       imageSrc: '/images/products/css-pad-mounted.jpg',
       summary:
@@ -127,7 +127,7 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-e-house',
-      title: 'E-House (Walkable Container Rich Substation)',
+      title: 'Compact Substation',
       subtitle: 'Heavy-Duty Walkable Modular Power Equipment Container',
       imageSrc: '/images/products/css-ehouse.jpg',
       summary:
@@ -156,8 +156,6 @@ export default function CompactSubstationPage() {
           <div className="eyebrow">Graycell Energy LLP · Siemens Approved Partner</div>
           <h1>
             COMPACT SUB-STATIONS
-            <br />
-            (CSS - TYPE 8FB20).
           </h1>
           <p>
             Graycell Energy LLP is an approved partner of Siemens to manufacture compact substations (CSS - TYPE 8FB20). Integrating Siemens RMU (12kV to 33kV, 630A, 21kA), fully type tested to IEC 62271-202 at our Pune Khed-Shivapur facility with 100+ annual unit capacity.

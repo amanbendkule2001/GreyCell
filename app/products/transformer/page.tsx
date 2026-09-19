@@ -21,7 +21,7 @@ export default function TransformerProductPage() {
   const transformerSections = [
     {
       id: 'oil-filled',
-      title: 'Oil-Filled Distribution Transformers',
+      title: 'Transformers',
       subtitle: '25 kVA – 2500 kVA, up to 33 kV Class',
       imageSrc: '/images/products/power-transformer.png',
       summary:
@@ -43,7 +43,7 @@ export default function TransformerProductPage() {
     },
     {
       id: 'aluminium-foil',
-      title: 'Aluminium Foil Wound Transformers',
+      title: 'Transformers',
       subtitle: 'Precision Automated Foil Winding Technology',
       imageSrc: '/images/products/aluminium_foil_wound.jpg',
       summary:
@@ -64,7 +64,7 @@ export default function TransformerProductPage() {
     },
     {
       id: 'copper-foil',
-      title: 'Copper Foil Wound Transformers',
+      title: 'Transformers',
       subtitle: 'High Efficiency Electrolytic Copper Winding',
       imageSrc: '/images/products/copper_foil_wound.jpg',
       summary:

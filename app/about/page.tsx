@@ -99,12 +99,12 @@ export default function About() {
       <section className="page-content">
         <div className="container" style={{ display: 'grid', gap: 40 }}>
           {/* 1. About Us Section */}
-          <div className="panel pad">
+          <div className="panel pad" style={{ background: '#fff', borderRadius: 4, border: '1px solid var(--line)', padding: 32 }}>
             <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>01 / ABOUT US</div>
-            <h2 style={{ marginBottom: 16 }}>Graycell Power Solutions Pvt. Ltd.</h2>
+            <h2 style={{ marginBottom: 16 }}>Graycell Power Solutions and Graycell Energy LLP</h2>
             <div style={{ color: '#4a5568', lineHeight: 1.8, fontSize: 15, display: 'grid', gap: 14 }}>
               <p>
-                Graycell Power Solutions Pvt. Ltd. manufactures high-quality distribution transformers and is founded by promoters with over 25 years of experience in the power industry.
+                We manufacture high-quality distribution transformers and are founded by promoters with over 25 years of experience in the power industry.
               </p>
               <p>
                 Our transformers are designed to meet international quality standards and compete with leading manufacturers in the Indian power sector.
@@ -115,53 +115,49 @@ export default function About() {
               <p style={{ fontWeight: 600, color: 'var(--ink)' }}>
                 We aim to manufacture reliable power solutions built with precision, efficiency and sustainability.
               </p>
+              <p>
+                As a Siemens Approved Partner (CSS - TYPE 8FB20), we manufacture compact sub stations under this license partnership integrating SIEMENS ring main units (RMU) of rating 12KV to 33KV, 630A, 21KA in 8FB20 compact sub-stations. The compact sub-station is fully type tested as per latest IEC 62271-202 and manufactured under high quality standards. We have a full-fledged manufacturing set up at <strong>Khed - Shivapur, Pune</strong> and have an installed capacity to manufacture more than 100 CSS per annum.
+              </p>
+            </div>
+
+            <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid var(--line)' }}>
+              <h3 style={{ fontSize: 18, marginBottom: 16, color: 'var(--ink)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Key Features
+              </h3>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                  gap: 12,
+                }}
+              >
+                {cssFeatures.map((feat, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 10,
+                      background: '#f8fafc',
+                      padding: '12px 16px',
+                      borderRadius: 4,
+                      border: '1px solid #e2e8f0',
+                      fontSize: 13.5,
+                      lineHeight: 1.5,
+                      color: '#334155',
+                    }}
+                  >
+                    <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* 2. Compact Sub Station (Siemens Approved Partner) */}
-          <div className="panel pad" style={{ background: '#f8fafc', border: '1px solid #cbd8e2' }}>
-            <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>02 / COMPACT SUB STATION</div>
-            <h2 style={{ marginBottom: 16 }}>Siemens Approved Partner (CSS - TYPE 8FB20)</h2>
-            <p style={{ color: '#4a5568', lineHeight: 1.8, fontSize: 15, marginBottom: 20 }}>
-              <strong>Graycell Energy LLP</strong> is an approved partner of Siemens to manufacture compact sub stations <strong>(CSS - TYPE 8FB20)</strong>. Under this license partnership, Graycell Energy integrates SIEMENS ring main units (RMU) of rating 12KV to 33KV, 630A, 21KA in 8FB20 compact sub-stations. The compact sub-station is fully type tested as per latest IEC 62271-202 and manufactured under high quality standards. Graycell Energy LLP has a full-fledged manufacturing set up at <strong>Khed - Shivapur, Pune</strong> and has an installed capacity to manufacture more than 100 CSS per annum.
-            </p>
-
-            <h3 style={{ fontSize: 18, marginBottom: 16, color: 'var(--ink)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Key Features
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: 12,
-              }}
-            >
-              {cssFeatures.map((feat, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: 10,
-                    background: '#fff',
-                    padding: '12px 16px',
-                    borderRadius: 4,
-                    border: '1px solid #e2e8f0',
-                    fontSize: 13.5,
-                    lineHeight: 1.5,
-                    color: '#334155',
-                  }}
-                >
-                  <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
-                  <span>{feat}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* 3. Our Strengths */}
+          {/* 2. Our Strengths */}
           <div>
-            <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>03 / OUR STRENGTHS</div>
+            <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>02 / OUR STRENGTHS</div>
             <h2 style={{ marginBottom: 20 }}>Core Engineering Capabilities</h2>
             <div
               style={{
@@ -215,7 +211,7 @@ export default function About() {
           >
             {/* Key Advantages */}
             <div className="panel pad" style={{ background: '#fff' }}>
-              <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>04 / KEY ADVANTAGES</div>
+              <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>03 / KEY ADVANTAGES</div>
               <h2 style={{ marginBottom: 16, fontSize: 24 }}>Strategic Value</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px 0', display: 'grid', gap: 12 }}>
                 {keyAdvantages.map((item, i) => (
@@ -232,7 +228,7 @@ export default function About() {
 
             {/* Cutting Manufacturing Technology */}
             <div className="panel pad" style={{ background: '#fff' }}>
-              <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>05 / CUTTING MANUFACTURING TECHNOLOGY</div>
+              <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>04 / CUTTING MANUFACTURING TECHNOLOGY</div>
               <h2 style={{ marginBottom: 16, fontSize: 24 }}>Automated Precision</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'grid', gap: 10 }}>
                 {cuttingTech.map((item, i) => (

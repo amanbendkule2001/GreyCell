@@ -22,7 +22,7 @@ export default function ProductsHubPage() {
     },
     {
       title: 'Compact Sub-Station',
-      subtitle: 'Siemens Approved Partner (CSS - TYPE 8FB20)',
+      subtitle: 'Siemens Approved Partner',
       href: '/products/compact-substation',
       img: '/images/products/compact-substation.png',
       summary:

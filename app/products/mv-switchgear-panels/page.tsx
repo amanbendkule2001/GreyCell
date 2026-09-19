@@ -21,7 +21,7 @@ export default function MvSwitchgearPanelsPage() {
   const mvSections = [
     {
       id: 'mv-fully-tested',
-      title: 'Fully Tested Panel',
+      title: 'Medium Voltage Switchgear Panel',
       subtitle: 'Type Tested IEC Medium Voltage SwitchGear Panels',
       imageSrc: '/images/projects/project-mv-switchgear.jpg',
       summary:
@@ -42,7 +42,7 @@ export default function MvSwitchgearPanelsPage() {
     },
     {
       id: 'mv-voltage-class',
-      title: 'Voltage Ratio – 11kV / 22kV Class',
+      title: 'Medium Voltage Switchgear Panel',
       subtitle: '11kV, 22kV & 33kV Rated Medium Voltage SwitchGear Panels',
       imageSrc: '/images/products/mv-switchgear.png',
       summary:
@@ -63,7 +63,7 @@ export default function MvSwitchgearPanelsPage() {
     },
     {
       id: 'mv-current-rating',
-      title: 'Current Ratio up to 2500A',
+      title: 'Medium Voltage Switchgear Panel',
       subtitle: 'High Current Busbar Ratings up to 2500A (21kA)',
       imageSrc: '/images/products/mv-switchgear-2500a.jpg',
       summary:
@@ -84,7 +84,7 @@ export default function MvSwitchgearPanelsPage() {
     },
     {
       id: 'mv-installation',
-      title: 'Installation – Indoor / Outdoor',
+      title: 'Medium Voltage Switchgear Panel',
       subtitle: 'IP4X Indoor & Weatherproof IP54 Outdoor Medium Voltage SwitchGear Panels',
       imageSrc: '/images/products/mv-switchgear-outdoor.jpg',
       summary:
