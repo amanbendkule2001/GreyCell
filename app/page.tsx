@@ -188,12 +188,12 @@ export default function Home(){
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
           <div className="panel" style={{ background: '#fff', borderRadius: 4, border: '1px solid var(--line)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ height: 230, overflow: 'hidden', position: 'relative' }}>
-              <img src="/images/technology/foil-winding.jpg" alt="Foil Winding Technology" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ height: 'clamp(200px, 24vw, 260px)', overflow: 'hidden', position: 'relative' }}>
+              <img src="/images/technology/automatic-lv-foil-winding-machine.jpg" alt="Automatic LV Foil Winding Machine" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
-            <div style={{ padding: 28, flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ padding: 'clamp(20px, 2.5vw, 28px)', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8, fontSize: 11 }}>TECHNOLOGY</div>
               <h3 style={{ fontSize: 20, marginBottom: 12, color: 'var(--ink)' }}>Foil Winding Technology</h3>
               <p style={{ color: '#526475', lineHeight: 1.7, fontSize: 14, margin: '0 0 20px', flex: 1 }}>
@@ -206,10 +206,10 @@ export default function Home(){
           </div>
 
           <div className="panel" style={{ background: '#fff', borderRadius: 4, border: '1px solid var(--line)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ height: 230, overflow: 'hidden', position: 'relative' }}>
-              <img src="/images/technology/natural-ester.jpg" alt="Natural Ester Fluid" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ height: 'clamp(200px, 24vw, 260px)', overflow: 'hidden', position: 'relative' }}>
+              <img src="/images/technology/natural-ester-see-through.jpg" alt="Natural Ester Dielectric Fluid Transformer" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
-            <div style={{ padding: 28, flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ padding: 'clamp(20px, 2.5vw, 28px)', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8, fontSize: 11 }}>TECHNOLOGY</div>
               <h3 style={{ fontSize: 20, marginBottom: 12, color: 'var(--ink)' }}>Natural Ester Fluid</h3>
               <p style={{ color: '#526475', lineHeight: 1.7, fontSize: 14, margin: '0 0 20px', flex: 1 }}>

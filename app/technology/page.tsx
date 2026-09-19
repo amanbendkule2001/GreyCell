@@ -22,7 +22,7 @@ export default function TechnologyPage() {
       id: 'foil-winding',
       title: 'Foil Winding Technology',
       subtitle: 'Automated Foil Winding for Uniform Current & High Short-Circuit Strength',
-      img: '/images/technology/foil-winding.jpg',
+      img: '/images/technology/automatic-lv-foil-winding-machine.jpg',
       summary:
         'Graycell utilizes state-of-the-art automated LV foil-winding machines. By replacing conventional round/rectangular wire with continuous metal foil strip across the full width of the coil, uniform current distribution and high short-circuit withstand capability are achieved.',
       benefits: [
@@ -37,7 +37,7 @@ export default function TechnologyPage() {
       id: 'natural-ester',
       title: 'Natural Ester Fluid',
       subtitle: 'Sustainable, Fire-Safe & Biodegradable Vegetable Dielectric Fluid',
-      img: '/images/technology/natural-ester.jpg',
+      img: '/images/technology/natural-ester-see-through.jpg',
       summary:
         'Natural ester dielectric fluid derived from renewable seed oils provides an eco-friendly alternative to mineral oil. Featuring a high fire point (>300°C), natural ester fluid eliminates fire hazards, extends paper insulation life, and is 100% biodegradable.',
       benefits: [

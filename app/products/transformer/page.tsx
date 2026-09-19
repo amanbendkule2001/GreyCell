@@ -108,7 +108,7 @@ export default function TransformerProductPage() {
       id: 'ester-oil',
       title: 'Natural Ester Transformers',
       subtitle: 'Bio-Degradable & Fire-Safe Ester Fluid Transformers',
-      imageSrc: '/images/products/natural-ester-transformer.png',
+      imageSrc: '/images/products/natural-ester-see-through.jpg',
       summary:
         'Utilizing natural ester vegetable-based dielectric fluids with high flash points (>300°C), providing exceptional fire safety, extended insulation life, and 100% biodegradability.',
       specs: [
