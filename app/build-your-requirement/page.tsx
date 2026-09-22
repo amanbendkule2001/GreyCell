@@ -12,6 +12,8 @@ export default function Builder() {
   const [refId, setRefId] = useState('');
 
   const [form, setForm] = useState({
+    name: '',
+    company: '',
     requirementType: 'Transformer',
     segment: '',
     capacity: '',
@@ -25,6 +27,8 @@ export default function Builder() {
   const handleWhatsAppFastTrack = () => {
     const msg = buildBuilderWhatsAppMessage({
       refId,
+      name: form.name,
+      company: form.company,
       requirementType: form.requirementType,
       segment: form.segment,
       capacity: form.capacity,
@@ -106,6 +110,8 @@ export default function Builder() {
                   Requirement Summary
                 </h4>
                 <div style={{ fontSize: '13px', display: 'grid', gap: '8px' }}>
+                  {form.name && <div><strong>Client Name:</strong> {form.name}</div>}
+                  {form.company && <div><strong>Organization:</strong> {form.company}</div>}
                   <div><strong>Requirement Type:</strong> {form.requirementType}</div>
                   <div><strong>Segment:</strong> {form.segment || '—'}</div>
                   <div><strong>Capacity:</strong> {form.capacity || '—'}</div>
@@ -138,6 +144,32 @@ export default function Builder() {
                 <div className="eyebrow">REQUIREMENT INTAKE FORM</div>
                 <h2 style={{ marginBottom: 24 }}>Requirement Details</h2>
                 <form onSubmit={handleSubmit} className="form-grid">
+                  <div className="field">
+                    <label htmlFor="name">Client Name *</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="e.g. Rajesh Kumar"
+                      required
+                    />
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="company">Organization Name *</label>
+                    <input
+                      id="company"
+                      type="text"
+                      name="company"
+                      value={form.company}
+                      onChange={handleChange}
+                      placeholder="e.g. Tata Projects / Torrent Power"
+                      required
+                    />
+                  </div>
+
                   <div className="field">
                     <label htmlFor="requirementType">Requirement Type</label>
                     <select

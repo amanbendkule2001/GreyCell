@@ -144,7 +144,7 @@ export function EnquiryModal() {
             <form className="modal-form" onSubmit={handleSubmit}>
               <div className="form-group-row">
                 <div className="modal-field">
-                  <label><User size={13} /> Full Name *</label>
+                  <label><User size={13} /> Client Name *</label>
                   <input
                     type="text"
                     required
@@ -154,7 +154,7 @@ export function EnquiryModal() {
                   />
                 </div>
                 <div className="modal-field">
-                  <label><Building size={13} /> Company / Organization</label>
+                  <label><Building size={13} /> Organization Name / Company</label>
                   <input
                     type="text"
                     placeholder="e.g. Torrent Power / Tata Projects"

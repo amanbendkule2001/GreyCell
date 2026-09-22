@@ -53,6 +53,22 @@ export function Footer() {
             <Link href="/about">About Us</Link>
             <Link href="/group">Graycell Group</Link>
             <Link href="/contact">Contact</Link>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent('open-cookie-settings'))}
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: '4px 0',
+                font: 'inherit',
+                color: 'inherit',
+                cursor: 'pointer',
+                textAlign: 'left',
+                display: 'block',
+              }}
+            >
+              Cookie Settings
+            </button>
           </div>
 
           <div>
@@ -73,6 +89,22 @@ export function Footer() {
           <span>GRAYCELL GROUP OF COMPANIES</span>
           <span>Graycell Power Solutions Pvt. Ltd. · Graycell Energy LLP</span>
           <span>© 2026 Graycell</span>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('open-cookie-settings'))}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              font: 'inherit',
+              fontSize: '11px',
+              color: '#8ba0b5',
+              cursor: 'pointer',
+              textDecoration: 'underline',
+            }}
+          >
+            DPDP Privacy & Cookies
+          </button>
         </div>
       </div>
     </footer>

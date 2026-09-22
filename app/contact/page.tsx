@@ -235,7 +235,7 @@ export default function Contact() {
             ) : (
               <form className="form-grid" onSubmit={submit}>
                 <div className="field">
-                  <label>Full name *</label>
+                  <label>Client Name *</label>
                   <input
                     required
                     placeholder="Your name"
@@ -244,7 +244,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="field">
-                  <label>Company *</label>
+                  <label>Organization Name *</label>
                   <input
                     required
                     placeholder="Organization / EPC name"

@@ -127,6 +127,8 @@ export function buildModalWhatsAppMessage(data: {
 
 export function buildBuilderWhatsAppMessage(data: {
   refId?: string;
+  name?: string;
+  company?: string;
   requirementType?: string;
   segment?: string;
   capacity?: string;
@@ -153,6 +155,8 @@ export function buildBuilderWhatsAppMessage(data: {
 
   parts.push(``);
   parts.push(`*Contact Details:*`);
+  if (data.name) parts.push(`• *Client Name:* ${data.name}`);
+  if (data.company) parts.push(`• *Organization:* ${data.company}`);
   if (data.email) parts.push(`• *Email:* ${data.email}`);
   if (data.mobile) parts.push(`• *Mobile / Phone:* ${data.mobile}`);
 

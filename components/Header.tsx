@@ -18,12 +18,12 @@ const navItems: NavItem[] = [
         label: 'Transformer',
         desc: 'Oil-filled & dry-type distribution transformer solutions',
         children: [
-          { href: '/products/transformer#oil-filled', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
-          { href: '/products/transformer#aluminium-foil', label: 'Aluminium Foil Wound Transformers', desc: 'Precision engineered foil winding' },
-          { href: '/products/transformer#copper-foil', label: 'Copper Foil Wound Transformers', desc: 'High-efficiency copper winding' },
-          { href: '/products/transformer#dry-type', label: 'Dry Type Distribution Transformers', desc: 'Cast resin & VPI insulation' },
-          { href: '/products/transformer#ester-oil', label: 'Natural Ester Transformers', desc: 'Eco-fluid, fire-safe solutions' },
-          { href: '/products/transformer#hermetically-sealed', label: 'Hermetically Sealed Transformers', desc: 'Corrugated tank, maintenance-free' },
+          { href: '/products/transformer', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
+          { href: '/products/transformer', label: 'Aluminium Foil Wound Transformers', desc: 'Precision engineered foil winding' },
+          { href: '/products/transformer', label: 'Copper Foil Wound Transformers', desc: 'High-efficiency copper winding' },
+          { href: '/products/transformer', label: 'Dry Type Distribution Transformers', desc: 'Cast resin & VPI insulation' },
+          { href: '/products/transformer', label: 'Natural Ester Transformers', desc: 'Eco-fluid, fire-safe solutions' },
+          { href: '/products/transformer', label: 'Hermetically Sealed Transformers', desc: 'Corrugated tank, maintenance-free' },
         ],
       },
       {
@@ -31,12 +31,12 @@ const navItems: NavItem[] = [
         label: 'Compact Sub-Station',
         desc: 'Siemens approved partner plug-and-play CSS',
         children: [
-          { href: '/products/compact-substation#compact-substation-3mva', label: 'Up to 3MVA, 33kV Class', desc: 'High capacity sub-station packages' },
-          { href: '/products/compact-substation#compact-substation-oil-dry', label: 'CSS with Oil / Dry Type Transformer up to 33kV', desc: 'Oil or cast resin transformer integrations' },
-          { href: '/products/compact-substation#compact-substation-oltc', label: 'CSS with Transformer having OLTC up to 33kV', desc: 'On-Load Tap Changer integrations' },
-          { href: '/products/compact-substation#compact-substation-msedcl', label: 'MSEDCL Approved CSS', desc: 'Utility compliant distribution packages' },
-          { href: '/products/compact-substation#compact-substation-pad-mounted', label: 'PAD Mounted CSS', desc: 'Compact skid / pad mounted solutions' },
-          { href: '/products/compact-substation#compact-substation-e-house', label: 'E-House (Walkable Container Rich Substation)', desc: 'Heavy-duty walkable container substations' },
+          { href: '/products/compact-substation', label: 'Up to 3MVA, 33kV Class', desc: 'High capacity sub-station packages' },
+          { href: '/products/compact-substation', label: 'CSS with Oil / Dry Type Transformer up to 33kV', desc: 'Oil or cast resin transformer integrations' },
+          { href: '/products/compact-substation', label: 'CSS with Transformer having OLTC up to 33kV', desc: 'On-Load Tap Changer integrations' },
+          { href: '/products/compact-substation', label: 'MSEDCL Approved CSS', desc: 'Utility compliant distribution packages' },
+          { href: '/products/compact-substation', label: 'PAD Mounted CSS', desc: 'Compact skid / pad mounted solutions' },
+          { href: '/products/compact-substation', label: 'E-House (Walkable Container Rich Substation)', desc: 'Heavy-duty walkable container substations' },
         ],
       },
       {
@@ -44,10 +44,10 @@ const navItems: NavItem[] = [
         label: 'Medium Voltage SwitchGear Panels',
         desc: 'Medium Voltage SwitchGear Panels with Siemens VCB & RMU',
         children: [
-          { href: '/products/mv-switchgear-panels#mv-fully-tested', label: 'Fully Tested Panel', desc: 'IEC type tested switchgear assemblies' },
-          { href: '/products/mv-switchgear-panels#mv-voltage-class', label: 'Voltage Ratio – 11kV / 22kV Class', desc: '11kV & 22kV medium voltage class' },
-          { href: '/products/mv-switchgear-panels#mv-current-rating', label: 'Current Ratio up to 2500A', desc: 'Busbar ratings up to 2500A, 21kA' },
-          { href: '/products/mv-switchgear-panels#mv-installation', label: 'Installation – Indoor / Outdoor', desc: 'Weatherproof indoor and outdoor panels' },
+          { href: '/products/mv-switchgear-panels', label: 'Fully Tested Panel', desc: 'IEC type tested switchgear assemblies' },
+          { href: '/products/mv-switchgear-panels', label: 'Voltage Ratio – 11kV / 22kV Class', desc: '11kV & 22kV medium voltage class' },
+          { href: '/products/mv-switchgear-panels', label: 'Current Ratio up to 2500A', desc: 'Busbar ratings up to 2500A, 21kA' },
+          { href: '/products/mv-switchgear-panels', label: 'Installation – Indoor / Outdoor', desc: 'Weatherproof indoor and outdoor panels' },
         ],
       },
     ],
@@ -114,22 +114,21 @@ export function Header() {
                     {item.children.map((child) =>
                       child.children ? (
                         <div className="nav-flyout-item-wrap" key={child.label}>
-                          <button 
+                          <Link 
+                            href={child.href}
                             className="nav-dropdown-link nav-flyout-trigger-link"
-                            aria-haspopup="true"
-                            style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', width: '100%', textAlign: 'left' }}
                           >
                             <div className="nav-flyout-text">
                               <span className="nav-dropdown-label">{child.label}</span>
                               {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
                             </div>
                             <ChevronRight size={13} className="nav-flyout-chevron" />
-                          </button>
+                          </Link>
                           <div className="nav-flyout-menu">
                             <div className="nav-flyout-inner">
                               {child.children.map((sub) => (
                                 <Link 
-                                  key={sub.href} 
+                                  key={sub.label} 
                                   href={sub.href} 
                                   className="nav-dropdown-link"
                                 >
@@ -235,7 +234,7 @@ export function Header() {
                                 <div className="mobile-sub-children" style={{ paddingLeft: 10, display: 'flex', flexDirection: 'column', gap: 8, paddingBottom: 8 }}>
                                   {child.children.map((sub) => (
                                     <Link
-                                      key={sub.href}
+                                      key={sub.label}
                                       href={sub.href}
                                       className={active(sub.href) ? 'active' : ''}
                                       style={{ fontSize: 12, color: '#647888', textDecoration: 'none' }}

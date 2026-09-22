@@ -3,6 +3,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { EnquiryModal } from '../components/EnquiryModal';
 import { WhatsAppWidget } from '../components/WhatsAppWidget';
+import { CookieConsentBanner } from '../components/CookieConsentBanner';
 import { siteConfig } from '../data/mock-data';
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){
        <Footer/>
        <EnquiryModal/>
        <WhatsAppWidget/>
+       <CookieConsentBanner/>
      </body>
    </html>
  );
