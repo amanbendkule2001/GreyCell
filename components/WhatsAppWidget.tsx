@@ -1,10 +1,17 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { MessageCircle, X, ArrowUp, Mail, Phone, ExternalLink } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { MessageCircle, X, ArrowUp, Mail, Phone, ExternalLink, Sparkles } from 'lucide-react';
+import {
+  detectCurrentProductContext,
+  buildProductWhatsAppMessage,
+  getWhatsAppUrl,
+  ProductContextInfo,
+} from '../lib/whatsapp';
 
 export function WhatsAppWidget() {
   const [chatOpen, setChatOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [productContext, setProductContext] = useState<ProductContextInfo | null>(null);
 
   const contacts = [
     { label: 'Technical & Sales Support 1', phone: '7559132800', display: '+91 7559132800' },
@@ -12,24 +19,95 @@ export function WhatsAppWidget() {
     { label: 'Technical & Sales Support 3', phone: '8600018957', display: '+91 8600018957' },
   ];
 
+  const updateContext = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    const ctx = detectCurrentProductContext(window.location.pathname, window.location.hash);
+    setProductContext(ctx);
+  }, []);
+
   useEffect(() => {
+    updateContext();
+
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
+
+    const handleHashChange = () => {
+      updateContext();
+    };
+
+    const handleCustomContext = (e: any) => {
+      if (e?.detail) {
+        setProductContext(e.detail);
+        if (e.detail.openChat) {
+          setChatOpen(true);
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleHashChange);
+    window.addEventListener('set-whatsapp-product', handleCustomContext);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+      window.removeEventListener('set-whatsapp-product', handleCustomContext);
+    };
+  }, [updateContext]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openEnquiry = () => {
-    window.dispatchEvent(new CustomEvent('open-enquiry'));
+    if (productContext) {
+      window.dispatchEvent(
+        new CustomEvent('open-enquiry', {
+          detail: {
+            type: productContext.category || productContext.productName,
+            productName: productContext.productName,
+            capacityVoltage: productContext.subtitle,
+          },
+        })
+      );
+    } else {
+      window.dispatchEvent(new CustomEvent('open-enquiry'));
+    }
   };
 
   const openWhatsApp = (num: string) => {
-    window.open(`https://wa.me/91${num}`, '_blank', 'noopener,noreferrer');
+    let msg: string;
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+
+    if (productContext) {
+      msg = buildProductWhatsAppMessage({
+        productName: productContext.productName,
+        category: productContext.category,
+        subtitle: productContext.subtitle,
+        specs: productContext.specs,
+        url: currentUrl,
+      });
+    } else {
+      msg = [
+        `⚡ *GRAYCELL POWER SOLUTIONS — GENERAL ENQUIRY* ⚡`,
+        ``,
+        `Hello Graycell Sales & Engineering Team,`,
+        ``,
+        `I would like to enquire about Graycell power engineering solutions, distribution transformers, compact substations, and medium-voltage switchgear panels.`,
+        ``,
+        currentUrl ? `*Page Reference:* ${currentUrl}` : '',
+        ``,
+        `Please share relevant product catalogues and technical information.`,
+      ]
+        .filter(Boolean)
+        .join('\n');
+    }
+
+    const url = getWhatsAppUrl(num, msg);
+    window.open(url, '_blank', 'noopener,noreferrer');
     setChatOpen(false);
   };
 
@@ -114,7 +192,44 @@ export function WhatsAppWidget() {
             </div>
 
             <div className="wa-popup-body" style={{ padding: 16, display: 'grid', gap: 10 }}>
-              <p style={{ fontSize: 13, color: '#475569', margin: '0 0 4px' }}>
+              {productContext && (
+                <div
+                  style={{
+                    background: '#f0fdf4',
+                    border: '1px solid #bbf7d0',
+                    borderRadius: 6,
+                    padding: '8px 10px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 2,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 10.5,
+                      fontWeight: 700,
+                      color: '#166534',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 4,
+                    }}
+                  >
+                    <Sparkles size={11} color="#16a34a" /> Inquiring About
+                  </div>
+                  <div style={{ fontSize: 12.5, fontWeight: 600, color: '#14532d', lineHeight: 1.3 }}>
+                    {productContext.productName}
+                  </div>
+                  {productContext.subtitle && (
+                    <div style={{ fontSize: 11, color: '#4b5563', lineHeight: 1.2 }}>
+                      {productContext.subtitle}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <p style={{ fontSize: 13, color: '#475569', margin: '0 0 2px' }}>
                 Connect directly with our engineering & sales team on WhatsApp:
               </p>
               {contacts.map((c, i) => (

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface NavSubChild { href: string; label: string; desc?: string; }
 interface NavChild { href: string; label: string; desc?: string; children?: NavSubChild[]; }
@@ -98,29 +98,41 @@ export function Header() {
           {navItems.map((item) =>
             item.children ? (
               <div className="nav-item-wrap" key={item.label}>
-                <Link
+                <button
                   className={`nav-top-link${active(item.href) ? ' active' : ''}`}
-                  href={item.href}
+                  onClick={(e) => {
+                    // For touch devices, we might want to toggle, but this is a hover menu.
+                  }}
+                  aria-haspopup="true"
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
                 >
                   {item.label}
-                  <ChevronDown size={11} className="nav-chevron" />
-                </Link>
+                  <ChevronDown size={13} className="nav-chevron" />
+                </button>
                 <div className="nav-dropdown">
                   <div className="nav-dropdown-inner">
                     {item.children.map((child) =>
                       child.children ? (
                         <div className="nav-flyout-item-wrap" key={child.label}>
-                          <Link href={child.href} className="nav-dropdown-link nav-flyout-trigger-link">
+                          <button 
+                            className="nav-dropdown-link nav-flyout-trigger-link"
+                            aria-haspopup="true"
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', width: '100%', textAlign: 'left' }}
+                          >
                             <div className="nav-flyout-text">
                               <span className="nav-dropdown-label">{child.label}</span>
                               {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
                             </div>
                             <ChevronRight size={13} className="nav-flyout-chevron" />
-                          </Link>
+                          </button>
                           <div className="nav-flyout-menu">
                             <div className="nav-flyout-inner">
                               {child.children.map((sub) => (
-                                <Link key={sub.href} href={sub.href} className="nav-dropdown-link">
+                                <Link 
+                                  key={sub.href} 
+                                  href={sub.href} 
+                                  className="nav-dropdown-link"
+                                >
                                   <span className="nav-dropdown-label">{sub.label}</span>
                                   {sub.desc && <span className="nav-dropdown-desc">{sub.desc}</span>}
                                 </Link>
@@ -129,7 +141,11 @@ export function Header() {
                           </div>
                         </div>
                       ) : (
-                        <Link key={child.href} href={child.href} className="nav-dropdown-link">
+                        <Link 
+                          key={child.href} 
+                          href={child.href} 
+                          className="nav-dropdown-link"
+                        >
                           <span className="nav-dropdown-label">{child.label}</span>
                           {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
                         </Link>

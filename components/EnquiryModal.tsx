@@ -2,12 +2,15 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { X, CheckCircle2, ArrowRight, Send, MessageSquare, Phone, Building, Mail, User } from 'lucide-react';
 import { siteConfig } from '../data/mock-data';
+import { buildModalWhatsAppMessage, getWhatsAppUrl } from '../lib/whatsapp';
 
 export function EnquiryModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [refId, setRefId] = useState('');
+
+  const [productName, setProductName] = useState('');
 
   const [form, setForm] = useState({
     name: '',
@@ -21,8 +24,21 @@ export function EnquiryModal() {
 
   useEffect(() => {
     const handleOpen = (e?: any) => {
-      if (e?.detail?.type) {
-        setForm(prev => ({ ...prev, requirementType: e.detail.type }));
+      if (e?.detail) {
+        if (e.detail.productName) {
+          setProductName(e.detail.productName);
+        } else {
+          setProductName('');
+        }
+        if (e.detail.type) {
+          setForm(prev => ({ ...prev, requirementType: e.detail.type }));
+        }
+        if (e.detail.capacityVoltage) {
+          setForm(prev => ({ ...prev, capacityVoltage: e.detail.capacityVoltage }));
+        }
+        if (e.detail.message) {
+          setForm(prev => ({ ...prev, message: e.detail.message }));
+        }
       }
       setSubmitted(false);
       setIsOpen(true);
@@ -55,7 +71,7 @@ export function EnquiryModal() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'modal' }),
+        body: JSON.stringify({ ...form, productName, source: 'modal' }),
       });
       const data = await res.json();
       setRefId(data.refId || 'GC-' + Math.floor(100000 + Math.random() * 900000));
@@ -68,18 +84,21 @@ export function EnquiryModal() {
   };
 
   const handleWhatsAppSend = () => {
-    const phone = (siteConfig.contact.whatsappNumber || '+919876543210').replace(/[^0-9]/g, '');
-    const text = encodeURIComponent(
-      `*New Graycell Enquiry*\n\n` +
-      `*Name:* ${form.name || 'N/A'}\n` +
-      `*Company:* ${form.company || 'N/A'}\n` +
-      `*Email:* ${form.email || 'N/A'}\n` +
-      `*Phone:* ${form.phone || 'N/A'}\n` +
-      `*Type:* ${form.requirementType}\n` +
-      `*Capacity/Voltage:* ${form.capacityVoltage || 'N/A'}\n` +
-      `*Requirement:* ${form.message || 'I would like to enquire about Graycell power solutions.'}`
-    );
-    window.open(`https://wa.me/${phone}?text=${text}`, '_blank', 'noopener,noreferrer');
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const text = buildModalWhatsAppMessage({
+      refId: submitted ? refId : undefined,
+      name: form.name,
+      company: form.company,
+      email: form.email,
+      phone: form.phone,
+      requirementType: form.requirementType,
+      productName: productName || form.requirementType,
+      capacityVoltage: form.capacityVoltage,
+      message: form.message,
+      url: currentUrl,
+    });
+    const url = getWhatsAppUrl(siteConfig.contact.whatsappNumber, text);
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   if (!isOpen) return null;
@@ -118,7 +137,7 @@ export function EnquiryModal() {
           <div className="enquiry-form-wrapper">
             <div className="modal-header">
               <div className="eyebrow">DIRECT ENGINEERING INTAKE</div>
-              <h2>Enquire with Graycell</h2>
+              <h2>{productName ? `Enquire: ${productName}` : 'Enquire with Graycell'}</h2>
               <p>Share your requirement details. We respond with structured technical and commercial information.</p>
             </div>
 

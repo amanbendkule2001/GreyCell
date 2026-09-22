@@ -2,8 +2,10 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
 import ProductShowcaseSection from '../../../components/ProductShowcaseSection';
+import { siteConfig } from '../../../data/mock-data';
+import { buildProductWhatsAppMessage, getWhatsAppUrl } from '../../../lib/whatsapp';
 
 export default function MvSwitchgearPanelsPage() {
   useEffect(() => {
@@ -18,11 +20,40 @@ export default function MvSwitchgearPanelsPage() {
     }
   }, []);
 
+  const handleWhatsAppEnquiry = (sec: any) => {
+    const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}/products/mv-switchgear-panels#${sec.id}` : '';
+    const displayName = `${sec.title} (${sec.subtitle})`;
+    const msg = buildProductWhatsAppMessage({
+      productName: displayName,
+      category: 'Medium Voltage Switchgear Panels',
+      subtitle: sec.subtitle,
+      specs: sec.specs,
+      url: currentUrl,
+      customMessage: sec.summary.slice(0, 150) + '...',
+    });
+    const url = getWhatsAppUrl(siteConfig.contact.whatsappNumber, msg);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleOnlineEnquiry = (sec: any) => {
+    const displayName = `${sec.title} (${sec.subtitle})`;
+    window.dispatchEvent(
+      new CustomEvent('open-enquiry', {
+        detail: {
+          productName: displayName,
+          type: 'MV System',
+          capacityVoltage: sec.subtitle,
+          message: `Technical enquiry regarding ${displayName}.`,
+        },
+      })
+    );
+  };
+
   const mvSections = [
     {
       id: 'mv-fully-tested',
-      title: 'Medium Voltage Switchgear Panel',
-      subtitle: 'Type Tested IEC Medium Voltage SwitchGear Panels',
+      title: 'Fully Tested Panel',
+      subtitle: 'IEC type tested switchgear assemblies',
       imageSrc: '/images/projects/project-mv-switchgear.jpg',
       summary:
         'Graycell Energy LLP manufactures fully type-tested Medium Voltage SwitchGear Panels engineered in compliance with international IEC 62271 standards. Integrating Siemens VCB and RMU technologies for maximum operating safety and short-circuit withstand performance.',
@@ -42,8 +73,8 @@ export default function MvSwitchgearPanelsPage() {
     },
     {
       id: 'mv-voltage-class',
-      title: 'Medium Voltage Switchgear Panel',
-      subtitle: '11kV, 22kV & 33kV Rated Medium Voltage SwitchGear Panels',
+      title: 'Voltage Ratio – 11kV / 22kV Class',
+      subtitle: '11kV & 22kV medium voltage class',
       imageSrc: '/images/products/mv-switchgear.png',
       summary:
         'Custom Medium Voltage SwitchGear Panels designed specifically for 11kV, 22kV, and 33kV distribution networks. Built for seamless integration into municipal utilities, industrial plants, commercial towers, and renewable energy substations.',
@@ -63,8 +94,8 @@ export default function MvSwitchgearPanelsPage() {
     },
     {
       id: 'mv-current-rating',
-      title: 'Medium Voltage Switchgear Panel',
-      subtitle: 'High Current Busbar Ratings up to 2500A (21kA)',
+      title: 'Current Ratio up to 2500A',
+      subtitle: 'Busbar ratings up to 2500A, 21kA',
       imageSrc: '/images/products/mv-switchgear-2500a.jpg',
       summary:
         'Heavy-duty Medium Voltage SwitchGear Panels with continuous current ratings up to 2500A and short-circuit ratings up to 21kA for 3 seconds. Engineered to handle large power transfers in heavy manufacturing, mining, data centers, and power utilities.',
@@ -84,8 +115,8 @@ export default function MvSwitchgearPanelsPage() {
     },
     {
       id: 'mv-installation',
-      title: 'Medium Voltage Switchgear Panel',
-      subtitle: 'IP4X Indoor & Weatherproof IP54 Outdoor Medium Voltage SwitchGear Panels',
+      title: 'Installation – Indoor / Outdoor',
+      subtitle: 'Weatherproof indoor and outdoor panels',
       imageSrc: '/images/products/mv-switchgear-outdoor.jpg',
       summary:
         'Flexible housing configurations available in IP4X indoor panels for substation control rooms, or heavy-duty weatherproof IP54 outdoor kiosks engineered for harsh tropical, coastal, or dusty industrial outdoor environments.',
@@ -192,9 +223,41 @@ export default function MvSwitchgearPanelsPage() {
                     </tbody>
                   </table>
 
-                  <Link href="/contact" className="btn btn-primary" style={{ width: '100%', marginTop: 20 }}>
-                    Enquire for {sec.title} <ArrowRight size={15} />
-                  </Link>
+                  <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
+                    <button
+                      type="button"
+                      className="btn btn-whatsapp-direct"
+                      onClick={() => handleWhatsAppEnquiry(sec)}
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        fontWeight: 600,
+                        padding: '12px 16px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <MessageCircle size={16} /> Fast-track on WhatsApp
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => handleOnlineEnquiry(sec)}
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      Online Technical Enquiry <ArrowRight size={15} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

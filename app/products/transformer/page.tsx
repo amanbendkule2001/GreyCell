@@ -2,8 +2,10 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Zap, ShieldCheck, Cpu } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, ShieldCheck, Cpu, MessageCircle } from 'lucide-react';
 import ProductShowcaseSection from '../../../components/ProductShowcaseSection';
+import { siteConfig } from '../../../data/mock-data';
+import { buildProductWhatsAppMessage, getWhatsAppUrl } from '../../../lib/whatsapp';
 
 export default function TransformerProductPage() {
   useEffect(() => {
@@ -18,11 +20,38 @@ export default function TransformerProductPage() {
     }
   }, []);
 
+  const handleWhatsAppEnquiry = (sec: any) => {
+    const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}/products/transformer#${sec.id}` : '';
+    const msg = buildProductWhatsAppMessage({
+      productName: sec.title,
+      category: 'Distribution & Power Transformers',
+      subtitle: sec.subtitle,
+      specs: sec.specs,
+      url: currentUrl,
+      customMessage: sec.summary.slice(0, 150) + '...',
+    });
+    const url = getWhatsAppUrl(siteConfig.contact.whatsappNumber, msg);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleOnlineEnquiry = (sec: any) => {
+    window.dispatchEvent(
+      new CustomEvent('open-enquiry', {
+        detail: {
+          productName: sec.title,
+          type: 'Transformer',
+          capacityVoltage: sec.subtitle,
+          message: `Technical enquiry regarding ${sec.title}. Subtitle: ${sec.subtitle}.`,
+        },
+      })
+    );
+  };
+
   const transformerSections = [
     {
       id: 'oil-filled',
-      title: 'Transformers',
-      subtitle: '25 kVA – 2500 kVA, up to 33 kV Class',
+      title: 'Oil-Filled Distribution Transformers',
+      subtitle: '25 kVA – 2500 kVA, up to 33 kV',
       imageSrc: '/images/products/power-transformer.png',
       summary:
         'Graycell Power Solutions Pvt. Ltd. manufactures high-quality oil-filled distribution transformers designed to meet international standards and compete with leading Indian manufacturers. Operating a state-of-the-art facility in Pune with promoters holding 25+ years of experience.',
@@ -43,8 +72,8 @@ export default function TransformerProductPage() {
     },
     {
       id: 'aluminium-foil',
-      title: 'Transformers',
-      subtitle: 'Precision Automated Foil Winding Technology',
+      title: 'Aluminium Foil Wound Transformers',
+      subtitle: 'Precision engineered foil winding',
       imageSrc: '/images/products/aluminium_foil_wound.jpg',
       summary:
         'Aluminium foil-wound transformers are increasingly preferred in distribution applications. Since aluminium is readily available in India, its use reduces dependence on imported copper and minimizes foreign exchange outflow.',
@@ -64,8 +93,8 @@ export default function TransformerProductPage() {
     },
     {
       id: 'copper-foil',
-      title: 'Transformers',
-      subtitle: 'High Efficiency Electrolytic Copper Winding',
+      title: 'Copper Foil Wound Transformers',
+      subtitle: 'High-efficiency copper winding',
       imageSrc: '/images/products/copper_foil_wound.jpg',
       summary:
         'Engineered for maximum thermal conductivity, compact dimensional requirements, and demanding industrial applications requiring premium high-efficiency copper conductors.',
@@ -86,7 +115,7 @@ export default function TransformerProductPage() {
     {
       id: 'dry-type',
       title: 'Dry Type Distribution Transformers',
-      subtitle: 'Cast Resin & VPI Dry Type (Indoor & Flame Retardant)',
+      subtitle: 'Cast resin & VPI insulation',
       imageSrc: '/images/products/dry-type-transformer.png',
       summary:
         'Ideal for high-rise commercial buildings, hospitals, airports, underground transit, and industrial plants requiring high fire safety and low environmental risk.',
@@ -107,7 +136,7 @@ export default function TransformerProductPage() {
     {
       id: 'ester-oil',
       title: 'Natural Ester Transformers',
-      subtitle: 'Bio-Degradable & Fire-Safe Ester Fluid Transformers',
+      subtitle: 'Eco-fluid, fire-safe solutions',
       imageSrc: '/images/products/natural-ester-see-through.jpg',
       summary:
         'Utilizing natural ester vegetable-based dielectric fluids with high flash points (>300°C), providing exceptional fire safety, extended insulation life, and 100% biodegradability.',
@@ -127,8 +156,8 @@ export default function TransformerProductPage() {
     },
     {
       id: 'hermetically-sealed',
-      title: 'Hermetically Sealed & Corrugated Tank Transformers',
-      subtitle: 'Corrugated Tank Maintenance-Free Sealed Units',
+      title: 'Hermetically Sealed Transformers',
+      subtitle: 'Corrugated tank, maintenance-free',
       imageSrc: '/images/products/hermetically_sealed.jpg',
       summary:
         'Hermetically sealed transformers without conservators, utilizing flexible corrugated tank fins to absorb oil expansion. Completely isolates dielectric oil from ambient atmosphere and humidity.',
@@ -235,9 +264,41 @@ export default function TransformerProductPage() {
                     </tbody>
                   </table>
 
-                  <Link href="/contact" className="btn btn-primary" style={{ width: '100%', marginTop: 20 }}>
-                    Enquire for {sec.title} <ArrowRight size={15} />
-                  </Link>
+                  <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
+                    <button
+                      type="button"
+                      className="btn btn-whatsapp-direct"
+                      onClick={() => handleWhatsAppEnquiry(sec)}
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        fontWeight: 600,
+                        padding: '12px 16px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <MessageCircle size={16} /> Fast-track on WhatsApp
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => handleOnlineEnquiry(sec)}
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      Online Technical Enquiry <ArrowRight size={15} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

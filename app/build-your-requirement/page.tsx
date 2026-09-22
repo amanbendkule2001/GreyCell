@@ -2,7 +2,9 @@
 
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
+import { siteConfig } from '../../data/mock-data';
+import { buildBuilderWhatsAppMessage, getWhatsAppUrl } from '../../lib/whatsapp';
 
 export default function Builder() {
   const [done, setDone] = useState(false);
@@ -19,6 +21,22 @@ export default function Builder() {
     mobile: '',
     specifications: '',
   });
+
+  const handleWhatsAppFastTrack = () => {
+    const msg = buildBuilderWhatsAppMessage({
+      refId,
+      requirementType: form.requirementType,
+      segment: form.segment,
+      capacity: form.capacity,
+      voltageRatio: form.voltageRatio,
+      installation: form.installation,
+      email: form.email,
+      mobile: form.mobile,
+      specifications: form.specifications,
+    });
+    const url = getWhatsAppUrl(siteConfig.contact.whatsappNumber, msg);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -97,7 +115,15 @@ export default function Builder() {
                   <div><strong>Mobile:</strong> {form.mobile}</div>
                 </div>
               </div>
-              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="btn btn-whatsapp-direct"
+                  onClick={handleWhatsAppFastTrack}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                >
+                  <MessageCircle size={16} /> Fast-track on WhatsApp
+                </button>
                 <button className="btn btn-outline" onClick={() => setDone(false)}>
                   Edit Requirement
                 </button>

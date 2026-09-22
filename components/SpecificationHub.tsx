@@ -17,6 +17,7 @@ import {
   Clock
 } from 'lucide-react';
 import { siteConfig } from '../data/mock-data';
+import { buildProductWhatsAppMessage, getWhatsAppUrl } from '../lib/whatsapp';
 
 const categories = [
   {
@@ -73,7 +74,16 @@ export function SpecificationHub() {
 
   const handleOpenEnquiry = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-enquiry'));
+    window.dispatchEvent(
+      new CustomEvent('open-enquiry', {
+        detail: {
+          productName: activeItem.label,
+          type: activeItem.label,
+          capacityVoltage: activeItem.rating,
+          message: `Technical enquiry for ${activeItem.label} (${activeItem.rating}). Standards: ${activeItem.standard}. Type: ${activeItem.badge}.`,
+        },
+      })
+    );
   };
 
   const handleCopyEmail = (e: React.MouseEvent) => {
@@ -98,10 +108,20 @@ export function SpecificationHub() {
     }
   };
 
-  const waPhone = (siteConfig.contact.whatsappNumber || '+918459947816').replace(/[^0-9]/g, '');
-  const waUrl = `https://wa.me/${waPhone}?text=${encodeURIComponent(
-    `Hello Graycell Sales, I would like to request a technical quotation for ${activeItem.label} (${activeItem.rating}).`
-  )}`;
+  const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}/#spec-hub` : '';
+  const waMsg = buildProductWhatsAppMessage({
+    productName: activeItem.label,
+    subtitle: activeItem.rating,
+    category: 'Power Engineering Equipment',
+    specs: [
+      { label: 'Rating', value: activeItem.rating },
+      { label: 'Standard', value: activeItem.standard },
+      { label: 'Configuration', value: activeItem.badge },
+    ],
+    url: currentUrl,
+    customMessage: activeItem.desc,
+  });
+  const waUrl = getWhatsAppUrl(siteConfig.contact.whatsappNumber, waMsg);
 
   return (
     <section className="spec-hub-section" id="spec-hub">

@@ -2,8 +2,10 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Factory, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Factory, Award, MessageCircle } from 'lucide-react';
 import ProductShowcaseSection from '../../../components/ProductShowcaseSection';
+import { siteConfig } from '../../../data/mock-data';
+import { buildProductWhatsAppMessage, getWhatsAppUrl } from '../../../lib/whatsapp';
 
 export default function CompactSubstationPage() {
   useEffect(() => {
@@ -18,11 +20,40 @@ export default function CompactSubstationPage() {
     }
   }, []);
 
+  const handleWhatsAppEnquiry = (sec: any) => {
+    const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}/products/compact-substation#${sec.id}` : '';
+    const displayName = `Compact Substation - ${sec.title}`;
+    const msg = buildProductWhatsAppMessage({
+      productName: displayName,
+      category: 'Compact Substations (CSS)',
+      subtitle: sec.subtitle,
+      specs: sec.specs,
+      url: currentUrl,
+      customMessage: sec.summary.slice(0, 150) + '...',
+    });
+    const url = getWhatsAppUrl(siteConfig.contact.whatsappNumber, msg);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleOnlineEnquiry = (sec: any) => {
+    const displayName = `Compact Substation - ${sec.title}`;
+    window.dispatchEvent(
+      new CustomEvent('open-enquiry', {
+        detail: {
+          productName: displayName,
+          type: 'Compact Substation',
+          capacityVoltage: sec.subtitle,
+          message: `Technical enquiry regarding ${displayName}.`,
+        },
+      })
+    );
+  };
+
   const cssSections = [
     {
       id: 'compact-substation-3mva',
-      title: 'Compact Substation',
-      subtitle: 'High Capacity Compact Substation Package',
+      title: 'Up to 3MVA, 33kV Class',
+      subtitle: 'High capacity sub-station packages',
       imageSrc: '/images/products/compact-substation.png',
       summary:
         'Graycell Energy LLP is an approved partner of Siemens to manufacture compact substations (CSS - TYPE 8FB20). High capacity design engineered up to 3MVA rating and 33kV voltage class for major industrial & infrastructure projects.',
@@ -43,8 +74,8 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-oil-dry',
-      title: 'Compact Substation',
-      subtitle: 'Oil, Cast Resin, VPI & Green Ester Oil Transformer Options',
+      title: 'CSS with Oil / Dry Type Transformer up to 33kV',
+      subtitle: 'Oil or cast resin transformer integrations',
       imageSrc: '/images/products/css-oil-dry.jpg',
       summary:
         'Customizable compact substations accommodating either oil-immersed, cast resin dry-type, VPI, or eco-friendly green ester oil transformers based on site environmental and safety specifications.',
@@ -64,8 +95,8 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-oltc',
-      title: 'Compact Substation',
-      subtitle: 'On-Load Tap Changer Integrated Compact Substation',
+      title: 'CSS with Transformer having OLTC up to 33kV',
+      subtitle: 'On-Load Tap Changer integrations',
       imageSrc: '/images/products/css-oltc.jpg',
       summary:
         'Engineered with On-Load Tap Changers (OLTC) for active voltage regulation in dynamic grid environments, renewable energy injection, and commercial installations with fluctuating primary supply.',
@@ -85,8 +116,8 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-msedcl',
-      title: 'Compact Substation',
-      subtitle: 'Utility Compliant Compact Substation Packages',
+      title: 'MSEDCL Approved CSS',
+      subtitle: 'Utility compliant distribution packages',
       imageSrc: '/images/products/css-msedcl.jpg',
       summary:
         'Specifically engineered and certified to meet Maharashtra State Electricity Distribution Company Limited (MSEDCL) technical standards and utility grid inter-connection guidelines.',
@@ -106,8 +137,8 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-pad-mounted',
-      title: 'Compact Substation',
-      subtitle: 'Skid & Pad Mounted Compact Substation Solutions',
+      title: 'PAD Mounted CSS',
+      subtitle: 'Compact skid / pad mounted solutions',
       imageSrc: '/images/products/css-pad-mounted.jpg',
       summary:
         'Low-profile pad and skid-mounted compact substations tailored for non-standard site requirements, renewable energy sites, mining, and temporary infrastructure deployments.',
@@ -127,8 +158,8 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-e-house',
-      title: 'Compact Substation',
-      subtitle: 'Heavy-Duty Walkable Modular Power Equipment Container',
+      title: 'E-House (Walkable Container Rich Substation)',
+      subtitle: 'Heavy-duty walkable container substations',
       imageSrc: '/images/products/css-ehouse.jpg',
       summary:
         'Walkable E-House containerized substations integrating Medium Voltage SwitchGear Panels, power distribution transformers, LV switchboards, HVAC, fire suppression, and SCADA automation into one prefabricated Walkable container unit.',
@@ -233,32 +264,41 @@ export default function CompactSubstationPage() {
                     </tbody>
                   </table>
 
-                  <Link
-                    href="/contact"
-                    className="btn btn-primary"
-                    style={{
-                      width: '100%',
-                      minHeight: 48,
-                      height: 'auto',
-                      padding: '12px 16px',
-                      marginTop: 20,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: 8,
-                      textAlign: 'center',
-                      lineHeight: 1.35,
-                      fontSize: 'clamp(11px, 2.5vw, 12px)',
-                      wordBreak: 'break-word',
-                      boxSizing: 'border-box',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    <span style={{ flex: '1 1 auto', textAlign: 'center' }}>
-                      Enquire for {sec.title}
-                    </span>
-                    <ArrowRight size={15} style={{ flexShrink: 0 }} />
-                  </Link>
+                  <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
+                    <button
+                      type="button"
+                      className="btn btn-whatsapp-direct"
+                      onClick={() => handleWhatsAppEnquiry(sec)}
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        fontWeight: 600,
+                        padding: '12px 16px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <MessageCircle size={16} /> Fast-track on WhatsApp
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => handleOnlineEnquiry(sec)}
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      Online Technical Enquiry <ArrowRight size={15} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

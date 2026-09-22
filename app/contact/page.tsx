@@ -18,6 +18,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { siteConfig } from '../../data/mock-data';
+import { getWhatsAppUrl } from '../../lib/whatsapp';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -399,7 +400,18 @@ export default function Contact() {
                     Instant Technical WhatsApp
                   </span>
                   <a
-                    href={`https://wa.me/918459947816?text=${encodeURIComponent('Hello Graycell team, I have a transformer / power engineering requirement to discuss.')}`}
+                    href={getWhatsAppUrl(
+                      siteConfig.contact.whatsappNumber,
+                      [
+                        '⚡ *GRAYCELL POWER SOLUTIONS — ENGINEERING ENQUIRY* ⚡',
+                        '',
+                        'Hello Graycell Technical Sales Team,',
+                        '',
+                        'I have a transformer / power engineering requirement to discuss with your team.',
+                        '',
+                        'Please connect with technical catalogs and quotation information.',
+                      ].join('\n')
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-secondary"

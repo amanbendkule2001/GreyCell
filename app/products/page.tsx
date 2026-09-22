@@ -1,8 +1,22 @@
 'use client';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
+import { siteConfig } from '../../data/mock-data';
+import { buildProductWhatsAppMessage, getWhatsAppUrl } from '../../lib/whatsapp';
 
 export default function ProductsHubPage() {
+  const handleWhatsAppCategory = (cat: any) => {
+    const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}${cat.href}` : '';
+    const msg = buildProductWhatsAppMessage({
+      productName: cat.title,
+      category: 'Power Engineering Equipment',
+      subtitle: cat.subtitle,
+      url: currentUrl,
+      customMessage: cat.summary,
+    });
+    const url = getWhatsAppUrl(siteConfig.contact.whatsappNumber, msg);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   const categories = [
     {
       title: 'Transformer',
@@ -107,9 +121,25 @@ export default function ProductsHubPage() {
                   ))}
                 </div>
 
-                <Link className="btn btn-primary" href={cat.href}>
-                  Open Category Page <ArrowRight size={15} />
-                </Link>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+                  <Link className="btn btn-primary" href={cat.href}>
+                    Open Category Page <ArrowRight size={15} />
+                  </Link>
+                  <button
+                    type="button"
+                    className="btn btn-whatsapp-direct"
+                    onClick={() => handleWhatsAppCategory(cat)}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <MessageCircle size={16} /> Fast-track on WhatsApp
+                  </button>
+                </div>
               </div>
             </div>
           ))}
