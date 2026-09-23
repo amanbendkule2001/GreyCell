@@ -91,7 +91,7 @@ export default function About() {
             POWER FOR TOMORROW.
           </h1>
           <p>
-            Graycell Power Solutions Pvt. Ltd. and Graycell Energy LLP deliver high-quality distribution transformers, compact substations (Siemens Approved Partner), and medium-voltage power solutions built for precision, efficiency, and sustainability.
+            Graycell delivers high-quality distribution transformers, compact substations (Siemens Approved Partner), and medium-voltage power solutions built for precision, efficiency, and sustainability.
           </p>
         </div>
       </section>
@@ -101,57 +101,14 @@ export default function About() {
           {/* 1. About Us Section */}
           <div className="panel pad" style={{ background: '#fff', borderRadius: 4, border: '1px solid var(--line)', padding: 32 }}>
             <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8 }}>01 / ABOUT US</div>
-            <h2 style={{ marginBottom: 16 }}>Graycell Power Solutions and Graycell Energy LLP</h2>
-            <div style={{ color: '#4a5568', lineHeight: 1.8, fontSize: 15, display: 'grid', gap: 14 }}>
-              <p>
-                We manufacture high-quality distribution transformers and are founded by promoters with over 25 years of experience in the power industry.
+            <h2 style={{ marginBottom: 16 }}>Graycell</h2>
+            <div style={{ color: '#4a5568', lineHeight: 1.7, fontSize: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <p style={{ margin: 0 }}>
+                Founded by promoters with over 25 years of experience in the power industry, Graycell manufactures high-quality distribution transformers, compact substations, and medium voltage panels. We possess unique expertise to design and manufacture any type of standard and customized compact substation solutions, fully type-tested and tailored to precise client requirements.
               </p>
-              <p>
-                Our transformers are designed to meet international quality standards and compete with leading manufacturers in the Indian power sector.
+              <p style={{ margin: 0 }}>
+                Graycell is an approved partner of Siemens for HT Panels and CSS, and we are associated with Lucy Electric for manufacturing various types of compact substations. We operate a state-of-the-art manufacturing setup at <strong>Khed - Shivapur, Pune</strong>, equipped with modern machinery, advanced testing systems, and strict quality control processes. With an installed capacity of over 100 CSS per annum, our skilled team of engineers and technicians ensures precision at every stage—from design and manufacturing to testing and delivery.
               </p>
-              <p>
-                We operate a state-of-the-art manufacturing facility equipped with modern machinery, advanced testing systems, and strict quality control processes. A skilled team of engineers and technicians ensures precision at every stage, from design and manufacturing to testing and delivery.
-              </p>
-              <p style={{ fontWeight: 600, color: 'var(--ink)' }}>
-                We aim to manufacture reliable power solutions built with precision, efficiency and sustainability.
-              </p>
-              <p>
-                As a Siemens Approved Partner (CSS - TYPE 8FB20), we manufacture compact sub stations under this license partnership integrating SIEMENS ring main units (RMU) of rating 12KV to 33KV, 630A, 21KA in 8FB20 compact sub-stations. The compact sub-station is fully type tested as per latest IEC 62271-202 and manufactured under high quality standards. We have a full-fledged manufacturing set up at <strong>Khed - Shivapur, Pune</strong> and have an installed capacity to manufacture more than 100 CSS per annum.
-              </p>
-            </div>
-
-            <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid var(--line)' }}>
-              <h3 style={{ fontSize: 18, marginBottom: 16, color: 'var(--ink)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                Key Features
-              </h3>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                  gap: 12,
-                }}
-              >
-                {cssFeatures.map((feat, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: 10,
-                      background: '#f8fafc',
-                      padding: '12px 16px',
-                      borderRadius: 4,
-                      border: '1px solid #e2e8f0',
-                      fontSize: 13.5,
-                      lineHeight: 1.5,
-                      color: '#334155',
-                    }}
-                  >
-                    <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
-                    <span>{feat}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -258,15 +215,58 @@ export default function About() {
             </div>
           </div>
 
-          {/* Group Structure Reference */}
-          <div style={{ marginTop: 10 }}>
-            <div className="eyebrow">GROUP STRUCTURE</div>
-            <div className="feature-grid" style={{ marginTop: 14 }}>
-              {groupCompanies.map((c, i) => (
-                <div className="panel pad" key={c.id}>
-                  <div className="num">0{i + 1}</div>
-                  <h3>{c.name}</h3>
-                  <p>{c.summary}</p>
+          {/* Company Images */}
+          <div style={{ marginTop: 40 }}>
+            <div className="eyebrow">OUR FACILITIES</div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: 20,
+                marginTop: 14,
+              }}
+            >
+              {[
+                { src: '/images/projects/project-factory-transformers.jpg', title: 'Graycell Plant' },
+                { src: '/images/manufacturing/stage-1-plant.jpg', title: 'Manufacturing Hub' }
+              ].map((img, i) => (
+                <div
+                  key={i}
+                  style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    borderRadius: 8,
+                    height: 480,
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                  }}
+                  className="bento-hover-card"
+                >
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.5s ease',
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      padding: '20px',
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                      color: 'white',
+                      fontWeight: 600,
+                      fontSize: '1.1rem',
+                      pointerEvents: 'none',
+                    }}
+                  >
+                    {img.title}
+                  </div>
                 </div>
               ))}
             </div>

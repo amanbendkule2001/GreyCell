@@ -59,8 +59,8 @@ export const clientLogos: ClientItem[] = [
   { id: 'pcmc', name: 'PCMC (Pimpri Chinchwad)', category: 'infrastructure', file: '/images/clients/pcmc.svg' },
   { id: 'mahanagar-gas', name: 'Mahanagar Gas Ltd. (MGL)', category: 'infrastructure', file: '/images/clients/mahanagar-gas.png' },
   { id: 'ntpc', name: 'NTPC Limited', category: 'infrastructure', file: '/images/clients/ntpc.svg' },
-  { id: 'jkumar', name: 'J. Kumar Infraprojects', category: 'infrastructure', file: '/images/clients/jkumar.png' },
-  { id: 'harsh-constructions', name: 'Harsh Constructions', category: 'infrastructure', file: '/images/clients/harsh-constructions.png' },
+  { id: 'jkumar', name: 'J. Kumar Infraprojects', category: 'electrical-contractors', file: '/images/clients/jkumar.png' },
+  { id: 'harsh-constructions', name: 'Harsh Constructions', category: 'electrical-contractors', file: '/images/clients/harsh-constructions.png' },
   { id: 'police-seal', name: 'Police Department Infrastructure', category: 'infrastructure', file: '/images/clients/police-seal.png' },
   { id: 'amrit-mahotsav', name: 'Azadi Ka Amrit Mahotsav', category: 'infrastructure', file: '/images/clients/amrit-mahotsav.png' },
   { id: 'iucaa', name: 'IUCAA Pune', category: 'infrastructure', file: '/images/clients/iucaa.png' },
@@ -82,14 +82,12 @@ export const clientLogos: ClientItem[] = [
   { id: 'mahindra', name: 'Mahindra & Mahindra', category: 'industry', file: '/images/clients/mahindra.png' },
   { id: 'thermax', name: 'Thermax Ltd.', category: 'industry', file: '/images/clients/thermax.png' },
   { id: 'sahyadri-farms', name: 'Sahyadri Farms', category: 'industry', file: '/images/clients/sahyadri-farms.png' },
-  { id: 'logos-group', name: 'LOGOS Group', category: 'industry', file: '/images/clients/logos-group.svg' },
   { id: 'feintool', name: 'Feintool', category: 'industry', file: '/images/clients/feintool.svg' },
   { id: 'silicat', name: 'Silicat (Industrial Minerals)', category: 'industry', file: '/images/clients/silicat.svg' },
   { id: 'neuman-esser', name: 'Neuman & Esser Group', category: 'industry', file: '/images/clients/neuman-esser.svg' },
-  { id: 'essar', name: 'Essar Group', category: 'industry', file: '/images/clients/essar.svg' },
   { id: 'araymond', name: 'ARaymond', category: 'industry', file: '/images/clients/araymond.svg' },
   { id: 'shera', name: 'Shera Building Solutions', category: 'industry', file: '/images/clients/shera.png' },
-  { id: 'coastal-marine', name: 'Coastal Marine Sales & Services', category: 'industry', file: '/images/clients/coastal-marine.png' },
+  { id: 'coastal-marine', name: 'Coastal Marine Sales & Services', category: 'electrical-contractors', file: '/images/clients/coastal-marine.png' },
 
   // 6. Data Center & IT
   { id: 'bse', name: 'BSE (Bombay Stock Exchange)', category: 'datacenter-it', file: '/images/clients/bse.png' },
@@ -102,11 +100,11 @@ export const clientLogos: ClientItem[] = [
   { id: 'aecom', name: 'AECOM', category: 'electrical-contractors', file: '/images/clients/aecom.png' },
   { id: 'archivista', name: 'Archivista AEPPL', category: 'electrical-contractors', file: '/images/clients/archivista.png' },
   { id: 'colossus', name: 'Colossus Infra Projects', category: 'electrical-contractors', file: '/images/clients/colossus.png' },
-  { id: 'sm-joshi', name: 'SM Joshi Consultants', category: 'electrical-contractors', file: '/images/clients/sm-joshi.svg' },
+  { id: 'sm-joshi', name: 'SN Joshi Consultants', category: 'electrical-contractors', file: '/images/clients/sn-joshi.png' },
   { id: 'ubtech', name: 'ubTECH Engineering', category: 'electrical-contractors', file: '/images/clients/ubtech.png' },
   { id: 'unicorn', name: 'Unicorn Consulting Engineers Ltd.', category: 'electrical-contractors', file: '/images/clients/unicorn.png' },
   { id: 'safal-engineers', name: 'Safal Engineers', category: 'electrical-contractors', file: '/images/clients/safal-engineers.svg' },
-  { id: 'abhiyanta-consulting', name: 'Abhiyanta Consulting Engineers', category: 'electrical-contractors', file: '/images/clients/abhiyanta-consulting.svg' },
+  { id: 'abhiyanta-consulting', name: 'Abhiyanta Consulting Engineers', category: 'electrical-contractors', file: '/images/clients/abhiyanta.png' },
   { id: 'fdg', name: 'FDG Infrastructure', category: 'electrical-contractors', file: '/images/clients/fdg.png' },
   { id: 'vlie', name: 'Vijay Limaye Consulting LLP (VL Engineers)', category: 'electrical-contractors', file: '/images/clients/vlie.png' },
   { id: 'arkk', name: 'ARKK Consulting Pvt. Ltd.', category: 'electrical-contractors', file: '/images/clients/arkk.png' },
@@ -126,7 +124,7 @@ const categories = [
   { id: 'ev-renewables', label: 'EV & Renewables' },
   { id: 'industry', label: 'Industry' },
   { id: 'datacenter-it', label: 'Data Center & IT' },
-  { id: 'electrical-contractors', label: 'Electrical Contractors' }
+  { id: 'electrical-contractors', label: 'Electrical Consultant & Contractors' }
 ];
 
 export function ClienteleSection() {
@@ -136,10 +134,10 @@ export function ClienteleSection() {
   const filtered = activeCategory === 'all'
     ? clientLogos
     : clientLogos.filter((c) =>
-        Array.isArray(c.category)
-          ? c.category.includes(activeCategory as ClientCategory)
-          : c.category === activeCategory
-      );
+      Array.isArray(c.category)
+        ? c.category.includes(activeCategory as ClientCategory)
+        : c.category === activeCategory
+    );
 
   // By default show top 24 on 'all' view, or all if showAll is true or filtered by category
   const displayed = (activeCategory === 'all' && !showAll)
@@ -149,7 +147,7 @@ export function ClienteleSection() {
   return (
     <section className="clientele-section">
       <div className="container">
-        
+
         {/* SECTION HEADER */}
         <div className="clientele-header">
           <div>
@@ -160,7 +158,7 @@ export function ClienteleSection() {
             </h2>
           </div>
           <p>
-            From state power utilities and rapid transit networks to Fortune 500 industrial conglomerates, 
+            From state power utilities and rapid transit networks to Fortune 500 industrial conglomerates,
             over 80+ leading enterprises specify and trust Graycell transformer and substation engineering.
           </p>
         </div>

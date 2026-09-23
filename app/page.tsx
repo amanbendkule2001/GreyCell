@@ -37,11 +37,10 @@ export default function Home(){
    <section className="hero">
      <div className="hero-copy container">
        <div className="eyebrow">ENGINEERED FOR A BRIGHTER TOMORROW</div>
-       <h1 className="hero-title">POWERING<br/>A MORE<br/><span className="blue">SUSTAINABLE WORLD</span></h1>
-       <p>{siteConfig.supportingText}</p>
+       <h1 className="hero-title">POWERING A MORE <span className="blue">SUSTAINABLE WORLD</span></h1>
+       <p>Manufacturer of Oil and Dry type Transformers, Compact Substations, Medium Voltage SwitchGear Panels.</p>
        <div className="hero-buttons">
          <Link className="btn btn-primary" href="/products">Explore Our Products <ArrowRight size={16}/></Link>
-         <Link className="btn btn-outline" href="/engineering"><CirclePlay size={17}/> Watch Our Story</Link>
        </div>
      </div>
      <div className="hero-visual">
@@ -128,7 +127,7 @@ export default function Home(){
         
         <div className="panel pad" style={{ background: '#fff', borderRadius: 4, border: '1px solid var(--line)', padding: 32, marginBottom: 24 }}>
           <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8, fontSize: 11 }}>ABOUT US</div>
-          <h3 style={{ fontSize: 22, marginBottom: 16, color: 'var(--ink)' }}>Graycell Power Solutions and Graycell Energy LLP</h3>
+          <h3 style={{ fontSize: 22, marginBottom: 16, color: 'var(--ink)' }}>Graycell</h3>
           <p style={{ color: '#526475', lineHeight: 1.8, fontSize: 14, marginBottom: 16 }}>
             We manufacture high-quality distribution transformers and are founded by promoters with over 25 years of experience in the power industry. Our transformers are designed to meet international quality standards and compete with leading manufacturers in the Indian power sector. We operate a state-of-the-art manufacturing facility equipped with modern machinery, advanced testing systems, and strict quality control processes. A skilled team of engineers and technicians ensures precision at every stage, from design and manufacturing to testing and delivery. We aim to manufacture reliable power solutions built with precision, efficiency and sustainability.
           </p>

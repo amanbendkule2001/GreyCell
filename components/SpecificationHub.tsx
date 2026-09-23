@@ -1,18 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import { 
-  Zap, 
-  Layers, 
-  Cpu, 
-  Leaf, 
-  Flame, 
-  Copy, 
-  Check, 
-  MessageSquare, 
-  PhoneCall, 
-  ArrowRight, 
-  ShieldCheck, 
+import { useState, useEffect } from 'react';
+import {
+  Zap,
+  Layers,
+  Cpu,
+  Leaf,
+  Flame,
+  Copy,
+  Check,
+  MessageSquare,
+  PhoneCall,
+  ArrowRight,
+  ShieldCheck,
   CheckCircle2,
   Clock
 } from 'lucide-react';
@@ -70,7 +70,12 @@ const categories = [
 export function SpecificationHub() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const activeItem = categories[activeIdx];
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleOpenEnquiry = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -108,7 +113,7 @@ export function SpecificationHub() {
     }
   };
 
-  const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}/#spec-hub` : '';
+  const currentUrl = isMounted ? `${window.location.origin}/#spec-hub` : '';
   const waMsg = buildProductWhatsAppMessage({
     productName: activeItem.label,
     subtitle: activeItem.rating,
@@ -130,7 +135,7 @@ export function SpecificationHub() {
           {/* Ambient Lighting Accents */}
           <div className="spec-hub-glow-cyan" />
           <div className="spec-hub-glow-blue" />
-          
+
           <div className="spec-hub-header">
             <div className="spec-hub-title-group">
               <div className="spec-hub-eyebrow">
@@ -230,7 +235,7 @@ export function SpecificationHub() {
                       {siteConfig.contact.salesEmail}
                     </a>
                   </div>
-                  <button 
+                  <button
                     type="button"
                     className={`spec-hub-copy-btn ${copied ? 'copied' : ''}`}
                     onClick={handleCopyEmail}

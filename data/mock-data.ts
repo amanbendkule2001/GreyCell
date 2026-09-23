@@ -34,7 +34,7 @@ export const siteConfig = {
   brand: "Graycell",
   descriptor: "Power Engineering Group",
   headline: "ENGINEERED POWER. BUILT TO PERFORM.",
-  supportingText: "Manufacturer of Oil and Dry type Transformers,Compact Substations,Medium Voltage SwitchGear Panels.",
+  supportingText: "Manufacturer of Oil and Dry type Transformers, Compact Substations, Medium Voltage SwitchGear Panels.",
   contact: {
     salesEmail: "sales@graycellpower.com",
     whatsappNumber: "+91 7559132800",

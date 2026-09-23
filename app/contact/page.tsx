@@ -72,6 +72,10 @@ export default function Contact() {
     }
   };
 
+  const officeAddress = "325, Platinum 9, Pashan- Sus Road, Baner, Pune – 411045, Maharashtra, India";
+  const officeMapEmbedUrl = "https://maps.google.com/maps?q=325,+Platinum+9,+Pashan-+Sus+Road,+Baner,+Pune+411045&t=&z=15&ie=UTF8&iwloc=&output=embed";
+  const officeDirectionsUrl = "https://www.google.com/maps/search/?api=1&query=325+Platinum+9+Pashan+Sus+Road+Baner+Pune+411045";
+
   const factoryAddress = "Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India";
   const factoryMapEmbedUrl = "https://maps.google.com/maps?q=Gat+No.+311,+Plot+No.+7,8,+Gauddara+Road,+nr.+Chate+College,+Khed+Shivapur,+Maharashtra+412205&t=&z=14&ie=UTF8&iwloc=&output=embed";
   const factoryDirectionsUrl = "https://www.google.com/maps/search/?api=1&query=Gat+No.+311+Plot+No.+7+8+Gauddara+Road+nr+Chate+College+Khed+Shivapur+Maharashtra+412205";
@@ -93,9 +97,62 @@ export default function Contact() {
       <section className="contact-locations-section">
         <div className="container">
           
-          {/* FACTORY & WORKS CARD */}
-          <div className="contact-address-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '800px', margin: '0 auto 30px' }}>
+          {/* ADDRESS CARDS */}
+          <div className="contact-address-grid">
             
+            {/* CORPORATE OFFICE */}
+            <div className="contact-address-card">
+              <div>
+                <div className="contact-card-top">
+                  <div className="contact-card-icon-wrap">
+                    <Building2 size={24} />
+                  </div>
+                  <span className="contact-card-badge office">Corporate Office</span>
+                </div>
+                <h3 className="contact-card-title">Registered & Corporate Office</h3>
+                <div className="contact-card-company">Graycell Power Solutions Pvt. Ltd.</div>
+                <p className="contact-card-address">
+                  <strong>325, Platinum 9, Pashan- Sus Road,</strong><br />
+                  Baner, Pune – 411045,<br />
+                  Maharashtra, India
+                </p>
+
+                <div className="contact-card-details">
+                  <div className="contact-detail-row">
+                    <Mail size={15} color="var(--blue)" />
+                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a></span>
+                  </div>
+                  <div className="contact-detail-row">
+                    <Phone size={15} color="var(--blue)" />
+                    <span>Direct Telephone: <a href="tel:+918459947816">+91 84599 47816</a></span>
+                  </div>
+                  <div className="contact-detail-row">
+                    <Clock size={15} color="var(--muted)" />
+                    <span>Working Hours: Mon – Sat (9:00 AM – 6:30 PM IST)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="contact-card-actions">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => scrollToMap('office')}
+                >
+                  <MapPin size={15} /> View Office on Map
+                </button>
+                <a
+                  href={officeDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  <Navigation size={14} /> Get Directions <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+            {/* FACTORY & WORKS CARD */}
             <div className="contact-address-card factory">
               <div>
                 <div className="contact-card-top">
@@ -154,21 +211,307 @@ export default function Contact() {
 
           </div>
 
+          {/* PHONE NUMBERS ACCORDING TO LOCATIONS (PUNE & MUMBAI) */}
+          <div style={{ marginBottom: 36 }}>
+            <div className="eyebrow" style={{ marginBottom: 12 }}>CONTACT NUMBERS BY LOCATION</div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: 24,
+              }}
+            >
+              {/* PUNE CARD */}
+              <div
+                style={{
+                  background: '#ffffff',
+                  border: '1px solid var(--line)',
+                  borderRadius: 10,
+                  padding: '24px',
+                  boxShadow: '0 2px 8px rgba(11, 29, 51, 0.04)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'var(--blue)' }} />
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <div
+                        style={{
+                          width: 42,
+                          height: 42,
+                          borderRadius: 8,
+                          background: 'rgba(8, 120, 201, 0.08)',
+                          color: 'var(--blue)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <Phone size={20} />
+                      </div>
+                      <div>
+                        <h3 style={{ margin: 0, fontSize: 18, color: 'var(--ink)' }}>Pune</h3>
+                        <span style={{ fontSize: 12, color: '#64748b' }}>Office & Plant Location</span>
+                      </div>
+                    </div>
+                    <span
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: 999,
+                        fontSize: 11,
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        background: '#eff6ff',
+                        color: 'var(--blue)',
+                      }}
+                    >
+                      Pune
+                    </span>
+                  </div>
+
+                  <p style={{ fontSize: 13, color: '#475569', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+                    Reach our Pune Corporate Office & Manufacturing Works team directly for inquiries, technical discussions, and plant visits.
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em' }}>
+                      Phone Numbers:
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 8 }}>
+                      <a
+                        href="tel:+918459947816"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          padding: '9px 12px',
+                          background: '#f8fafc',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: 6,
+                          color: '#0f172a',
+                          fontWeight: 600,
+                          fontSize: 13.5,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <Phone size={14} color="var(--blue)" />
+                        <span>+91 84599 47816</span>
+                      </a>
+                      <a
+                        href="tel:+917559132800"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          padding: '9px 12px',
+                          background: '#f8fafc',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: 6,
+                          color: '#0f172a',
+                          fontWeight: 600,
+                          fontSize: 13.5,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <Phone size={14} color="var(--blue)" />
+                        <span>+91 75591 32800</span>
+                      </a>
+                      <a
+                        href="tel:+919518345584"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          padding: '9px 12px',
+                          background: '#f8fafc',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: 6,
+                          color: '#0f172a',
+                          fontWeight: 600,
+                          fontSize: 13.5,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <Phone size={14} color="var(--blue)" />
+                        <span>+91 95183 45584</span>
+                      </a>
+                      <a
+                        href="tel:+918600018957"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          padding: '9px 12px',
+                          background: '#f8fafc',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: 6,
+                          color: '#0f172a',
+                          fontWeight: 600,
+                          fontSize: 13.5,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <Phone size={14} color="var(--blue)" />
+                        <span>+91 86000 18957</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ paddingTop: 14, borderTop: '1px solid #edf2f7', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, fontSize: 13 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#475569' }}>
+                    <Mail size={14} color="var(--blue)" />
+                    <span><a href="mailto:sales@graycellpower.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>sales@graycellpower.com</a></span>
+                  </div>
+                  <a
+                    href="tel:+918459947816"
+                    className="btn btn-primary"
+                    style={{ padding: '6px 14px', fontSize: 12 }}
+                  >
+                    <Phone size={13} /> Call Pune
+                  </a>
+                </div>
+              </div>
+
+              {/* MUMBAI CARD */}
+              <div
+                style={{
+                  background: '#ffffff',
+                  border: '1px solid var(--line)',
+                  borderRadius: 10,
+                  padding: '24px',
+                  boxShadow: '0 2px 8px rgba(11, 29, 51, 0.04)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: '#16834b' }} />
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <div
+                        style={{
+                          width: 42,
+                          height: 42,
+                          borderRadius: 8,
+                          background: 'rgba(22, 131, 75, 0.08)',
+                          color: '#16834b',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <Phone size={20} />
+                      </div>
+                      <div>
+                        <h3 style={{ margin: 0, fontSize: 18, color: 'var(--ink)' }}>Mumbai</h3>
+                        <span style={{ fontSize: 12, color: '#64748b' }}>Regional Sales & Commercial Desk</span>
+                      </div>
+                    </div>
+                    <span
+                      style={{
+                        padding: '4px 10px',
+                        borderRadius: 999,
+                        fontSize: 11,
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        background: '#ecfdf5',
+                        color: '#065f46',
+                      }}
+                    >
+                      Mumbai
+                    </span>
+                  </div>
+
+                  <p style={{ fontSize: 13, color: '#475569', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+                    Connect with our regional representative in Mumbai for project requirements, equipment specifications, and commercial inquiries.
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em' }}>
+                      Phone Number:
+                    </div>
+                    <div>
+                      <a
+                        href="tel:+918104178072"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          padding: '9px 16px',
+                          background: '#f8fafc',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: 6,
+                          color: '#0f172a',
+                          fontWeight: 600,
+                          fontSize: 14,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <Phone size={15} color="#16834b" />
+                        <span>+91 81041 78072</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ paddingTop: 14, borderTop: '1px solid #edf2f7', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, fontSize: 13 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#475569' }}>
+                    <Mail size={14} color="#16834b" />
+                    <span><a href="mailto:sales@graycellpower.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>sales@graycellpower.com</a></span>
+                  </div>
+                  <a
+                    href="tel:+918104178072"
+                    className="btn btn-primary"
+                    style={{ padding: '6px 14px', fontSize: 12, background: '#16834b', borderColor: '#16834b' }}
+                  >
+                    <Phone size={13} /> Call Mumbai
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* INTERACTIVE GOOGLE MAP */}
           <div className="contact-map-frame-box" id="map-view">
             <div className="contact-map-header">
               <div>
-                <strong style={{ fontSize: 15, color: '#0f172a' }}>Factory Location Map</strong>
+                <strong style={{ fontSize: 15, color: '#0f172a' }}>Google Location Map</strong>
                 <span style={{ fontSize: 12, color: '#64748b', marginLeft: 10 }}>
-                  Manufacturing Plant & Works (Khed Shivapur, Pune)
+                  Showing {activeMap === 'office' ? 'Corporate Office (Baner, Pune)' : 'Manufacturing Plant (Khed Shivapur, Pune)'}
                 </span>
+              </div>
+
+              <div className="contact-map-tabs">
+                <button
+                  type="button"
+                  className={`contact-map-tab ${activeMap === 'office' ? 'active' : ''}`}
+                  onClick={() => setActiveMap('office')}
+                >
+                  <Building2 size={14} /> Corporate Office (Pune)
+                </button>
+                <button
+                  type="button"
+                  className={`contact-map-tab ${activeMap === 'factory' ? 'active' : ''}`}
+                  onClick={() => setActiveMap('factory')}
+                >
+                  <Factory size={14} /> Factory & Works (Shivapur)
+                </button>
               </div>
             </div>
 
             <iframe
-              title="Graycell Factory Map"
+              title={activeMap === 'office' ? "Graycell Corporate Office Map" : "Graycell Factory Map"}
               className="contact-map-embed"
-              src={factoryMapEmbedUrl}
+              src={activeMap === 'office' ? officeMapEmbedUrl : factoryMapEmbedUrl}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -176,11 +519,11 @@ export default function Contact() {
 
             <div className="contact-map-footer-info">
               <div>
-                <strong>📍 Factory Location: </strong>
-                <span>{factoryAddress}</span>
+                <strong>📍 {activeMap === 'office' ? 'Office Location:' : 'Factory Location:'} </strong>
+                <span>{activeMap === 'office' ? officeAddress : factoryAddress}</span>
               </div>
               <a
-                href={factoryDirectionsUrl}
+                href={activeMap === 'office' ? officeDirectionsUrl : factoryDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-map-direct-link"
