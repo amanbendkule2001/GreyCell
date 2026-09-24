@@ -26,12 +26,8 @@ export default function ProductsHubPage() {
       summary:
         'Oil-filled, dry-type cast resin, aluminium foil wound, copper foil wound, natural ester fluid, and hermetically sealed corrugated tank distribution transformers.',
       sublinks: [
-        { label: 'Oil-Filled Distribution Transformers', href: '/products/transformer#oil-filled' },
-        { label: 'Aluminium Foil Wound Transformers', href: '/products/transformer#aluminium-foil' },
-        { label: 'Copper Foil Wound Transformers', href: '/products/transformer#copper-foil' },
-        { label: 'Dry Type Distribution Transformers', href: '/products/transformer#dry-type' },
-        { label: 'Natural Ester Transformers', href: '/products/transformer#ester-oil' },
-        { label: 'Hermetically Sealed Transformers', href: '/products/transformer#hermetically-sealed' },
+        { label: 'Oil-Filled Distribution Transformers', href: '/products/oil-filled-distribution' },
+        { label: 'Dry Type Distribution Transformers', href: '/products/dry-type-distribution' },
       ],
     },
     {

@@ -56,62 +56,31 @@ export default function TransformerProductPage() {
       summary:
         'Graycell Power Solutions Pvt. Ltd. manufactures high-quality oil-filled distribution transformers designed to meet international standards and compete with leading Indian manufacturers. Operating a state-of-the-art facility in Pune with promoters holding 25+ years of experience.',
       specs: [
-        { label: 'Rating Range', value: '25 kVA – 2500 kVA' },
-        { label: 'Voltage Class', value: 'Up to 33 kV' },
+        { label: 'Rating', value: '25 kVA to 2500 kVA' },
+        { label: 'HT Voltage', value: 'Up to 33 kV' },
+        { label: 'LV Side Voltage', value: 'Up to 800 V' },
         { label: 'Cooling Method', value: 'ONAN / ONAF' },
-        { label: 'Winding Material', value: 'High Conductivity Electrolytic Copper / Aluminium' },
-        { label: 'Standard Compliance', value: 'IS 1180 / IEC 60076' },
+        { label: 'Installation', value: 'Indoor / Outdoor' },
+        { label: 'Losses', value: 'As per IS 1180, Level 1, Level 2, Level 3' },
+        { label: 'Radiator', value: '1. Conventional Detachable Radiator, 2. Corrugated Tank' },
+        { label: 'Type of Cooling', value: '1. Gas/Air Cushioned, 2. Non-Gas Type' },
+        { label: 'Type of Tank', value: '1. Bolted Type, 2. Hermetically Sealed' },
+        { label: 'Type of Insulation', value: 'Class A' },
       ],
       features: [
-        'Robust mechanical strength designed to withstand short-circuit forces',
-        'Vacuum drying & automated oil impregnation for high dielectric reliability',
-        'Optimized core design for minimal no-load and load losses',
-        'Strict routine testing at every stage of manufacturing',
+        'Marshalling Box with OTI & WTI',
+        'PRV (Pressure Relief Valve)',
+        'MOG (Magnetic Oil Gauge)',
+        'Buchholz Relay',
+        'Conservator Tank with Prismatic Oil Level Gauge',
+        'Type of Oil: Mineral Oil / Natural Oil / Ester Oil / Synthetic Ester Oil',
+        'Winding Type: Aluminium / Copper',
+        'HV Bushing: Epoxy / Porcelain',
+        'LV Bushing: Epoxy',
       ],
       productId: 'oil-filled-distribution',
     },
-    {
-      id: 'aluminium-foil',
-      title: 'Aluminium Foil Wound Transformers',
-      subtitle: 'Precision engineered foil winding',
-      imageSrc: '/images/products/aluminium_foil_wound.jpg',
-      summary:
-        'Aluminium foil-wound transformers are increasingly preferred in distribution applications. Since aluminium is readily available in India, its use reduces dependence on imported copper and minimizes foreign exchange outflow.',
-      specs: [
-        { label: 'Cost Savings', value: '15-20% lower cost vs copper' },
-        { label: 'Energy Efficiency', value: 'Equivalent energy efficiency and losses' },
-        { label: 'Physical Dimensions', value: 'Similar overall transformer footprint' },
-        { label: 'Winding Process', value: 'Fully automated LV foil winding' },
-      ],
-      features: [
-        'Uniform current distribution throughout the winding',
-        'High mechanical strength against axial short-circuit forces',
-        'Reduced hot spots & improved thermal performance',
-        'Eliminates human error through automated precision winding',
-      ],
-      productId: 'aluminium-foil-wound-transformers',
-    },
-    {
-      id: 'copper-foil',
-      title: 'Copper Foil Wound Transformers',
-      subtitle: 'High-efficiency copper winding',
-      imageSrc: '/images/products/copper_foil_wound.jpg',
-      summary:
-        'Engineered for maximum thermal conductivity, compact dimensional requirements, and demanding industrial applications requiring premium high-efficiency copper conductors.',
-      specs: [
-        { label: 'Conductor Material', value: 'Electrolytic Grade Copper Foil' },
-        { label: 'Efficiency Class', value: 'Ultra-High Efficiency Tier' },
-        { label: 'Overload Capability', value: 'Enhanced thermal reserve' },
-        { label: 'Voltage Range', value: 'Up to 33 kV class' },
-      ],
-      features: [
-        'Superior thermal conductivity and lower electrical resistance',
-        'Ideal for high-density commercial and industrial installations',
-        'Compatible with natural ester biodegradable dielectric fluids',
-        'Comprehensive routine and type testing backed by 25+ years promoter expertise',
-      ],
-      productId: 'copper-foil-wound-transformers',
-    },
+
     {
       id: 'dry-type',
       title: 'Dry Type Distribution Transformers',
@@ -133,48 +102,7 @@ export default function TransformerProductPage() {
       ],
       productId: 'dry-type-distribution',
     },
-    {
-      id: 'ester-oil',
-      title: 'Natural Ester Transformers',
-      subtitle: 'Eco-fluid, fire-safe solutions',
-      imageSrc: '/images/products/natural-ester-see-through.jpg',
-      summary:
-        'Utilizing natural ester vegetable-based dielectric fluids with high flash points (>300°C), providing exceptional fire safety, extended insulation life, and 100% biodegradability.',
-      specs: [
-        { label: 'Fire Point', value: '> 300°C (K-Class Fluid)' },
-        { label: 'Environmental Impact', value: '100% Biodegradable & Non-Toxic' },
-        { label: 'Insulation Life', value: 'Up to 33% extended paper insulation life' },
-        { label: 'Applications', value: 'Dense urban, eco-sensitive & renewable projects' },
-      ],
-      features: [
-        'K-class high fire point significantly reduces fire risk',
-        'Rapidly biodegradable in soil and water',
-        'Higher moisture tolerance extends paper insulation longevity',
-        'Compatible with standard distribution transformer designs',
-      ],
-      productId: 'natural-ester-transformers',
-    },
-    {
-      id: 'hermetically-sealed',
-      title: 'Hermetically Sealed Transformers',
-      subtitle: 'Corrugated tank, maintenance-free',
-      imageSrc: '/images/products/hermetically_sealed.jpg',
-      summary:
-        'Hermetically sealed transformers without conservators, utilizing flexible corrugated tank fins to absorb oil expansion. Completely isolates dielectric oil from ambient atmosphere and humidity.',
-      specs: [
-        { label: 'Tank Design', value: 'Corrugated Elastic Fin Expansion' },
-        { label: 'Maintenance', value: 'Completely Sealed & Maintenance-Free' },
-        { label: 'Atmospheric Exposure', value: 'Zero moisture or oxygen contact' },
-        { label: 'Installation', value: 'Indoor & Compact Outdoor' },
-      ],
-      features: [
-        'Eliminates need for conservator tank and silica gel breathers',
-        'Prevents oil oxidation and dielectric degradation over decades',
-        'Compact overall height for space-constrained substations',
-        'Factory tested and sealed for lifetime operational integrity',
-      ],
-      productId: 'hermetically-sealed-transformers',
-    },
+
   ];
 
   return (
@@ -217,87 +145,87 @@ export default function TransformerProductPage() {
                 <span className="eyebrow" style={{ color: 'var(--blue)' }}>0{idx + 1} / TRANSFORMER CATEGORY</span>
                 <span className="tag" style={{ background: '#e0f2fe', color: 'var(--blue)' }}>33 kV CLASS</span>
               </div>
-              
+
               <h2 style={{ fontSize: 32, marginBottom: 6 }}>{sec.title}</h2>
               <div style={{ fontSize: 15, color: '#64748b', fontWeight: 500, marginBottom: 20 }}>{sec.subtitle}</div>
 
-              {/* PRODUCT SHOWCASE (IMAGE GALLERY & 3D MODEL VIEWER TAB) */}
-              <div style={{ marginBottom: 30 }}>
-                <ProductShowcaseSection
-                  productId={sec.productId}
-                  productName={sec.title}
-                  category="transformer"
-                  imageSrc={sec.imageSrc}
-                  imageAlt={sec.title}
-                />
-              </div>
-
-              {/* OVERVIEW & SPECS GRID */}
-              <div className="two-col" style={{ alignItems: 'start' }}>
-                <div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12 }}>Overview & Applications</h3>
-                  <p style={{ color: '#475569', lineHeight: 1.75, fontSize: 14, marginBottom: 20 }}>{sec.summary}</p>
-
-                  <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Key Features</h4>
-                  <div style={{ display: 'grid', gap: 10 }}>
-                    {sec.features.map((f, i) => (
-                      <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
-                        <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
-                        <span>{f}</span>
-                      </div>
-                    ))}
-                  </div>
+              <div className="two-col" style={{ alignItems: 'start', gap: '40px' }}>
+                <div style={{ marginBottom: 30 }}>
+                  <ProductShowcaseSection
+                    productId={sec.productId}
+                    productName={sec.title}
+                    category="transformer"
+                    imageSrc={sec.imageSrc}
+                    imageAlt={sec.title}
+                  />
                 </div>
 
-                <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
-                  <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
-                    Technical Profile
-                  </h4>
-                  <table className="spec-table">
-                    <tbody>
-                      {sec.specs.map((sp, i) => (
-                        <tr key={i}>
-                          <th>{sp.label}</th>
-                          <td>{sp.value}</td>
-                        </tr>
+                <div style={{ display: 'grid', gap: '30px' }}>
+                  <div>
+                    <h3 style={{ fontSize: 20, marginBottom: 12 }}>Overview & Applications</h3>
+                    <p style={{ color: '#475569', lineHeight: 1.75, fontSize: 14, marginBottom: 20 }}>{sec.summary}</p>
+
+                    <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>{sec.id === 'oil-filled' ? 'Accessories' : 'Key Features'}</h4>
+                    <div style={{ display: 'grid', gap: 10 }}>
+                      {sec.features.map((f, i) => (
+                        <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
+                          <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                          <span>{f}</span>
+                        </div>
                       ))}
-                    </tbody>
-                  </table>
+                    </div>
+                  </div>
 
-                  <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
-                    <button
-                      type="button"
-                      className="btn btn-whatsapp-direct"
-                      onClick={() => handleWhatsAppEnquiry(sec)}
-                      style={{
-                        width: '100%',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                        fontWeight: 600,
-                        padding: '12px 16px',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <MessageCircle size={16} /> Fast-track on WhatsApp
-                    </button>
+                  <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
+                    <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
+                      Technical Profile
+                    </h4>
+                    <table className="spec-table">
+                      <tbody>
+                        {sec.specs.map((sp, i) => (
+                          <tr key={i}>
+                            <th>{sp.label}</th>
+                            <td>{sp.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
 
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={() => handleOnlineEnquiry(sec)}
-                      style={{
-                        width: '100%',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                        cursor: 'pointer',
-                      }}
-                    >
-                      Online Technical Enquiry <ArrowRight size={15} />
-                    </button>
+                    <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
+                      <button
+                        type="button"
+                        className="btn btn-whatsapp-direct"
+                        onClick={() => handleWhatsAppEnquiry(sec)}
+                        style={{
+                          width: '100%',
+                          justifyContent: 'center',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          fontWeight: 600,
+                          padding: '12px 16px',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        <MessageCircle size={16} /> Fast-track on WhatsApp
+                      </button>
+
+                      <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={() => handleOnlineEnquiry(sec)}
+                        style={{
+                          width: '100%',
+                          justifyContent: 'center',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                          cursor: 'pointer',
+                        }}
+                      >
+                        Online Technical Enquiry <ArrowRight size={15} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -702,7 +702,19 @@ h6,
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: heroFade 35s infinite;
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide.hero-slide-active {
+  opacity: 1 !important;
+  animation: none !important;
+  z-index: 3 !important;
+}
+
+.hero-slide.hero-slide-inactive {
+  opacity: 0 !important;
+  animation: none !important;
+  z-index: 1 !important;
 }
 
 .hero-slide img {

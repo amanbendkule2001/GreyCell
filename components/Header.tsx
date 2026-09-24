@@ -18,12 +18,8 @@ const navItems: NavItem[] = [
         label: 'Transformer',
         desc: 'Oil-filled & dry-type distribution transformer solutions',
         children: [
-          { href: '/products/transformer', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
-          { href: '/products/transformer', label: 'Aluminium Foil Wound Transformers', desc: 'Precision engineered foil winding' },
-          { href: '/products/transformer', label: 'Copper Foil Wound Transformers', desc: 'High-efficiency copper winding' },
-          { href: '/products/transformer', label: 'Dry Type Distribution Transformers', desc: 'Cast resin & VPI insulation' },
-          { href: '/products/transformer', label: 'Natural Ester Transformers', desc: 'Eco-fluid, fire-safe solutions' },
-          { href: '/products/transformer', label: 'Hermetically Sealed Transformers', desc: 'Corrugated tank, maintenance-free' },
+          { href: '/products/oil-filled-distribution', label: 'Oil-Filled Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
+          { href: '/products/dry-type-distribution', label: 'Dry Type Distribution Transformers', desc: '25 kVA – 2500 kVA, up to 33 kV' },
         ],
       },
       {
@@ -114,7 +110,7 @@ export function Header() {
                     {item.children.map((child) =>
                       child.children ? (
                         <div className="nav-flyout-item-wrap" key={child.label}>
-                          <Link 
+                          <Link
                             href={child.href}
                             className="nav-dropdown-link nav-flyout-trigger-link"
                           >
@@ -127,9 +123,9 @@ export function Header() {
                           <div className="nav-flyout-menu">
                             <div className="nav-flyout-inner">
                               {child.children.map((sub) => (
-                                <Link 
-                                  key={sub.label} 
-                                  href={sub.href} 
+                                <Link
+                                  key={sub.label}
+                                  href={sub.href}
                                   className="nav-dropdown-link"
                                 >
                                   <span className="nav-dropdown-label">{sub.label}</span>
@@ -140,9 +136,9 @@ export function Header() {
                           </div>
                         </div>
                       ) : (
-                        <Link 
-                          key={child.href} 
-                          href={child.href} 
+                        <Link
+                          key={child.href}
+                          href={child.href}
                           className="nav-dropdown-link"
                         >
                           <span className="nav-dropdown-label">{child.label}</span>
