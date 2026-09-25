@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
     label: 'Products',
     children: [
       {
-        href: '/products/transformer',
+        href: '#',
         label: 'Transformer',
         desc: 'Oil-filled & dry-type distribution transformer solutions',
         children: [
@@ -113,6 +113,9 @@ export function Header() {
                           <Link
                             href={child.href}
                             className="nav-dropdown-link nav-flyout-trigger-link"
+                            onClick={(e) => {
+                              if (child.href === '#') e.preventDefault();
+                            }}
                           >
                             <div className="nav-flyout-text">
                               <span className="nav-dropdown-label">{child.label}</span>
