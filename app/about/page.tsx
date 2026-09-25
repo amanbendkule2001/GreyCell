@@ -217,18 +217,20 @@ export default function About() {
 
           {/* Company Images */}
           <div style={{ marginTop: 40 }}>
-            <div className="eyebrow">OUR FACILITIES</div>
+            <div className="eyebrow">OUR MANIFACTURING PLANT</div>
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
                 gap: 20,
                 marginTop: 14,
               }}
             >
               {[
-                { src: '/images/projects/project-factory-transformers.jpg', title: 'Graycell Plant' },
-                { src: '/images/manufacturing/stage-1-plant.jpg', title: 'Manufacturing Hub' }
+                { src: '/images/about/facility-1.jpg', title: 'Graycell Plant' },
+                { src: '/images/about/facility-2.jpg', title: 'Manufacturing Hub' },
+                { src: '/images/about/facility-3.jpg', title: 'Production Facility' },
+                { src: '/images/about/facility-4.jpg', title: 'Assembly Line' }
               ].map((img, i) => (
                 <div
                   key={i}
@@ -236,7 +238,7 @@ export default function About() {
                     position: 'relative',
                     overflow: 'hidden',
                     borderRadius: 8,
-                    height: 480,
+                    aspectRatio: '4/3',
                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
                   }}
                   className="bento-hover-card"
@@ -251,22 +253,6 @@ export default function About() {
                       transition: 'transform 0.5s ease',
                     }}
                   />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      padding: '20px',
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-                      color: 'white',
-                      fontWeight: 600,
-                      fontSize: '1.1rem',
-                      pointerEvents: 'none',
-                    }}
-                  >
-                    {img.title}
-                  </div>
                 </div>
               ))}
             </div>

@@ -82,7 +82,7 @@ export default function DryTypeTransformerPage() {
             <div style={{ fontSize: 15, color: '#64748b', fontWeight: 500, marginBottom: 20 }}>{sec.subtitle}</div>
 
             <div className="two-col" style={{ alignItems: 'start', gap: '40px' }}>
-              <div style={{ marginBottom: 30 }}>
+              <div style={{ marginBottom: 30, minWidth: 0 }}>
                 <ProductShowcaseSection
                   productId={sec.productId}
                   productName={sec.title}
@@ -92,36 +92,35 @@ export default function DryTypeTransformerPage() {
                 />
               </div>
 
-              <div style={{ display: 'grid', gap: '30px' }}>
-                <div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12 }}>Overview & Applications</h3>
-                  <p style={{ color: '#475569', lineHeight: 1.75, fontSize: 14, marginBottom: 20 }}>{sec.summary}</p>
-
-                  <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Accessories</h4>
-                  <div style={{ display: 'grid', gap: 10 }}>
-                    {sec.features.map((f, i) => (
-                      <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
-                        <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
-                        <span>{f}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
+              <div style={{ display: 'grid', gap: '30px', minWidth: 0 }}>
                 <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
                   <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
                     Technical Profile
                   </h4>
-                  <table className="spec-table">
-                    <tbody>
-                      {sec.specs.map((sp, i) => (
-                        <tr key={i}>
-                          <th>{sp.label}</th>
-                          <td>{sp.value}</td>
-                        </tr>
+                  <div style={{ overflowX: 'auto' }}>
+                    <table className="spec-table">
+                      <tbody>
+                        {sec.specs.map((sp, i) => (
+                          <tr key={i}>
+                            <th>{sp.label}</th>
+                            <td>{sp.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div style={{ marginTop: 30 }}>
+                    <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Accessories</h4>
+                    <div style={{ display: 'grid', gap: 10 }}>
+                      {sec.features.map((f, i) => (
+                        <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
+                          <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                          <span>{f}</span>
+                        </div>
                       ))}
-                    </tbody>
-                  </table>
+                    </div>
+                  </div>
 
                   <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
                     <button
