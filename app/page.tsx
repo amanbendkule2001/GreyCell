@@ -47,7 +47,6 @@ export default function Home() {
       <div className="hero-visual">
         {/* CSS Auto-Slider replaced with HeroSlider component */}
         <HeroSlider />
-        <div className="hero-badge"><strong>Power engineering solutions</strong><p>Transformers · Compact substations · MV systems</p></div>
       </div>
     </section>
 
