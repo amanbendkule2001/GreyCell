@@ -5939,11 +5939,17 @@ h6,
 }
 
 
+.bento-hover-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.4s;
+  z-index: 1;
+}
+
 .bento-hover-card:hover img {
-  transform: scale(1.05);
+  /* removed */
 }
 
 .bento-hover-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.15) translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  z-index: 10;
 }
