@@ -15,16 +15,20 @@ export default function DryTypeTransformerPage() {
     summary:
       'Ideal for high-rise commercial buildings, hospitals, airports, underground transit, and industrial plants requiring high fire safety and low environmental risk.',
     specs: [
-      { label: 'Insulation Class', value: 'Class F / Class H' },
-      { label: 'Enclosure Rating', value: 'IP21 / IP23 / IP33' },
-      { label: 'Fire Rating', value: 'F1 Flame Retardant' },
-      { label: 'Maintenance', value: 'Near zero maintenance' },
+      { label: 'Cooling', value: 'AN / AF' },
+      { label: 'Installation', value: 'Indoor / Outdoor' },
+      { label: 'IP Rating', value: 'IP23 / IP34' },
+      { label: 'Losses', value: 'As per latest IS 2026 Part 2' },
+      { label: 'Winding Type', value: 'Aluminium / Copper' },
+      { label: 'Type of Insulation', value: 'F / H' },
+      { label: 'HV Bushing', value: 'Epoxy' },
+      { label: 'LV Bushing', value: 'Epoxy' },
     ],
     features: [
-      'Non-hygroscopic cast resin insulation eliminating moisture ingress',
-      'Self-extinguishing with zero toxic gas emission',
-      'High short-circuit withstand capability',
-      'Suitable for indoor installation close to load centers',
+      'Temperature Scanner',
+      'RTD',
+      'Surge Arrester',
+      'HV / LV Side Cable Box',
     ],
     productId: 'dry-type-distribution',
   };
@@ -93,7 +97,7 @@ export default function DryTypeTransformerPage() {
                   <h3 style={{ fontSize: 20, marginBottom: 12 }}>Overview & Applications</h3>
                   <p style={{ color: '#475569', lineHeight: 1.75, fontSize: 14, marginBottom: 20 }}>{sec.summary}</p>
 
-                  <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Key Features</h4>
+                  <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Accessories</h4>
                   <div style={{ display: 'grid', gap: 10 }}>
                     {sec.features.map((f, i) => (
                       <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>

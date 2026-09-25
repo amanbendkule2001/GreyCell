@@ -1,10 +1,12 @@
 'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../../data/mock-data';
 import { buildProductWhatsAppMessage, getWhatsAppUrl } from '../../lib/whatsapp';
 
 export default function ProductsHubPage() {
+  const [showTransformerOptions, setShowTransformerOptions] = useState(false);
   const handleWhatsAppCategory = (cat: any) => {
     const currentUrl = typeof window !== 'undefined' ? `${window.location.origin}${cat.href}` : '';
     const msg = buildProductWhatsAppMessage({
@@ -22,7 +24,7 @@ export default function ProductsHubPage() {
       title: 'Transformer',
       subtitle: '25 kVA – 2500 kVA, up to 33 kV Class',
       href: '/products/transformer',
-      img: '/images/products/power-transformer.png',
+      img: '/images/products/conventional_transformer_new.jpg',
       summary:
         'Oil-filled, dry-type cast resin, aluminium foil wound, copper foil wound, natural ester fluid, and hermetically sealed corrugated tank distribution transformers.',
       sublinks: [
@@ -38,7 +40,7 @@ export default function ProductsHubPage() {
       summary:
         'Turnkey compact substations integrating Siemens RMU (12kV to 33kV, 630A, 21kA), oil/dry transformers, OLTC, MSEDCL approved, pad mounted, and walkable E-House container solutions.',
       sublinks: [
-        { label: 'Up to 3MVA, 33kV Class', href: '/products/compact-substation#compact-substation-3mva' },
+
         { label: 'CSS with Oil / Dry Type Transformer up to 33kV', href: '/products/compact-substation#compact-substation-oil-dry' },
         { label: 'CSS with Transformer having OLTC up to 33kV', href: '/products/compact-substation#compact-substation-oltc' },
         { label: 'MSEDCL Approved CSS', href: '/products/compact-substation#compact-substation-msedcl' },
@@ -81,12 +83,12 @@ export default function ProductsHubPage() {
       <section className="page-content">
         <div className="container" style={{ display: 'grid', gap: 36 }}>
           {categories.map((cat) => (
-            <div key={cat.title} className="panel pad" style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 30 }}>
-              <div className="product-image-box" style={{ height: 260, borderRadius: 6, overflow: 'hidden' }}>
+            <div key={cat.title} className="panel pad" style={{ display: 'flex', flexWrap: 'wrap', gap: 30 }}>
+              <div className="product-image-box" style={{ flex: '1 1 300px', maxWidth: '100%', height: 260, borderRadius: 6, overflow: 'hidden' }}>
                 <img src={cat.img} alt={cat.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </div>
 
-              <div>
+              <div style={{ flex: '3 1 320px' }}>
                 <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 4 }}>PRODUCT CATEGORY</div>
                 <h2 style={{ fontSize: 28, margin: '0 0 6px' }}>{cat.title}</h2>
                 <div style={{ fontSize: 14, color: '#64748b', fontWeight: 500, marginBottom: 12 }}>{cat.subtitle}</div>
@@ -118,9 +120,43 @@ export default function ProductsHubPage() {
                 </div>
 
                 <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-                  <Link className="btn btn-primary" href={cat.href}>
-                    Open Category Page <ArrowRight size={15} />
-                  </Link>
+                  {cat.title === 'Transformer' ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      <button 
+                        className="btn btn-primary" 
+                        onClick={() => setShowTransformerOptions(!showTransformerOptions)}
+                      >
+                        Open Category Page <ArrowRight size={15} />
+                      </button>
+                      {showTransformerOptions && (
+                        <div style={{
+                          background: 'white',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: '6px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          overflow: 'hidden'
+                        }}>
+                          <Link 
+                            href="/products/oil-filled-distribution" 
+                            style={{ padding: '12px 16px', borderBottom: '1px solid #f1f5f9', fontSize: '13.5px', fontWeight: 600, color: '#334155' }}
+                          >
+                            Oil-Filled Distribution Transformers
+                          </Link>
+                          <Link 
+                            href="/products/dry-type-distribution" 
+                            style={{ padding: '12px 16px', fontSize: '13.5px', fontWeight: 600, color: '#334155' }}
+                          >
+                            Dry Type Distribution Transformers
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link className="btn btn-primary" href={cat.href}>
+                      Open Category Page <ArrowRight size={15} />
+                    </Link>
+                  )}
                   <button
                     type="button"
                     className="btn btn-whatsapp-direct"

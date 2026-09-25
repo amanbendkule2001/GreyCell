@@ -6,7 +6,7 @@ import { ClienteleSection } from '../components/ClienteleSection';
 import HeroSlider from '../components/HeroSlider';
 
 const productImage: { [key: string]: string } = {
-  'oil-filled-distribution': '/images/products/power-transformer.png',
+  'oil-filled-distribution': '/images/products/conventional_transformer_new.jpg',
   'dry-type-distribution': '/images/products/dry-type-transformer.png',
   'compact-substations': '/images/products/compact-substation.png',
   'foil-wound-transformers': '/images/products/mv-switchgear.png',

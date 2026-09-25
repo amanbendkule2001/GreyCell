@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
         label: 'Compact Sub-Station',
         desc: 'Siemens approved partner plug-and-play CSS',
         children: [
-          { href: '/products/compact-substation', label: 'Up to 3MVA, 33kV Class', desc: 'High capacity sub-station packages' },
+
           { href: '/products/compact-substation', label: 'CSS with Oil / Dry Type Transformer up to 33kV', desc: 'Oil or cast resin transformer integrations' },
           { href: '/products/compact-substation', label: 'CSS with Transformer having OLTC up to 33kV', desc: 'On-Load Tap Changer integrations' },
           { href: '/products/compact-substation', label: 'MSEDCL Approved CSS', desc: 'Utility compliant distribution packages' },

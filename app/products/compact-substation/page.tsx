@@ -50,28 +50,7 @@ export default function CompactSubstationPage() {
   };
 
   const cssSections = [
-    {
-      id: 'compact-substation-3mva',
-      title: 'Up to 3MVA, 33kV Class',
-      subtitle: 'High capacity sub-station packages',
-      imageSrc: '/images/products/compact-substation.png',
-      summary:
-        'Graycell Energy LLP is an approved partner of Siemens to manufacture compact substations (CSS - TYPE 8FB20). High capacity design engineered up to 3MVA rating and 33kV voltage class for major industrial & infrastructure projects.',
-      specs: [
-        { label: 'Capacity Rating', value: 'Up to 3000 kVA (3 MVA)' },
-        { label: 'Voltage Class', value: '12kV / 22kV / 33kV' },
-        { label: 'Siemens Partnership', value: 'CSS TYPE 8FB20 Approved Partner' },
-        { label: 'RMU Rating', value: 'Siemens RMU 12kV to 33kV, 630A, 21kA' },
-        { label: 'Type Test Standard', value: 'IEC 62271-202' },
-      ],
-      features: [
-        'Internal arc tested for 21kA-1Sec, Short time withstand 21kA-3Sec',
-        'Enclosure degree of protection IP54 for MV-LV Section, IP23 for Transformer',
-        'Enclosure Class K10 with Natural & AF ventilation system',
-        'Saves up to 40% premium footprint space over conventional substation design',
-      ],
-      productId: 'compact-substations',
-    },
+
     {
       id: 'compact-substation-oil-dry',
       title: 'CSS with Oil / Dry Type Transformer up to 33kV',
@@ -86,10 +65,14 @@ export default function CompactSubstationPage() {
         { label: 'Manufacturing Site', value: 'Khed-Shivapur, Pune (100+ per annum)' },
       ],
       features: [
-        'Customized options in 6.6kV / 11kV / 22kV / 33kV up to 2500 kVA',
-        'Plug & Play factory assembled unit ready for immediate site energization',
-        'Suitable for SF6 insulated Ring Main Unit / VCB / GIS options',
-        'Rust, corrosion & weatherproof enclosure for harsh outdoor environments',
+        'Fully type tested to IEC62271-202',
+        'Internal arc test design for 21KA-1Sec, Short time withstand 21KA-3Sec.',
+        'Fully Type tested & customized options in 6.6kV/11kV/22kV/33kV upto 2500 KVA with secondary voltage options from 415V upto 800Volts.',
+        'Enclosure Degree Of Protection - IP54 for MV-LV Section, IP23 for Transformer',
+        'Enclosure Class-K10 . Natural & AF Ventilation System',
+        'Designed, Built & Tested CSS to suit every project be it Indoor or Outdoor type',
+        'Rust, corrosion & weatherproof design suitable for outdoor application.',
+        'Extremely user-friendly design for operation & routine maintenance'
       ],
       productId: 'compact-substations',
     },
@@ -107,10 +90,12 @@ export default function CompactSubstationPage() {
         { label: 'Footprint Reduction', value: '40% footprint savings' },
       ],
       features: [
-        'SCADA compatible with Smart IoT Enabled CSS & transformer health monitoring system',
-        'Seamless automatic tap operation under full load conditions',
-        'Extremely user-friendly design for operation and routine maintenance',
-        'Factory integrated control circuitry and protective relaying',
+        'Customized design of CSS as per requirement',
+        'Separate door for OLTC operation',
+        'Compact type transformer with OLTC to accommodate in CSS',
+        'HT/LT placement on one side of CSS to save space',
+        'Inbuilt RTCC panel for OLTC',
+        'Special lifting arrangement for heavy, large CSS',
       ],
       productId: 'compact-substations',
     },
@@ -128,10 +113,15 @@ export default function CompactSubstationPage() {
         { label: 'Testing Standard', value: 'Type Tested IEC 62271-202' },
       ],
       features: [
-        'Pre-approved utility layouts ensuring rapid approval and commissioning',
-        'Tamper-evident metering compartments complying with DISCOM norms',
-        'Robust lockable doors and anti-vandalism outdoor housing',
-        'Full factory routine test reports provided prior to dispatch',
+        'Specially designed CSS as per MSEDCL requirements.',
+        'Fully type-tested design up to 1000kVA, 22/0.433kV CSS.',
+        'Approved by MSEDCL.',
+        'HT side MSEDCL approved SCADA RMU.',
+        'Transformer compartment suitable to accommodate any standard MSEDCL transformer.',
+        'Interchangeability of transformer at site location easily possible.',
+        'LT side MSEDCL approved feeder pillar is provided.',
+        'All CSS are fully tested by MSEDCL authority.',
+        'Suitable for all LT consumers.'
       ],
       productId: 'compact-substations',
     },
@@ -149,10 +139,13 @@ export default function CompactSubstationPage() {
         { label: 'Enclosure Protection', value: 'IP54 Outdoor Weatherproof' },
       ],
       features: [
-        'Ideal for renewable solar/wind farms and mining sites',
-        'Skid mounted options for non-standard or temporary site deployment',
-        'Factory wired and tested — no site assembly required',
-        'Weatherproof heavy-gauge enclosure with K10 enclosure class',
+        'PAD skid-mounted CSS for non-standard site requirements in the entire range.',
+        'Compact in design.',
+        'HT Transformer and LT Panel are mounted on a common skid and connected with each other by cables/busbars.',
+        'Safety fencing is provided for the transformer.',
+        'High IP degree of protection.',
+        'Suitable for all types of indoor and outdoor installations.',
+        'Easy to operate and maintain.'
       ],
       productId: 'compact-substations',
     },
@@ -170,10 +163,12 @@ export default function CompactSubstationPage() {
         { label: 'Equipment Integration', value: 'Medium Voltage SwitchGear Panels, Transformer, LV Panel, SCADA' },
       ],
       features: [
-        'Full internal walkthrough corridor for operator convenience and maintenance',
-        'Factory integrated HVAC, lighting, auxiliary power, and fire detection',
-        'Drastically reduces civil construction time and on-site labor costs',
-        'Fully tested and ready for immediate plug-and-play installation',
+        'E-House is a modern concept in which all substation switchgear panels and AUX panels are installed in one container, which is walkable and convenient to operate.',
+        'E-House is a plug-and-play solution which is pre-assembled at the factory and delivered to the site ready to use.',
+        'Reduces site work and installation time.',
+        'E-House is completely enclosed, hence suitable for the oil and gas, steel, and cement industries where the outside environment is hazardous.',
+        'E-House is equipped with a fire and gas suppression system.',
+        'E-House features fire-retardant walls to protect inside switchgear panels from external fires for up to 60/90/100 minutes.'
       ],
       productId: 'compact-substations',
     },
@@ -211,98 +206,180 @@ export default function CompactSubstationPage() {
       {/* SINGLE PAGE COMPACT SUB-STATION SECTIONS */}
       <section className="page-content">
         <div className="container" style={{ display: 'grid', gap: 60 }}>
-          {cssSections.map((sec, idx) => (
-            <div key={sec.id} id={sec.id} className="panel pad" style={{ scrollMarginTop: 100 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                <span className="eyebrow" style={{ color: 'var(--blue)' }}>0{idx + 1} / COMPACT SUB-STATION</span>
-                <span className="tag" style={{ background: '#e0f2fe', color: 'var(--blue)' }}>SIEMENS 8FB20 PARTNER</span>
-              </div>
+          {cssSections.map((sec, idx) => {
+            const isThreeColLayout = sec.id === 'compact-substation-oil-dry' || sec.id === 'compact-substation-oltc';
+            const showFeaturesInSpecBox = sec.id === 'compact-substation-msedcl' || sec.id === 'compact-substation-pad-mounted' || sec.id === 'compact-substation-e-house';
 
-              <h2 style={{ fontSize: 32, marginBottom: 6 }}>{sec.title}</h2>
-              <div style={{ fontSize: 15, color: '#64748b', fontWeight: 500, marginBottom: 20 }}>{sec.subtitle}</div>
+            return (
+              <div key={sec.id} id={sec.id} className="panel pad" style={{ scrollMarginTop: 100 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                  <span className="eyebrow" style={{ color: 'var(--blue)' }}>0{idx + 1} / COMPACT SUB-STATION</span>
+                  <span className="tag" style={{ background: '#e0f2fe', color: 'var(--blue)' }}>SIEMENS 8FB20 PARTNER</span>
+                </div>
 
-              {/* PRODUCT SHOWCASE (IMAGE GALLERY & 3D MODEL VIEWER TAB) */}
-              <div style={{ marginBottom: 30 }}>
-                <ProductShowcaseSection
-                  productId={sec.productId}
-                  productName={sec.title}
-                  category="compact_substation"
-                  imageSrc={sec.imageSrc}
-                  imageAlt={sec.title}
-                />
-              </div>
+                <h2 style={{ fontSize: 32, marginBottom: 6 }}>{sec.title}</h2>
+                <div style={{ fontSize: 15, color: '#64748b', fontWeight: 500, marginBottom: 20 }}>{sec.subtitle}</div>
 
-              {/* OVERVIEW & SPECS GRID */}
-              <div className="two-col" style={{ alignItems: 'start' }}>
-                <div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12 }}>Overview & Technical Highlights</h3>
-                  <p style={{ color: '#475569', lineHeight: 1.75, fontSize: 14, marginBottom: 20 }}>{sec.summary}</p>
+                {!isThreeColLayout ? (
+                  <div className="two-col" style={{ alignItems: 'start', gap: '40px' }}>
+                    <div style={{ width: '100%' }}>
+                      <ProductShowcaseSection
+                        productId={sec.productId}
+                        productName={sec.title}
+                        category="compact_substation"
+                        imageSrc={sec.imageSrc}
+                        imageAlt={sec.title}
+                      />
+                    </div>
 
-                  <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Key Features</h4>
-                  <div style={{ display: 'grid', gap: 10 }}>
-                    {sec.features.map((f, i) => (
-                      <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
-                        <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
-                        <span>{f}</span>
+                    <div style={{ width: '100%' }}>
+                      <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1', marginBottom: 24 }}>
+                        <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
+                          {showFeaturesInSpecBox ? 'Key Features' : 'Specification Profile'}
+                        </h4>
+
+                        {showFeaturesInSpecBox ? (
+                          <div style={{ display: 'grid', gap: 10 }}>
+                            {sec.features.map((f, i) => (
+                              <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
+                                <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                                <span>{f}</span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <table className="spec-table">
+                            <tbody>
+                              {sec.specs.map((sp, i) => (
+                                <tr key={i}>
+                                  <th>{sp.label}</th>
+                                  <td>{sp.value}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        )}
+
+                        <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
+                          <button
+                            type="button"
+                            className="btn btn-whatsapp-direct"
+                            onClick={() => handleWhatsAppEnquiry(sec)}
+                            style={{
+                              width: '100%',
+                              justifyContent: 'center',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 8,
+                              fontWeight: 600,
+                              padding: '12px 16px',
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <MessageCircle size={16} /> Fast-track on WhatsApp
+                          </button>
+
+                          <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => handleOnlineEnquiry(sec)}
+                            style={{
+                              width: '100%',
+                              justifyContent: 'center',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 8,
+                              cursor: 'pointer',
+                            }}
+                          >
+                            Online Technical Enquiry <ArrowRight size={15} />
+                          </button>
+                        </div>
                       </div>
-                    ))}
+
+                      {!showFeaturesInSpecBox && (
+                        <>
+                          <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Key Features</h4>
+                          <div style={{ display: 'grid', gap: 10 }}>
+                            {sec.features.map((f, i) => (
+                              <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155' }}>
+                                <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                                <span>{f}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <React.Fragment>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', alignItems: 'start' }}>
+                      <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
+                        <img src="/images/products/conventional_transformer_new.jpg" alt="Oil Filled Distribution Transformer" style={{ width: '100%', objectFit: 'contain' }} />
+                      </div>
 
-                <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
-                  <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
-                    Specification Profile
-                  </h4>
-                  <table className="spec-table">
-                    <tbody>
-                      {sec.specs.map((sp, i) => (
-                        <tr key={i}>
-                          <th>{sp.label}</th>
-                          <td>{sp.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
+                        <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
+                          Key Features
+                        </h4>
+                        <div style={{ display: 'grid', gap: 10 }}>
+                          {sec.features.map((f, i) => (
+                            <div key={i} style={{ display: 'flex', gap: 10, fontSize: 13.5, color: '#334155', alignItems: 'flex-start' }}>
+                              <CheckCircle2 size={16} color="var(--blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                              <span style={{ lineHeight: 1.4 }}>{f}</span>
+                            </div>
+                          ))}
+                        </div>
 
-                  <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
-                    <button
-                      type="button"
-                      className="btn btn-whatsapp-direct"
-                      onClick={() => handleWhatsAppEnquiry(sec)}
-                      style={{
-                        width: '100%',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                        fontWeight: 600,
-                        padding: '12px 16px',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <MessageCircle size={16} /> Fast-track on WhatsApp
-                    </button>
+                        <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
+                          <button
+                            type="button"
+                            className="btn btn-whatsapp-direct"
+                            onClick={() => handleWhatsAppEnquiry(sec)}
+                            style={{
+                              width: '100%',
+                              justifyContent: 'center',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 8,
+                              fontWeight: 600,
+                              padding: '12px 16px',
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <MessageCircle size={16} /> Fast-track on WhatsApp
+                          </button>
 
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={() => handleOnlineEnquiry(sec)}
-                      style={{
-                        width: '100%',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                        cursor: 'pointer',
-                      }}
-                    >
-                      Online Technical Enquiry <ArrowRight size={15} />
-                    </button>
-                  </div>
-                </div>
+                          <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => handleOnlineEnquiry(sec)}
+                            style={{
+                              width: '100%',
+                              justifyContent: 'center',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 8,
+                              cursor: 'pointer',
+                            }}
+                          >
+                            Online Technical Enquiry <ArrowRight size={15} />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
+                        <img src="/images/products/dry-type-transformer.png" alt="Dry Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
+                      </div>
+                    </div>
+
+
+                  </React.Fragment>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </>
