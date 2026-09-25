@@ -72,15 +72,18 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="footer-title">Sales & Factory</div>
+            <div className="footer-title">Sales & Locations</div>
             <a href={`mailto:${siteConfig.contact.salesEmail}`} style={{ display: 'block', marginBottom: 4 }}>
               {siteConfig.contact.salesEmail}
             </a>
-            <a href="tel:+917559132800" style={{ display: 'block', marginBottom: 2, color: 'inherit' }}>
-              +91 7559132800 / +91 9518345584
+            <a href="tel:+918459947816" style={{ display: 'block', marginBottom: 2, color: 'inherit' }}>
+              +91 84599 47816 / +91 75591 32800
             </a>
+            <span style={{ display: 'block', fontSize: 11.5, color: '#8ba0b5', lineHeight: 1.4, marginTop: 10 }}>
+              <strong style={{ color: '#c4d7ea' }}>Office:</strong> 325, Platinum 9, Pashan- Sus Road, Baner, Pune – 411045, Maharashtra, India
+            </span>
             <span style={{ display: 'block', fontSize: 11.5, color: '#8ba0b5', lineHeight: 1.4, marginTop: 6 }}>
-              <strong style={{ color: '#c4d7ea' }}>Factory:</strong> Gat No. 311, Plot 7-8, Khed Shivapur, Pune, MH – 412205
+              <strong style={{ color: '#c4d7ea' }}>Factory:</strong> Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India
             </span>
           </div>
         </div>

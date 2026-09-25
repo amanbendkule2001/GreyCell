@@ -104,7 +104,7 @@ export default function OilFilledTransformerPage() {
       <section className="page-content">
         <div className="container">
           <div className="panel pad">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: '8px' }}>
               <span className="eyebrow" style={{ color: 'var(--blue)' }}>TRANSFORMER CATEGORY</span>
               <span className="tag" style={{ background: '#e0f2fe', color: 'var(--blue)' }}>33 kV CLASS</span>
             </div>
@@ -113,49 +113,82 @@ export default function OilFilledTransformerPage() {
             <div style={{ fontSize: 15, color: '#64748b', fontWeight: 500, marginBottom: 20 }}>{sec.subtitle}</div>
 
             <div className="two-col" style={{ alignItems: 'start', gap: '40px' }}>
-              <div style={{ marginBottom: 30, position: 'relative', overflow: 'hidden', borderRadius: 8, border: '1px solid #cbd5e1' }}>
-                <div style={{ position: 'relative', width: '100%', paddingTop: '75%' }}>
-                  <img 
-                    src={SLIDER_IMAGES[currentImageIndex].src} 
-                    alt={SLIDER_IMAGES[currentImageIndex].caption} 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain', background: '#f8fafc' }} 
-                  />
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0.6)', color: 'white', padding: '12px 16px', fontSize: 14, fontWeight: 500 }}>
-                    {SLIDER_IMAGES[currentImageIndex].caption}
+              <div style={{ width: '100%', minWidth: 0 }}>
+                <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 8, border: '1px solid #cbd5e1' }}>
+                  <div style={{ position: 'relative', width: '100%', paddingTop: '75%' }}>
+                    <img 
+                      src={SLIDER_IMAGES[currentImageIndex].src} 
+                      alt={SLIDER_IMAGES[currentImageIndex].caption} 
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain', background: '#f8fafc' }} 
+                    />
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0.6)', color: 'white', padding: '12px 16px', fontSize: 14, fontWeight: 500 }}>
+                      {SLIDER_IMAGES[currentImageIndex].caption}
+                    </div>
                   </div>
+                  
+                  <button 
+                    onClick={handlePrev}
+                    style={{ position: 'absolute', top: '50%', left: 10, transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                  >
+                    <ChevronLeft size={20} color="#333" />
+                  </button>
+                  <button 
+                    onClick={handleNext}
+                    style={{ position: 'absolute', top: '50%', right: 10, transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                  >
+                    <ChevronRight size={20} color="#333" />
+                  </button>
                 </div>
                 
-                <button 
-                  onClick={handlePrev}
-                  style={{ position: 'absolute', top: '50%', left: 10, transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
-                >
-                  <ChevronLeft size={20} color="#333" />
-                </button>
-                <button 
-                  onClick={handleNext}
-                  style={{ position: 'absolute', top: '50%', right: 10, transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
-                >
-                  <ChevronRight size={20} color="#333" />
-                </button>
+                <div style={{ marginTop: 20 }}>
+                  <h4 style={{ fontSize: 16, color: 'var(--ink)', fontWeight: 600, marginBottom: 12 }}>
+                    Types of Oil-Filled Distribution Transformers
+                  </h4>
+                  <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, scrollbarWidth: 'thin' }}>
+                    {SLIDER_IMAGES.map((img, idx) => (
+                      <div 
+                        key={idx}
+                        onClick={() => setCurrentImageIndex(idx)}
+                        title={img.caption}
+                        style={{
+                          flex: '0 0 calc(20% - 9.6px)',
+                          minWidth: 80,
+                          aspectRatio: '4/3',
+                          borderRadius: 6,
+                          border: currentImageIndex === idx ? '2px solid var(--blue)' : '1px solid #cbd5e1',
+                          overflow: 'hidden',
+                          cursor: 'pointer',
+                          opacity: currentImageIndex === idx ? 1 : 0.6,
+                          transition: 'all 0.2s ease-in-out',
+                          background: '#f8fafc'
+                        }}
+                      >
+                        <img src={img.src} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div style={{ display: 'grid', gap: '30px' }}>
+              <div style={{ display: 'grid', gap: '30px', minWidth: 0 }}>
 
 
                 <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
                   <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
                     Technical Profile
                   </h4>
-                  <table className="spec-table">
-                    <tbody>
-                      {sec.specs.map((sp, i) => (
-                        <tr key={i}>
-                          <th>{sp.label}</th>
-                          <td>{sp.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <div style={{ overflowX: 'auto' }}>
+                    <table className="spec-table">
+                      <tbody>
+                        {sec.specs.map((sp, i) => (
+                          <tr key={i}>
+                            <th>{sp.label}</th>
+                            <td>{sp.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
 
                   <div style={{ marginTop: 30 }}>
                     <h4 style={{ fontSize: 16, marginBottom: 12, color: 'var(--ink)' }}>Accessories</h4>

@@ -103,7 +103,7 @@ export default function CompactSubstationPage() {
       id: 'compact-substation-msedcl',
       title: 'MSEDCL Approved CSS',
       subtitle: 'Utility compliant distribution packages',
-      imageSrc: '/images/products/css-msedcl.jpg',
+      imageSrc: '/images/products/css-msedcl.png',
       summary:
         'Specifically engineered and certified to meet Maharashtra State Electricity Distribution Company Limited (MSEDCL) technical standards and utility grid inter-connection guidelines.',
       specs: [
@@ -129,7 +129,7 @@ export default function CompactSubstationPage() {
       id: 'compact-substation-pad-mounted',
       title: 'PAD Mounted CSS',
       subtitle: 'Compact skid / pad mounted solutions',
-      imageSrc: '/images/products/css-pad-mounted.jpg',
+      imageSrc: '/images/products/css-pad-mounted.png',
       summary:
         'Low-profile pad and skid-mounted compact substations tailored for non-standard site requirements, renewable energy sites, mining, and temporary infrastructure deployments.',
       specs: [
@@ -153,7 +153,7 @@ export default function CompactSubstationPage() {
       id: 'compact-substation-e-house',
       title: 'E-House (Walkable Container Rich Substation)',
       subtitle: 'Heavy-duty walkable container substations',
-      imageSrc: '/images/products/css-ehouse.jpg',
+      imageSrc: '/images/products/e-house-new.jpg',
       summary:
         'Walkable E-House containerized substations integrating Medium Voltage SwitchGear Panels, power distribution transformers, LV switchboards, HVAC, fire suppression, and SCADA automation into one prefabricated Walkable container unit.',
       specs: [
@@ -315,8 +315,9 @@ export default function CompactSubstationPage() {
                 ) : (
                   <React.Fragment>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', alignItems: 'start' }}>
-                      <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
-                        <img src="/images/products/conventional_transformer_new.jpg" alt="Oil Filled Distribution Transformer" style={{ width: '100%', objectFit: 'contain' }} />
+                      <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
+                        <img src="/images/products/oil-type-transformer-new.jpg" alt="Oil Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
+                        <h4 style={{ fontSize: 18, margin: '16px 0 0 0', color: 'var(--ink)', textAlign: 'center' }}>Oil Type</h4>
                       </div>
 
                       <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
@@ -369,8 +370,9 @@ export default function CompactSubstationPage() {
                         </div>
                       </div>
 
-                      <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
-                        <img src="/images/products/dry-type-transformer.png" alt="Dry Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
+                      <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
+                        <img src="/images/products/dry-type-transformer-new.jpg" alt="Dry Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
+                        <h4 style={{ fontSize: 18, margin: '16px 0 0 0', color: 'var(--ink)', textAlign: 'center' }}>Dry Type</h4>
                       </div>
                     </div>
 
