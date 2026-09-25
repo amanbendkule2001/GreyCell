@@ -37,7 +37,7 @@ export default function OilFilledTransformerPage() {
     subtitle: '25 kVA – 2500 kVA, up to 33 kV',
     imageSrc: '/images/products/power-transformer.png',
     summary:
-      'Graycell Power Solutions Pvt. Ltd. manufactures high-quality oil-filled distribution transformers designed to meet international standards and compete with leading Indian manufacturers. Operating a state-of-the-art facility in Pune with promoters holding 25+ years of experience.',
+      'Graycell manufactures high-quality oil-filled distribution transformers designed to meet international standards and compete with leading Indian manufacturers. Operating a state-of-the-art facility in Pune with promoters holding 25+ years of experience.',
     specs: [
       { label: 'Rating', value: '25 kVA to 2500 kVA' },
       { label: 'HT Voltage', value: 'Up to 33 kV' },
@@ -95,7 +95,7 @@ export default function OilFilledTransformerPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <div className="eyebrow">Graycell Power Solutions · Product Range</div>
+          <div className="eyebrow">Graycell · Product Range</div>
           <h1>{sec.title}</h1>
           <p>{sec.summary}</p>
         </div>
@@ -116,37 +116,37 @@ export default function OilFilledTransformerPage() {
               <div style={{ width: '100%', minWidth: 0 }}>
                 <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 8, border: '1px solid #cbd5e1' }}>
                   <div style={{ position: 'relative', width: '100%', paddingTop: '75%' }}>
-                    <img 
-                      src={SLIDER_IMAGES[currentImageIndex].src} 
-                      alt={SLIDER_IMAGES[currentImageIndex].caption} 
-                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain', background: '#f8fafc' }} 
+                    <img
+                      src={SLIDER_IMAGES[currentImageIndex].src}
+                      alt={SLIDER_IMAGES[currentImageIndex].caption}
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain', background: '#f8fafc' }}
                     />
                     <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0.6)', color: 'white', padding: '12px 16px', fontSize: 14, fontWeight: 500 }}>
                       {SLIDER_IMAGES[currentImageIndex].caption}
                     </div>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={handlePrev}
                     style={{ position: 'absolute', top: '50%', left: 10, transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
                   >
                     <ChevronLeft size={20} color="#333" />
                   </button>
-                  <button 
+                  <button
                     onClick={handleNext}
                     style={{ position: 'absolute', top: '50%', right: 10, transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
                   >
                     <ChevronRight size={20} color="#333" />
                   </button>
                 </div>
-                
+
                 <div style={{ marginTop: 20 }}>
                   <h4 style={{ fontSize: 16, color: 'var(--ink)', fontWeight: 600, marginBottom: 12 }}>
                     Types of Oil-Filled Distribution Transformers
                   </h4>
                   <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, scrollbarWidth: 'thin' }}>
                     {SLIDER_IMAGES.map((img, idx) => (
-                      <div 
+                      <div
                         key={idx}
                         onClick={() => setCurrentImageIndex(idx)}
                         title={img.caption}

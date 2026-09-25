@@ -56,7 +56,7 @@ export default function MvSwitchgearPanelsPage() {
       subtitle: 'IEC type tested switchgear assemblies',
       imageSrc: '/images/projects/project-mv-switchgear.jpg',
       summary:
-        'Graycell Energy LLP manufactures fully type-tested Medium Voltage SwitchGear Panels engineered in compliance with international IEC 62271 standards. Integrating Siemens VCB and RMU technologies for maximum operating safety and short-circuit withstand performance.',
+        'Graycell manufactures fully type-tested Medium Voltage SwitchGear Panels engineered in compliance with international IEC 62271 standards. Integrating Siemens VCB and RMU technologies for maximum operating safety and short-circuit withstand performance.',
       specs: [
         { label: 'Testing Standard', value: 'IEC 62271-200 / IEC 62271-100' },
         { label: 'Internal Arc Rating', value: '21kA for 1 Second (AFLR)' },
@@ -141,7 +141,7 @@ export default function MvSwitchgearPanelsPage() {
       {/* HERO SECTION */}
       <section className="page-hero">
         <div className="container">
-          <div className="eyebrow">Graycell Energy LLP · Medium Voltage Solutions</div>
+          <div className="eyebrow">Graycell · Medium Voltage Solutions</div>
           <h1>
             MEDIUM VOLTAGE
             <br />

@@ -179,12 +179,12 @@ export default function CompactSubstationPage() {
       {/* HERO SECTION */}
       <section className="page-hero">
         <div className="container">
-          <div className="eyebrow">Graycell Energy LLP · Siemens Approved Partner</div>
+          <div className="eyebrow">Graycell · Siemens Approved Partner</div>
           <h1>
             COMPACT SUB-STATIONS
           </h1>
           <p>
-            Graycell Energy LLP is an approved partner of Siemens to manufacture compact substations (CSS - TYPE 8FB20). Integrating Siemens RMU (12kV to 33kV, 630A, 21kA), fully type tested to IEC 62271-202 at our Pune Khed-Shivapur facility with 100+ annual unit capacity.
+            Graycell is an approved partner of Siemens to manufacture compact substations (CSS - TYPE 8FB20). Integrating Siemens RMU (12kV to 33kV, 630A, 21kA), fully type tested to IEC 62271-202 at our Pune Khed-Shivapur facility with 100+ annual unit capacity.
           </p>
 
           {/* SECTION ANCHOR NAV */}

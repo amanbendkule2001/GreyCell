@@ -64,7 +64,7 @@ export default function DryTypeTransformerPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <div className="eyebrow">Graycell Power Solutions · Product Range</div>
+          <div className="eyebrow">Graycell · Product Range</div>
           <h1>{sec.title}</h1>
           <p>{sec.summary}</p>
         </div>
