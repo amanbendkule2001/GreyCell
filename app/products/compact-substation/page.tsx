@@ -222,7 +222,7 @@ export default function CompactSubstationPage() {
 
                 {!isThreeColLayout ? (
                   <div className="two-col" style={{ alignItems: 'start', gap: '40px' }}>
-                    <div style={{ width: '100%' }}>
+                    <div style={{ width: '100%', minWidth: 0 }}>
                       <ProductShowcaseSection
                         productId={sec.productId}
                         productName={sec.title}
@@ -232,7 +232,7 @@ export default function CompactSubstationPage() {
                       />
                     </div>
 
-                    <div style={{ width: '100%' }}>
+                    <div style={{ width: '100%', minWidth: 0 }}>
                       <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1', marginBottom: 24 }}>
                         <h4 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 16px 0', color: 'var(--blue)' }}>
                           {showFeaturesInSpecBox ? 'Key Features' : 'Specification Profile'}
@@ -248,16 +248,18 @@ export default function CompactSubstationPage() {
                             ))}
                           </div>
                         ) : (
-                          <table className="spec-table">
-                            <tbody>
-                              {sec.specs.map((sp, i) => (
-                                <tr key={i}>
-                                  <th>{sp.label}</th>
-                                  <td>{sp.value}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                          <div style={{ overflowX: 'auto', width: '100%' }}>
+                            <table className="spec-table" style={{ minWidth: 350 }}>
+                              <tbody>
+                                {sec.specs.map((sp, i) => (
+                                  <tr key={i}>
+                                    <th>{sp.label}</th>
+                                    <td>{sp.value}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
                         )}
 
                         <div style={{ display: 'grid', gap: 10, marginTop: 20 }}>
@@ -314,7 +316,7 @@ export default function CompactSubstationPage() {
                   </div>
                 ) : (
                   <React.Fragment>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', alignItems: 'start' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', alignItems: 'start' }}>
                       <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
                         <img src="/images/products/oil-type-transformer-new.jpg" alt="Oil Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
                         <h4 style={{ fontSize: 18, margin: '16px 0 0 0', color: 'var(--ink)', textAlign: 'center' }}>Oil Type</h4>

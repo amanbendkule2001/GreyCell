@@ -207,7 +207,7 @@ export function ClienteleSection() {
                 </>
               ) : (
                 <>
-                  View All {clientLogos.length} Approved Clients <ChevronDown size={15} />
+                  View All  Featured Clients <ChevronDown size={15} />
                 </>
               )}
             </button>
