@@ -88,7 +88,7 @@ export const products: Product[] = [
   {
     id: "compact-substations", slug: "compact-substations", name: "Compact Substations", shortName: "Compact Substations", category: "compact_substation", status: "review", ownership: "graycell_solution",
     summary: "Compact substation solutions referenced in the supplied Graycell Energy material, including MV/LV integration and project-specific configurations.", applications: ["Industrial", "Commercial", "Infrastructure", "Utility"], technologies: ["Medium Voltage SwitchGear Panels", "Transformer Integration", "Smart Monitoring"],
-    features: ["Indoor/outdoor configuration references", "Project-specific customization references", "Monitoring/SCADA compatibility references"], specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/products/compact-substation.png", imageAlt: "Graycell compact substation package unit",
+    features: ["Indoor/outdoor configuration references", "Project-specific customization references", "Monitoring/SCADA compatibility references"], specifications: [], media: [], documents: [], relatedProductIds: [], enquiryEnabled: true, imageSrc: "/images/hero/img17.png", imageAlt: "Graycell compact substation package unit",
     seo: { title: "Compact Substations | Graycell", description: "Explore Graycell compact substation solutions and MV/LV power distribution capabilities." },
   },
   {

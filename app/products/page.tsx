@@ -36,7 +36,7 @@ export default function ProductsHubPage() {
       title: 'Compact Sub-Station',
       subtitle: 'Siemens Approved Partner',
       href: '/products/compact-substation',
-      img: '/images/products/compact-substation.png',
+      img: '/images/hero/img17.png',
       summary:
         'Turnkey compact substations integrating Siemens RMU (12kV to 33kV, 630A, 21kA), oil/dry transformers, OLTC, MSEDCL approved, pad mounted, and walkable E-House container solutions.',
       sublinks: [

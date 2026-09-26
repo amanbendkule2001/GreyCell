@@ -17,12 +17,8 @@ const NEW_HERO_SLIDES = [
   },
   {
     image: '/images/hero/img17.png',
-    caption: 'Compact Substation',
-    objectPosition: 'left',
-  },
-  {
-    image: '/images/hero/css-new-hero.jpg',
     caption: 'Compact Sub Station (CSS)',
+    objectPosition: 'left',
   },
   {
     image: '/images/hero/switchgear-panels.jpg',

@@ -8,7 +8,7 @@ import HeroSlider from '../components/HeroSlider';
 const productImage: { [key: string]: string } = {
   'oil-filled-distribution': '/images/products/conventional_transformer_new.jpg',
   'dry-type-distribution': '/images/products/dry-type-transformer.png',
-  'compact-substations': '/images/products/compact-substation.png',
+  'compact-substations': '/images/hero/img17.png',
   'foil-wound-transformers': '/images/products/mv-switchgear.png',
   'aluminium-foil-wound-transformers': '/images/products/aluminium_foil_wound.jpg',
   'copper-foil-wound-transformers': '/images/products/copper_foil_wound.jpg',
