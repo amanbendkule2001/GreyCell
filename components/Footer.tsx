@@ -79,12 +79,16 @@ export function Footer() {
             <span style={{ display: 'block', fontSize: 12, color: '#c4d7ea', marginBottom: 2 }}>
               <strong>Pune:</strong>
             </span>
-            <a href="tel:+918459947816" style={{ display: 'block', marginBottom: 2, color: 'inherit' }}>
-              +91 84599 47816 / +91 75591 32800
-            </a>
-            <a href="tel:+919518345584" style={{ display: 'block', marginBottom: 10, color: 'inherit' }}>
-              +91 95183 45584 / +91 86000 18957
-            </a>
+            <div style={{ marginBottom: 2, color: 'inherit' }}>
+              <a href="tel:+918459947816" style={{ color: 'inherit' }}>+91 84599 47816</a>
+              {' / '}
+              <a href="tel:+917559132800" style={{ color: 'inherit' }}>+91 75591 32800</a>
+            </div>
+            <div style={{ marginBottom: 10, color: 'inherit' }}>
+              <a href="tel:+919518345584" style={{ color: 'inherit' }}>+91 95183 45584</a>
+              {' / '}
+              <a href="tel:+918600018957" style={{ color: 'inherit' }}>+91 86000 18957</a>
+            </div>
             <span style={{ display: 'block', fontSize: 12, color: '#c4d7ea', marginBottom: 2 }}>
               <strong>Mumbai:</strong>
             </span>

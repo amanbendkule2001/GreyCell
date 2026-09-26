@@ -21,6 +21,10 @@ const NEW_HERO_SLIDES = [
     objectPosition: 'left',
   },
   {
+    image: '/images/hero/css-new-hero.jpg',
+    caption: 'Compact substation',
+  },
+  {
     image: '/images/hero/switchgear-panels.jpg',
     caption: 'Low/Medium Voltage Switchgear Panels',
   },
