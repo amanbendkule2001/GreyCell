@@ -9,7 +9,7 @@ const productImage: { [key: string]: string } = {
   'oil-filled-distribution': '/images/products/conventional_transformer_new.jpg',
   'dry-type-distribution': '/images/products/dry-type-transformer.png',
   'compact-substations': '/images/hero/img17.png',
-  'foil-wound-transformers': '/images/products/mv-switchgear.png',
+  'foil-wound-transformers': '/images/products/mv-switchgear-new.jpg',
   'aluminium-foil-wound-transformers': '/images/products/aluminium_foil_wound.jpg',
   'copper-foil-wound-transformers': '/images/products/copper_foil_wound.jpg',
   'hermetically-sealed-transformers': '/images/products/hermetically_sealed.jpg',
@@ -167,7 +167,7 @@ export default function Home() {
 
           <div className="panel" style={{ background: '#fff', borderRadius: 4, border: '1px solid var(--line)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ height: 'clamp(200px, 24vw, 260px)', overflow: 'hidden', position: 'relative' }}>
-              <img src="/images/technology/natural-ester-see-through.jpg" alt="Natural Ester Dielectric Fluid Transformer" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+              <img src="/images/technology/natural-ester-new.jpg" alt="Natural Ester Dielectric Fluid Transformer" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
             </div>
             <div style={{ padding: 'clamp(20px, 2.5vw, 28px)', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8, fontSize: 11 }}>TECHNOLOGY</div>

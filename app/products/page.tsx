@@ -52,7 +52,7 @@ export default function ProductsHubPage() {
       title: 'Medium Voltage SwitchGear Panels',
       subtitle: '11kV / 22kV / 33kV · Up to 2500A (21kA)',
       href: '/products/mv-switchgear-panels',
-      img: '/images/products/mv-switchgear.png',
+      img: '/images/products/mv-switchgear-new.jpg',
       summary:
         'Type-tested Medium Voltage SwitchGear Panels complying with IEC 62271. Featuring Siemens VCB, busbar ratings up to 2500A, 21kA short circuit withstand, and IP4X indoor / IP54 outdoor housings.',
       sublinks: [

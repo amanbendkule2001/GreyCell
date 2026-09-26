@@ -75,7 +75,7 @@ export default function MvSwitchgearPanelsPage() {
       id: 'mv-voltage-class',
       title: 'Voltage Ratio – 11kV / 22kV Class',
       subtitle: '11kV & 22kV medium voltage class',
-      imageSrc: '/images/products/mv-switchgear.png',
+      imageSrc: '/images/products/mv-switchgear-new.jpg',
       summary:
         'Custom Medium Voltage SwitchGear Panels designed specifically for 11kV, 22kV, and 33kV distribution networks. Built for seamless integration into municipal utilities, industrial plants, commercial towers, and renewable energy substations.',
       specs: [

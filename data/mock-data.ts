@@ -82,7 +82,7 @@ export const products: Product[] = [
   {
     id: "foil-wound-transformers", slug: "foil-wound-transformers", name: "Medium Voltage SwitchGear Panels", shortName: "Medium Voltage SwitchGear Panels", category: "mv_system", status: "approved", ownership: "graycell_manufactured",
     summary: "Medium Voltage SwitchGear Panels and modular solutions engineered for robust power distribution.", applications: ["Industrial", "Commercial", "Utility"], technologies: ["Medium Voltage SwitchGear Panels", "Vacuum Circuit Breakers"],
-    features: ["Indoor modular switchgear lineup", "Arc-fault safety protection", "Advanced metering and monitoring", "Scalable multi-panel design"], specifications: [], media: [], documents: [], relatedProductIds: ["oil-filled-distribution", "compact-substations"], enquiryEnabled: true, imageSrc: "/images/products/mv-switchgear.png", imageAlt: "Graycell Medium Voltage SwitchGear Panels lineup",
+    features: ["Indoor modular switchgear lineup", "Arc-fault safety protection", "Advanced metering and monitoring", "Scalable multi-panel design"], specifications: [], media: [], documents: [], relatedProductIds: ["oil-filled-distribution", "compact-substations"], enquiryEnabled: true, imageSrc: "/images/products/mv-switchgear-new.jpg", imageAlt: "Graycell Medium Voltage SwitchGear Panels lineup",
     seo: { title: "Medium Voltage SwitchGear Panels | Graycell", description: "Explore Graycell Medium Voltage SwitchGear Panels and power distribution solutions." },
   },
   {

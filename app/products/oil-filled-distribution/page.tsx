@@ -11,7 +11,7 @@ export default function OilFilledTransformerPage() {
     { src: '/images/products/conventional_transformer_new.jpg', caption: 'Conventional Transformer' },
     { src: '/images/products/hermetically_sealed.jpg', caption: 'Hermetically Sealed and Corrugated' },
     { src: '/images/products/copper_foil_wound.jpg', caption: 'Aluminium / Copper Foil Wound Transformer' },
-    { src: '/images/products/natural-ester-see-through.jpg', caption: 'Ester Oil Transformer' },
+    { src: '/images/technology/natural-ester-new.jpg', caption: 'Ester Oil Transformer' },
     { src: '/images/products/gsense_monitoring.jpg', caption: 'Smart Monitoring Transformer with Digital Diagnosis' },
   ];
 
