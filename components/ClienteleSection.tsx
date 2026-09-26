@@ -117,7 +117,7 @@ export const clientLogos: ClientItem[] = [
 ];
 
 const categories = [
-  { id: 'all', label: `All Clients (${clientLogos.length})` },
+  { id: 'all', label: ` Featured  Clients ` },
   { id: 'commercial-residential', label: 'Commercial & Residential' },
   { id: 'infrastructure', label: 'Infrastructure' },
   { id: 'utilities', label: 'Utilities' },
