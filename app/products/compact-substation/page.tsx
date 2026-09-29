@@ -62,11 +62,11 @@ export default function CompactSubstationPage() {
         { label: 'Transformer Types', value: 'Oil-Filled, Cast Resin (Dry), VPI, Ester Oil' },
         { label: 'Secondary Voltage', value: '415V up to 800V options' },
         { label: 'Enclosure Protection', value: 'IP54 MV/LV · IP23 Transformer' },
-        { label: 'Manufacturing Site', value: 'Khed-Shivapur, Pune (100+ per annum)' },
+        { label: 'Manufacturing Site', value: 'Khed-Shivapur, Pune (400+ per annum)' },
       ],
       features: [
         'Fully type tested to IEC62271-202',
-        'Internal arc test design for 21KA-1Sec, Short time withstand 21KA-3Sec.',
+        'Internal arc test design for 21KA 0.1Sec, Short time withstand 21KA 3Sec.',
         'Fully Type tested & customized options in 6.6kV/11kV/22kV/33kV upto 2500 KVA with secondary voltage options from 415V upto 800Volts.',
         'Enclosure Degree Of Protection - IP54 for MV-LV Section, IP23 for Transformer',
         'Enclosure Class-K10 . Natural & AF Ventilation System',
@@ -151,7 +151,7 @@ export default function CompactSubstationPage() {
     },
     {
       id: 'compact-substation-e-house',
-      title: 'E-House (Walkable Container Rich Substation)',
+      title: 'E-House (Walkable Containerised Substation)',
       subtitle: 'Heavy-duty walkable container substations',
       imageSrc: '/images/products/e-house-new.jpg',
       summary:
@@ -163,7 +163,7 @@ export default function CompactSubstationPage() {
         { label: 'Equipment Integration', value: 'Medium Voltage SwitchGear Panels, Transformer, LV Panel, SCADA' },
       ],
       features: [
-        'E-House is a modern concept in which all substation switchgear panels and AUX panels are installed in one container, which is walkable and convenient to operate.',
+        'E-House is a modern concept in which all substation switchgear panels and aux panels are installed in one container, which is walkable and convenient to operate.',
         'E-House is a plug-and-play solution which is pre-assembled at the factory and delivered to the site ready to use.',
         'Reduces site work and installation time.',
         'E-House is completely enclosed, hence suitable for the oil and gas, steel, and cement industries where the outside environment is hazardous.',
@@ -318,8 +318,7 @@ export default function CompactSubstationPage() {
                   <React.Fragment>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', alignItems: 'start' }}>
                       <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
-                        <img src="/images/products/oil-type-transformer-new.jpg" alt="Oil Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
-                        <h4 style={{ fontSize: 18, margin: '16px 0 0 0', color: 'var(--ink)', textAlign: 'center' }}>Oil Type</h4>
+                        <img src={sec.id === 'compact-substation-oil-dry' ? "/images/products/css-oil-dry-new.png" : "/images/products/css-oltc-left.png"} alt="Compact Substation" style={{ width: '100%', objectFit: 'contain' }} />
                       </div>
 
                       <div style={{ background: '#f8fafc', padding: 24, borderRadius: 6, border: '1px solid #cbd5e1' }}>
@@ -373,8 +372,7 @@ export default function CompactSubstationPage() {
                       </div>
 
                       <div style={{ background: '#f8fafc', borderRadius: 8, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid #cbd5e1' }}>
-                        <img src="/images/products/dry-type-transformer-new.jpg" alt="Dry Type Transformer" style={{ width: '100%', objectFit: 'contain' }} />
-                        <h4 style={{ fontSize: 18, margin: '16px 0 0 0', color: 'var(--ink)', textAlign: 'center' }}>Dry Type</h4>
+                        <img src={sec.id === 'compact-substation-oil-dry' ? "/images/products/css-oil-dry-right.png" : "/images/products/dry-type-transformer-new.jpg"} alt={sec.id === 'compact-substation-oil-dry' ? "Compact Substation" : "Dry Type Transformer"} style={{ width: '100%', objectFit: 'contain' }} />
                       </div>
                     </div>
 

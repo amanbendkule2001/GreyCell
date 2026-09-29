@@ -96,10 +96,10 @@ export function SpecificationHub() {
     e.stopPropagation();
     try {
       if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(siteConfig.contact.salesEmail);
+        navigator.clipboard.writeText(`${siteConfig.contact.salesEmail}, ${siteConfig.contact.responseEmail}`);
       } else {
         const textarea = document.createElement('textarea');
-        textarea.value = siteConfig.contact.salesEmail;
+        textarea.value = `${siteConfig.contact.salesEmail}, ${siteConfig.contact.responseEmail}`;
         document.body.appendChild(textarea);
         textarea.select();
         document.execCommand('copy');
@@ -234,6 +234,9 @@ export function SpecificationHub() {
                     <a href={`mailto:${siteConfig.contact.salesEmail}`} className="spec-hub-channel-val">
                       {siteConfig.contact.salesEmail}
                     </a>
+                    <a href={`mailto:${siteConfig.contact.responseEmail}`} className="spec-hub-channel-val" style={{ marginTop: 2 }}>
+                      {siteConfig.contact.responseEmail}
+                    </a>
                   </div>
                   <button
                     type="button"
@@ -251,11 +254,11 @@ export function SpecificationHub() {
                 <div className="spec-hub-channel-item">
                   <div className="spec-hub-channel-info">
                     <span className="spec-hub-channel-label">ENGINEERING HOTLINE</span>
-                    <a href="tel:+919930124365" className="spec-hub-channel-val">
-                      +91 99301 24365 / +91 95612 26593
+                    <a href="tel:+918459947816" className="spec-hub-channel-val">
+                      +91 84599 47816 / +91 75591 32800
                     </a>
                   </div>
-                  <a href="tel:+919930124365" className="spec-hub-phone-btn" title="Call Sales Director">
+                  <a href="tel:+918459947816" className="spec-hub-phone-btn" title="Call Sales Director">
                     <PhoneCall size={14} />
                     <span>Call</span>
                   </a>

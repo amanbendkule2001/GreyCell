@@ -24,7 +24,7 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [refId, setRefId] = useState('');
-  const [activeMap, setActiveMap] = useState<'office' | 'factory'>('office');
+  // activeMap removed
 
   const [form, setForm] = useState({
     name: '',
@@ -64,8 +64,7 @@ export default function Contact() {
     }
   };
 
-  const scrollToMap = (type: 'office' | 'factory') => {
-    setActiveMap(type);
+  const scrollToMap = () => {
     const el = document.getElementById('map-view');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -73,12 +72,11 @@ export default function Contact() {
   };
 
   const officeAddress = "325, Platinum 9, Pashan- Sus Road, Baner, Pune – 411045, Maharashtra, India";
-  const officeMapEmbedUrl = "https://maps.google.com/maps?q=325,+Platinum+9,+Pashan-+Sus+Road,+Baner,+Pune+411045&t=&z=15&ie=UTF8&iwloc=&output=embed";
   const officeDirectionsUrl = "https://www.google.com/maps/search/?api=1&query=325+Platinum+9+Pashan+Sus+Road+Baner+Pune+411045";
 
   const factoryAddress = "Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India";
-  const factoryMapEmbedUrl = "https://maps.google.com/maps?q=Gat+No.+311,+Plot+No.+7,8,+Gauddara+Road,+nr.+Chate+College,+Khed+Shivapur,+Maharashtra+412205&t=&z=14&ie=UTF8&iwloc=&output=embed";
-  const factoryDirectionsUrl = "https://www.google.com/maps/search/?api=1&query=Gat+No.+311+Plot+No.+7+8+Gauddara+Road+nr+Chate+College+Khed+Shivapur+Maharashtra+412205";
+  const factoryMapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3786.831407357402!2d73.8449922!3d18.3549743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ed0009d7348b%3A0x49765890e0568007!2sGRAYCELL%20POWER%20SOLUTION%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1790688581129!5m2!1sen!2sin";
+  const factoryDirectionsUrl = "https://maps.app.goo.gl/PqJb1ws7r9y824BR9";
 
   return (
     <>
@@ -120,7 +118,7 @@ export default function Contact() {
                 <div className="contact-card-details">
                   <div className="contact-detail-row">
                     <Mail size={15} color="var(--blue)" />
-                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a></span>
+                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a> | <a href={`mailto:${siteConfig.contact.responseEmail}`}>{siteConfig.contact.responseEmail}</a></span>
                   </div>
                   <div className="contact-detail-row">
                     <Phone size={15} color="var(--blue)" />
@@ -134,13 +132,6 @@ export default function Contact() {
               </div>
 
               <div className="contact-card-actions">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => scrollToMap('office')}
-                >
-                  <MapPin size={15} /> View Office on Map
-                </button>
                 <a
                   href={officeDirectionsUrl}
                   target="_blank"
@@ -172,7 +163,7 @@ export default function Contact() {
                 <div className="contact-card-details">
                   <div className="contact-detail-row">
                     <Mail size={15} color="var(--blue)" />
-                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a></span>
+                    <span>Email: <a href={`mailto:${siteConfig.contact.salesEmail}`}>{siteConfig.contact.salesEmail}</a> | <a href={`mailto:${siteConfig.contact.responseEmail}`}>{siteConfig.contact.responseEmail}</a></span>
                   </div>
                   <div className="contact-detail-row">
                     <Phone size={15} color="#16834b" />
@@ -194,7 +185,7 @@ export default function Contact() {
                   type="button"
                   className="btn btn-primary"
                   style={{ background: '#16834b', borderColor: '#16834b' }}
-                  onClick={() => scrollToMap('factory')}
+                  onClick={() => scrollToMap()}
                 >
                   <MapPin size={15} /> View Factory on Map
                 </button>
@@ -366,7 +357,9 @@ export default function Contact() {
                 <div style={{ paddingTop: 14, borderTop: '1px solid #edf2f7', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, fontSize: 13 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#475569' }}>
                     <Mail size={14} color="var(--blue)" />
-                    <span><a href="mailto:sales@graycellpower.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>sales@graycellpower.com</a></span>
+                    <span>
+                      <a href="mailto:sales@graycellpower.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>sales@graycellpower.com</a> | <a href="mailto:responsegraycells@gmail.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>responsegraycells@gmail.com</a>
+                    </span>
                   </div>
                   <a
                     href="tel:+918459947816"
@@ -466,7 +459,9 @@ export default function Contact() {
                 <div style={{ paddingTop: 14, borderTop: '1px solid #edf2f7', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, fontSize: 13 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#475569' }}>
                     <Mail size={14} color="#16834b" />
-                    <span><a href="mailto:sales@graycellpower.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>sales@graycellpower.com</a></span>
+                    <span>
+                      <a href="mailto:sales@graycellpower.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>sales@graycellpower.com</a> | <a href="mailto:responsegraycells@gmail.com" style={{ color: 'var(--blue)', fontWeight: 500 }}>responsegraycells@gmail.com</a>
+                    </span>
                   </div>
                   <a
                     href="tel:+918104178072"
@@ -486,32 +481,15 @@ export default function Contact() {
               <div>
                 <strong style={{ fontSize: 15, color: '#0f172a' }}>Google Location Map</strong>
                 <span style={{ fontSize: 12, color: '#64748b', marginLeft: 10 }}>
-                  Showing {activeMap === 'office' ? 'Corporate Office (Baner, Pune)' : 'Manufacturing Plant (Khed Shivapur, Pune)'}
+                  Showing Manufacturing Plant (Khed Shivapur, Pune)
                 </span>
-              </div>
-
-              <div className="contact-map-tabs">
-                <button
-                  type="button"
-                  className={`contact-map-tab ${activeMap === 'office' ? 'active' : ''}`}
-                  onClick={() => setActiveMap('office')}
-                >
-                  <Building2 size={14} /> Corporate Office (Pune)
-                </button>
-                <button
-                  type="button"
-                  className={`contact-map-tab ${activeMap === 'factory' ? 'active' : ''}`}
-                  onClick={() => setActiveMap('factory')}
-                >
-                  <Factory size={14} /> Factory & Works (Shivapur)
-                </button>
               </div>
             </div>
 
             <iframe
-              title={activeMap === 'office' ? "Graycell Corporate Office Map" : "Graycell Factory Map"}
+              title="Graycell Factory Map"
               className="contact-map-embed"
-              src={activeMap === 'office' ? officeMapEmbedUrl : factoryMapEmbedUrl}
+              src={factoryMapEmbedUrl}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -519,11 +497,11 @@ export default function Contact() {
 
             <div className="contact-map-footer-info">
               <div>
-                <strong>📍 {activeMap === 'office' ? 'Office Location:' : 'Factory Location:'} </strong>
-                <span>{activeMap === 'office' ? officeAddress : factoryAddress}</span>
+                <strong>📍 Factory Location: </strong>
+                <span>{factoryAddress}</span>
               </div>
               <a
-                href={activeMap === 'office' ? officeDirectionsUrl : factoryDirectionsUrl}
+                href={factoryDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-map-direct-link"
@@ -546,7 +524,7 @@ export default function Contact() {
                 <div className="eyebrow" style={{ color: '#16834b', marginBottom: 8 }}>ENQUIRY RECORDED · REF: #{refId}</div>
                 <h2 style={{ fontSize: 26, margin: '0 0 10px' }}>ENQUIRY SUBMITTED SUCCESSFULLY</h2>
                 <p style={{ maxWidth: 540, margin: '0 auto 16px', color: '#475569', lineHeight: 1.6 }}>
-                  Thank you, <strong>{form.name || 'Client'}</strong>. Your specification has been logged under Reference ID <strong>#{refId}</strong> and dispatched to <strong>{siteConfig.contact.salesEmail}</strong>.
+                  Thank you, <strong>{form.name || 'Client'}</strong>. Your specification has been logged under Reference ID <strong>#{refId}</strong> and dispatched to <strong>{siteConfig.contact.salesEmail}</strong> and <strong>{siteConfig.contact.responseEmail}</strong>.
                 </p>
                 <p style={{ maxWidth: 500, margin: '0 auto 24px', fontSize: 13, color: '#64748b' }}>
                   Our technical sales team will review your parameters and follow up with a technical & commercial proposal within 24 business hours.
@@ -723,6 +701,12 @@ export default function Contact() {
                     href={`mailto:${siteConfig.contact.salesEmail}`}
                   >
                     {siteConfig.contact.salesEmail}
+                  </a>
+                  <a 
+                    style={{ color: '#004C99', textDecoration: 'none', fontWeight: 600, display: 'block', marginTop: 4 }}
+                    href={`mailto:${siteConfig.contact.responseEmail}`}
+                  >
+                    {siteConfig.contact.responseEmail}
                   </a>
                 </div>
 

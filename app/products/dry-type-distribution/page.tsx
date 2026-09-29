@@ -18,7 +18,7 @@ export default function DryTypeTransformerPage() {
       { label: 'Cooling', value: 'AN / AF' },
       { label: 'Installation', value: 'Indoor / Outdoor' },
       { label: 'IP Rating', value: 'IP23 / IP34' },
-      { label: 'Losses', value: 'As per latest IS 2026 Part 2' },
+      { label: 'Losses', value: 'As per latest IS 2026 Part 11' },
       { label: 'Winding Type', value: 'Aluminium / Copper' },
       { label: 'Type of Insulation', value: 'F / H' },
       { label: 'HV Bushing', value: 'Epoxy' },

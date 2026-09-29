@@ -21,26 +21,6 @@ export interface ClientItem {
 }
 
 export const clientLogos: ClientItem[] = [
-  // 1. Commercial & Residential
-  { id: 'abil', name: 'ABIL Group', category: 'commercial-residential', file: '/images/clients/abil.png' },
-  { id: 'malpani', name: 'Malpani Group', category: 'commercial-residential', file: '/images/clients/malpani.png' },
-  { id: 'panchshil', name: 'Panchshil Realty', category: 'commercial-residential', file: '/images/clients/panchshil.png' },
-  { id: 'kohinoor', name: 'Kohinoor Group (Builders)', category: 'commercial-residential', file: '/images/clients/kohinoor.png' },
-  { id: 'kohinoor-mall', name: 'Kohinoor Mall', category: 'commercial-residential', file: '/images/clients/kohinoor-mall.png' },
-  { id: 'hiranandani', name: 'Hiranandani Builders', category: 'commercial-residential', file: '/images/clients/hiranandani.svg' },
-  { id: 'rohan-builders', name: 'Rohan Builders', category: 'commercial-residential', file: '/images/clients/rohan-builders.png' },
-  { id: 'kirloskar', name: 'Kirloskar', category: 'commercial-residential', file: '/images/clients/kirloskar.svg' },
-  { id: 'novotel', name: 'Novotel Hotels & Resorts', category: 'commercial-residential', file: '/images/clients/novotel.png' },
-  { id: 'marriott', name: 'Courtyard by Marriott', category: 'commercial-residential', file: '/images/clients/marriott.svg' },
-  { id: 'rmz', name: 'RMZ Corp', category: 'commercial-residential', file: '/images/clients/rmz.svg' },
-  { id: 'lokmanya', name: 'Lokmanya Hospital', category: 'commercial-residential', file: '/images/clients/lokmanya-hospital.svg' },
-  { id: 'solitaire', name: 'Solitaire Group', category: 'commercial-residential', file: '/images/clients/solitaire.svg' },
-  { id: 'nyati', name: 'Nyati Builders (Nyati Group)', category: 'commercial-residential', file: '/images/clients/nyati-builders.svg' },
-  { id: 'naiknavare', name: 'Naiknavare Developers', category: 'commercial-residential', file: '/images/clients/naiknavare.png' },
-  { id: 'suma-shilp', name: 'Suma Shilp Ltd.', category: 'commercial-residential', file: '/images/clients/suma-shilp.png' },
-  { id: 'basil-group', name: 'Basil Group', category: 'commercial-residential', file: '/images/clients/basil-group.png' },
-  { id: 'sagar-k', name: 'Sagar K Enterprises', category: 'commercial-residential', file: '/images/clients/sagar-k.png' },
-
   // 2. Infrastructure
   { id: 'bharat-electronics', name: 'Bharat Electronics (BEL)', category: 'infrastructure', file: '/images/clients/bharat-electronics.png' },
   { id: 'jnpt-port', name: 'Jawaharlal Nehru Port Trust (JNPT)', category: 'infrastructure', file: '/images/clients/jnpt-port.png' },
@@ -113,18 +93,38 @@ export const clientLogos: ClientItem[] = [
   { id: 'architectural-energy-solutions', name: 'Architectural Energy Solutions', category: 'electrical-contractors', file: '/images/clients/architectural-energy-solutions.svg' },
   { id: 'dorsch-consult', name: 'Dorsch Consult India', category: 'electrical-contractors', file: '/images/clients/dorsch-consult.svg' },
   { id: 'eskayem', name: 'Eskayem Consultants', category: 'electrical-contractors', file: '/images/clients/eskayem.png' },
-  { id: 'mep-engineering', name: 'MEP Engineering Consultants', category: 'electrical-contractors', file: '/images/clients/mep-engineering.png' }
+  { id: 'mep-engineering', name: 'MEP Engineering Consultants', category: 'electrical-contractors', file: '/images/clients/mep-engineering.png' },
+
+  // 1. Commercial & Residential
+  { id: 'abil', name: 'ABIL Group', category: 'commercial-residential', file: '/images/clients/abil.png' },
+  { id: 'malpani', name: 'Malpani Group', category: 'commercial-residential', file: '/images/clients/malpani.png' },
+  { id: 'panchshil', name: 'Panchshil Realty', category: 'commercial-residential', file: '/images/clients/panchshil.png' },
+  { id: 'kohinoor', name: 'Kohinoor Group (Builders)', category: 'commercial-residential', file: '/images/clients/kohinoor.png' },
+  { id: 'kohinoor-mall', name: 'Kohinoor Mall', category: 'commercial-residential', file: '/images/clients/kohinoor-mall.png' },
+  { id: 'hiranandani', name: 'Hiranandani Builders', category: 'commercial-residential', file: '/images/clients/hiranandani.svg' },
+  { id: 'rohan-builders', name: 'Rohan Builders', category: 'commercial-residential', file: '/images/clients/rohan-builders.png' },
+  { id: 'kirloskar', name: 'Kirloskar', category: 'commercial-residential', file: '/images/clients/kirloskar.svg' },
+  { id: 'novotel', name: 'Novotel Hotels & Resorts', category: 'commercial-residential', file: '/images/clients/novotel.png' },
+  { id: 'marriott', name: 'Courtyard by Marriott', category: 'commercial-residential', file: '/images/clients/marriott.svg' },
+  { id: 'rmz', name: 'RMZ Corp', category: 'commercial-residential', file: '/images/clients/rmz.svg' },
+  { id: 'lokmanya', name: 'Lokmanya Hospital', category: 'commercial-residential', file: '/images/clients/lokmanya-hospital.svg' },
+  { id: 'solitaire', name: 'Solitaire Group', category: 'commercial-residential', file: '/images/clients/solitaire.svg' },
+  { id: 'nyati', name: 'Nyati Builders (Nyati Group)', category: 'commercial-residential', file: '/images/clients/nyati-builders.svg' },
+  { id: 'naiknavare', name: 'Naiknavare Developers', category: 'commercial-residential', file: '/images/clients/naiknavare.png' },
+  { id: 'suma-shilp', name: 'Suma Shilp Ltd.', category: 'commercial-residential', file: '/images/clients/suma-shilp.png' },
+  { id: 'basil-group', name: 'Basil Group', category: 'commercial-residential', file: '/images/clients/basil-group.png' },
+  { id: 'sagar-k', name: 'Sagar K Enterprises', category: 'commercial-residential', file: '/images/clients/sagar-k.png' }
 ];
 
 const categories = [
   { id: 'all', label: ` Featured  Clients ` },
-  { id: 'commercial-residential', label: 'Commercial & Residential' },
   { id: 'infrastructure', label: 'Infrastructure' },
   { id: 'utilities', label: 'Utilities' },
   { id: 'ev-renewables', label: 'EV & Renewables' },
   { id: 'industry', label: 'Industry' },
   { id: 'datacenter-it', label: 'Data Center & IT' },
-  { id: 'electrical-contractors', label: 'Electrical Consultant & Contractors' }
+  { id: 'electrical-contractors', label: 'Electrical Consultant & Contractors' },
+  { id: 'commercial-residential', label: 'Commercial & Residential' }
 ];
 
 export function ClienteleSection() {

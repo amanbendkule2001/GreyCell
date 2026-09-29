@@ -32,7 +32,7 @@ const navItems: NavItem[] = [
           { href: '/products/compact-substation', label: 'CSS with Transformer having OLTC up to 33kV', desc: 'On-Load Tap Changer integrations' },
           { href: '/products/compact-substation', label: 'MSEDCL Approved CSS', desc: 'Utility compliant distribution packages' },
           { href: '/products/compact-substation', label: 'PAD Mounted CSS', desc: 'Compact skid / pad mounted solutions' },
-          { href: '/products/compact-substation', label: 'E-House (Walkable Container Rich Substation)', desc: 'Heavy-duty walkable container substations' },
+          { href: '/products/compact-substation', label: 'E-House (Walkable Containerised Substation)', desc: 'Heavy-duty walkable container substations' },
         ],
       },
       {
@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
     label: 'Technology',
     children: [
       { href: '/technology#foil-winding', label: 'Foil Winding Technology', desc: 'Precision winding for efficiency' },
-      { href: '/technology#natural-ester', label: 'Natural Ester Fluid', desc: 'Sustainable, biodegradable dielectric' },
+      { href: '/technology#natural-ester', label: 'Natural Ester Oil', desc: 'Sustainable, biodegradable dielectric' },
       { href: '/technology#g-sense', label: 'Graycell G-Sense', desc: 'IoT Smart Monitoring for Transformer & CSS' },
     ],
   },

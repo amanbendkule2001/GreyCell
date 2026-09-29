@@ -38,7 +38,7 @@ export function Footer() {
                 className="footer-brand-logo"
               />
             </div>
-            <p>Power engineering for transformers, compact substations and electrical infrastructure.</p>
+            <p>{siteConfig.supportingText}</p>
           </div>
 
           <div>
@@ -73,8 +73,11 @@ export function Footer() {
 
           <div>
             <div className="footer-title">Sales & Locations</div>
-            <a href={`mailto:${siteConfig.contact.salesEmail}`} style={{ display: 'block', marginBottom: 12 }}>
+            <a href={`mailto:${siteConfig.contact.salesEmail}`} style={{ display: 'block', marginBottom: 4 }}>
               {siteConfig.contact.salesEmail}
+            </a>
+            <a href={`mailto:${siteConfig.contact.responseEmail}`} style={{ display: 'block', marginBottom: 12 }}>
+              {siteConfig.contact.responseEmail}
             </a>
             <span style={{ display: 'block', fontSize: 12, color: '#c4d7ea', marginBottom: 2 }}>
               <strong>Pune:</strong>

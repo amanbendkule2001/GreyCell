@@ -28,7 +28,7 @@ export interface Technology { id: string; slug: string; name: string; summary: s
 export interface Project { id: string; slug: string; title: string; status: ContentStatus; application?: string; industry?: string; location?: string; solution?: string; equipment?: string[]; capacity?: string; voltage?: string; challenge?: string; solutionDescription?: string; result?: string; media: MediaReference[]; relatedProductIds: string[]; isCaseStudy: boolean; seo: SEOData; }
 export interface Resource { id: string; slug: string; title: string; type: DocumentReference["type"]; productIds: string[]; file?: DocumentReference; status: ContentStatus; seo: SEOData; }
 export interface GroupCompany { id: string; name: string; summary: string; capabilities: string[]; status: ContentStatus; }
-export interface ContactConfig { salesEmail: string; whatsappNumber?: string; phoneNumbers?: string[]; officeAddress?: string; factoryAddress?: string; }
+export interface ContactConfig { salesEmail: string; responseEmail?: string; whatsappNumber?: string; phoneNumbers?: string[]; officeAddress?: string; factoryAddress?: string; }
 
 export const siteConfig = {
   brand: "Graycell",
@@ -37,6 +37,7 @@ export const siteConfig = {
   supportingText: "Manufacturer of Oil and Dry type Transformers, Compact Substations, Medium Voltage SwitchGear Panels.",
   contact: {
     salesEmail: "sales@graycellpower.com",
+    responseEmail: "responsegraycells@gmail.com",
     whatsappNumber: "+91 7559132800",
     phoneNumbers: ["+91 7559132800", "+91 9518345584", "+91 8600018957"],
     factoryAddress: "Gat No. 311, Plot No. 7, 8, Gauddara Road, nr. Chate College, Khed Shivapur, Maharashtra – 412205, India",

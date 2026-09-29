@@ -35,11 +35,11 @@ export default function TechnologyPage() {
     },
     {
       id: 'natural-ester',
-      title: 'Natural Ester Fluid',
+      title: 'Natural Ester Oil',
       subtitle: 'Sustainable, Fire-Safe & Biodegradable Vegetable Dielectric Fluid',
       img: '/images/technology/natural-ester-new.jpg',
       summary:
-        'Natural ester dielectric fluid derived from renewable seed oils provides an eco-friendly alternative to mineral oil. Featuring a high fire point (>300°C), natural ester fluid eliminates fire hazards, extends paper insulation life, and is 100% biodegradable.',
+        'Natural ester dielectric oil derived from renewable seed oils provides an eco-friendly alternative to mineral oil. Featuring a high fire point (>300°C), natural ester oil eliminates fire hazards, extends paper insulation life, and is 100% biodegradable.',
       benefits: [
         'High fire point (>300°C, K-Class rating) for maximum fire safety',
         '100% biodegradable within 28 days in soil and water',

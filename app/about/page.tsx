@@ -104,10 +104,10 @@ export default function About() {
             <h2 style={{ marginBottom: 16 }}>Graycell</h2>
             <div style={{ color: '#4a5568', lineHeight: 1.7, fontSize: 16, display: 'flex', flexDirection: 'column', gap: 16 }}>
               <p style={{ margin: 0 }}>
-                Founded by promoters with over 25 years of experience in the power industry, Graycell manufactures high-quality distribution transformers, compact substations, and medium voltage panels. We possess unique expertise to design and manufacture any type of standard and customized compact substation solutions, fully type-tested and tailored to precise client requirements.
+                Founded by promoters with 30+ years of experience in the power industry, Graycell manufactures high-quality distribution transformers, compact substations, and medium voltage panels. We possess unique expertise to design and manufacture any type of standard and customized compact substation solutions, fully type-tested and tailored to precise client requirements.
               </p>
               <p style={{ margin: 0 }}>
-                Graycell is an approved partner of Siemens for HT Panels and CSS, and we are associated with Lucy Electric for manufacturing various types of compact substations. We operate a state-of-the-art manufacturing setup at <strong>Khed - Shivapur, Pune</strong>, equipped with modern machinery, advanced testing systems, and strict quality control processes. With an installed capacity of over 100 CSS per annum, our skilled team of engineers and technicians ensures precision at every stage—from design and manufacturing to testing and delivery.
+                Graycell is an approved partner of Siemens for HT Panels and CSS, and we are associated with Lucy Electric for manufacturing various types of compact substations. We operate a state-of-the-art manufacturing setup at <strong>Khed - Shivapur, Pune</strong>, equipped with modern machinery, advanced testing systems, and strict quality control processes. With an installed capacity of over 400 CSS per annum, our skilled team of engineers and technicians ensures precision at every stage—from design and manufacturing to testing and delivery.
               </p>
             </div>
           </div>

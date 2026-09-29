@@ -1282,7 +1282,7 @@ export default function ProductInteractiveExperience({
     } else if (isNaturalEster) {
       map = {
         esterfluid: {
-          title: 'K-Class Biodegradable Natural Ester Fluid (FR3)',
+          title: 'K-Class Biodegradable Natural Ester Oil (FR3)',
           desc: 'Vegetable-oil based dielectric liquid offering ultra-high fire safety, 100% non-toxic biodegradability, and extended insulation life.',
           spec: 'Fire Point: 360°C · Flash Point: 316°C · Readily Biodegradable'
         },

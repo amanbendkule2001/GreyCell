@@ -71,6 +71,7 @@ export default function TransformerProductPage() {
         'Marshalling Box with OTI & WTI',
         'PRV (Pressure Relief Valve)',
         'MOG (Magnetic Oil Gauge)',
+        'DGPT',
         'Buchholz Relay',
         'Conservator Tank with Prismatic Oil Level Gauge',
         'Type of Oil: Mineral Oil / Natural Oil / Ester Oil / Synthetic Ester Oil',

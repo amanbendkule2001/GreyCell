@@ -26,7 +26,7 @@ export default function ProductsHubPage() {
       href: '/products/transformer',
       img: '/images/products/conventional_transformer_new.jpg',
       summary:
-        'Oil-filled, dry-type cast resin, aluminium foil wound, copper foil wound, natural ester fluid, and hermetically sealed corrugated tank distribution transformers.',
+        'Oil-filled, dry-type cast resin, aluminium foil wound, copper foil wound, natural ester oil, and hermetically sealed corrugated tank distribution transformers.',
       sublinks: [
         { label: 'Oil-Filled Distribution Transformers', href: '/products/oil-filled-distribution' },
         { label: 'Dry Type Distribution Transformers', href: '/products/dry-type-distribution' },
@@ -45,7 +45,7 @@ export default function ProductsHubPage() {
         { label: 'CSS with Transformer having OLTC up to 33kV', href: '/products/compact-substation#compact-substation-oltc' },
         { label: 'MSEDCL Approved CSS', href: '/products/compact-substation#compact-substation-msedcl' },
         { label: 'PAD Mounted CSS', href: '/products/compact-substation#compact-substation-pad-mounted' },
-        { label: 'E-House (Walkable Container Rich Substation)', href: '/products/compact-substation#compact-substation-e-house' },
+        { label: 'E-House (Walkable Containerised Substation)', href: '/products/compact-substation#compact-substation-e-house' },
       ],
     },
     {

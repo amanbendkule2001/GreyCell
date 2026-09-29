@@ -220,7 +220,7 @@ const PRODUCT_CONTEXT_MAP: Record<string, ProductContextInfo> = {
     category: 'Transformers',
     subtitle: 'Bio-Degradable Fluid & High Fire-Safety Design',
     specs: [
-      { label: 'Dielectric Fluid', value: 'Natural Ester Fluid (K-Class)' },
+      { label: 'Dielectric Fluid', value: 'Natural Ester Oil (K-Class)' },
       { label: 'Fire Point', value: '> 300°C (High Fire Point)' },
       { label: 'Eco Feature', value: '100% Biodegradable & Non-Toxic' },
     ],

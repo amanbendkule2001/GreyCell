@@ -69,7 +69,7 @@ export default function Home() {
       <div className="container">
         <div className="section-heading"><div><div className="eyebrow">OUR PRODUCTS</div><h2>Built for Today.<br />Ready for Tomorrow.</h2><p>From distribution transformers to compact substations, Graycell presents a focused portfolio for power infrastructure.</p></div><Link className="text-link" href="/products">View all products <span>→</span></Link></div>
         <div className="product-grid">
-          {featured.map(p => <Link className="product-card" href={`/products/${p.slug}`} key={p.id}><div className="product-image-box"><span className="product-label">{p.category.replace('_', ' ')}</span><img src={productImage[p.id] ?? p.imageSrc ?? '/images/products/oil-filled-transformer.jpg'} alt={p.imageAlt ?? p.name} /></div><div className="product-body"><h3>{p.name}</h3><p>{p.summary}</p><span className="product-link">Explore <span>→</span></span></div></Link>)}
+          {featured.map(p => <Link className="product-card" href={`/products/${p.slug}`} key={p.id}><div className="product-image-box"><span className="product-label">{p.category.replace('_', ' ')}</span><img src={productImage[p.id] ?? p.imageSrc ?? '/images/products/oil-filled-transformer.jpg'} alt={p.imageAlt ?? p.name} /></div><div className="product-body"><h3>{p.name}</h3><span className="product-link">Explore <span>→</span></span></div></Link>)}
         </div>
       </div>
     </section>
@@ -90,10 +90,10 @@ export default function Home() {
           <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8, fontSize: 11 }}>ABOUT US</div>
           <h3 style={{ fontSize: 22, marginBottom: 16, color: 'var(--ink)' }}>Graycell</h3>
           <p style={{ color: '#526475', lineHeight: 1.8, fontSize: 14, marginBottom: 16 }}>
-            We manufacture high-quality distribution transformers and are founded by promoters with over 25 years of experience in the power industry. Our transformers are designed to meet international quality standards and compete with leading manufacturers in the Indian power sector. We operate a state-of-the-art manufacturing facility equipped with modern machinery, advanced testing systems, and strict quality control processes. A skilled team of engineers and technicians ensures precision at every stage, from design and manufacturing to testing and delivery. We aim to manufacture reliable power solutions built with precision, efficiency and sustainability.
+            Founded by promoters with 30+ years of experience in the power industry, Graycell manufactures high-quality distribution transformers, compact substations, and medium voltage panels. We possess unique expertise to design and manufacture any type of standard and customized compact substation solutions, fully type-tested and tailored to precise client requirements.
           </p>
           <p style={{ color: '#526475', lineHeight: 1.8, fontSize: 14, margin: 0 }}>
-            As a Siemens approved partner, we manufacture compact substations under this license partnership integrating SIEMENS ring main unit (RMU) of rating 12KV to 33KV, 630A, 21KA. The compact sub-station is fully type tested as per latest 62271-202 and manufactured under high quality standards. We have a full-fledged manufacturing set up at Khed - Shivapur, Pune and have installed capacity to manufacture more than 100 CSS per annum.
+            Graycell is an approved partner of Siemens for HT Panels and CSS, and we are associated with Lucy Electric for manufacturing various types of compact substations. We operate a state-of-the-art manufacturing setup at <strong>Khed - Shivapur, Pune</strong>, equipped with modern machinery, advanced testing systems, and strict quality control processes. With an installed capacity of over 400 CSS per annum, our skilled team of engineers and technicians ensures precision at every stage—from design and manufacturing to testing and delivery.
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export default function Home() {
             </div>
             <div style={{ padding: 'clamp(20px, 2.5vw, 28px)', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div className="eyebrow" style={{ color: 'var(--blue)', marginBottom: 8, fontSize: 11 }}>TECHNOLOGY</div>
-              <h3 style={{ fontSize: 20, marginBottom: 12, color: 'var(--ink)' }}>Natural Ester Fluid</h3>
+              <h3 style={{ fontSize: 20, marginBottom: 12, color: 'var(--ink)' }}>Natural Ester Oil</h3>
               <p style={{ color: '#526475', lineHeight: 1.7, fontSize: 14, margin: '0 0 20px', flex: 1 }}>
                 A 100% biodegradable vegetable dielectric fluid derived from renewable seed oils as an eco-friendly mineral oil alternative. With a high fire point exceeding 300°C (K-Class), it eliminates fire hazard, enhances safety, and extends insulation life by absorbing moisture.
               </p>
