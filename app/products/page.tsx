@@ -75,7 +75,7 @@ export default function ProductsHubPage() {
             POWER SOLUTIONS.
           </h1>
           <p>
-            Explore Graycell product categories. Each major category contains all related technical specifications, single-page sections, image galleries, and interactive 3D model viewers.
+            Explore Graycell product categories. Each major category contains all related technical specifications, single-page sections, and image galleries.
           </p>
         </div>
       </section>

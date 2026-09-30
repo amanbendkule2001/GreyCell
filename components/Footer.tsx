@@ -109,8 +109,9 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span>GRAYCELL GROUP OF COMPANIES</span>
-          <span>Graycell Power Solutions Pvt. Ltd. · Graycell Energy LLP</span>
+          <span>Graycell</span>
           <span>© 2026 Graycell</span>
+          <span>Powered by Knowletive Services</span>
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent('open-cookie-settings'))}

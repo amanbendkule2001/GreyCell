@@ -252,16 +252,30 @@ export function SpecificationHub() {
 
                 {/* Direct Channel 2: Telephone Hotline */}
                 <div className="spec-hub-channel-item">
-                  <div className="spec-hub-channel-info">
-                    <span className="spec-hub-channel-label">ENGINEERING HOTLINE</span>
-                    <a href="tel:+918459947816" className="spec-hub-channel-val">
-                      +91 84599 47816 / +91 75591 32800
-                    </a>
+                  <div className="spec-hub-channel-info" style={{ width: '100%' }}>
+                    <span className="spec-hub-channel-label">ENGINEERING HOTLINE - PUNE</span>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 16px', marginBottom: '12px', marginTop: '4px' }}>
+                      <a href="tel:+918459947816" className="spec-hub-channel-val" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <PhoneCall size={12} /> +91 84599 47816
+                      </a>
+                      <a href="tel:+917559132800" className="spec-hub-channel-val" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <PhoneCall size={12} /> +91 75591 32800
+                      </a>
+                      <a href="tel:+919518345584" className="spec-hub-channel-val" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <PhoneCall size={12} /> +91 95183 45584
+                      </a>
+                      <a href="tel:+918600018957" className="spec-hub-channel-val" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <PhoneCall size={12} /> +91 86000 18957
+                      </a>
+                    </div>
+                    
+                    <span className="spec-hub-channel-label">ENGINEERING HOTLINE - MUMBAI</span>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 16px', marginTop: '4px' }}>
+                      <a href="tel:+918104178072" className="spec-hub-channel-val" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <PhoneCall size={12} /> +91 81041 78072
+                      </a>
+                    </div>
                   </div>
-                  <a href="tel:+918459947816" className="spec-hub-phone-btn" title="Call Sales Director">
-                    <PhoneCall size={14} />
-                    <span>Call</span>
-                  </a>
                 </div>
 
                 {/* Compliance & Certification Assurance Badges */}

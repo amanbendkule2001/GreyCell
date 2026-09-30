@@ -22,7 +22,7 @@ const industries = [
   { name: 'EV & Renewables', img: '/images/industries/renewable-energy.jpg' },
   { name: 'Industry', img: '/images/industries/industries-manufacturing.jpg' },
   { name: 'Data Center & IT', img: '/images/industries/data-centers.jpg' },
-  { name: 'Electrical Contractors', img: '/images/industries/electrical-contractors.jpg' }
+  { name: 'Electrical Consultants', img: '/images/industries/electrical-contractors.jpg' }
 ];
 const proof = [
   { title: 'Sustainable Solutions', text: 'Lower-impact options for a cleaner tomorrow.', icon: Leaf },
