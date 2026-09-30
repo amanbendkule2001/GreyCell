@@ -108,7 +108,6 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>GRAYCELL GROUP OF COMPANIES</span>
           <span>Graycell</span>
           <span>© 2026 Graycell</span>
           <span>Powered by Knowletive Services</span>
